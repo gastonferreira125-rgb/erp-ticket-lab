@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ticket_id",
+    "categoria",
+    "prioridad",
+    "resumen",
+    "referencia_documento",
+    "datos_faltantes"
+  ],
+  "properties": {
+    "ticket_id": {
+      "type": "string"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "Finanzas",
+        "Ventas",
+        "Inventario",
+        "Autorizaciones",
+        "Reportes",
+        "Integraciones",
+        "Compras",
+        "Otros"
+      ]
+    },
+    "prioridad": {
+      "type": "string",
+      "enum": [
+        "Alta",
+        "Media",
+        "Baja"
+      ]
+    },
+    "resumen": {
+      "type": "string",
+      "minLength": 1
+    },
+    "referencia_documento": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "datos_faltantes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
