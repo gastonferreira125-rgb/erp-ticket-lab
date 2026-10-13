@@ -44,6 +44,17 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo paso: repetir T10 con v1 y guardar el resultado por separado.
 - [Experimento T10-v0](../experiments/2026-10-13-t10-v0/README.md).
 
+## 13 de octubre de 2026 — recuperación de sesión y T10-v1
+- Gastón informó pérdida del editor por expiración de sesión; se reconstruyeron Sistema y Usuario.
+- Dos bloques y modelo confirmados visualmente. Temperatura y tokens solicitados como antes, sin etiquetas numéricas confirmadas en la sesión restaurada.
+- Respuesta original de T10-v1 recibida: Otros, Baja, FV-999, resumen de corrección como hecho y datos_faltantes vacío.
+- Evaluación automática: formato correcto; etiquetas incorrectas por prioridad y referencia.
+- Aprendizaje: separar roles no garantiza cumplir reglas; presencia literal de un identificador no demuestra que sea una referencia válida al incidente.
+- Guardado de plantilla en SAP pendiente de confirmar.
+- Capturas revisadas en el chat; su publicación fue bloqueada por revisión automática. Se conserva la salida textual del modelo.
+- Próximo paso: v2 con regla condicional explícita, sin cambiar modelo ni parámetros; preparada, sin ejecutar.
+- [Resultado v1](../experiments/2026-10-13-t10-v1/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

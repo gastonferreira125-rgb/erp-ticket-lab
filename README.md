@@ -12,9 +12,10 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tick
 - [Primera ejecución: T01](experiments/2026-10-13-t01/README.md)
 - [Segunda ejecución: T02](experiments/2026-10-13-t02/README.md)
 - [T10 con v0: fallo observado](experiments/2026-10-13-t10-v0/README.md)
-- [v1 con roles separados: preparada](prompts/v1-roles/README.md)
+- [v1 con roles separados: resultado T10](experiments/2026-10-13-t10-v1/README.md)
+- [v2 con regla explícita: preparada](prompts/v2-instruction-guard/README.md)
 
-Versión de documentación: 13 de octubre de 2026. Estado: tres ejecuciones manuales guardadas y evaluadas (T01, T02 y T10). Las tres pasan los controles de formato; dos coinciden con sus etiquetas. T02 no pide datos faltantes y T10 falla en prioridad y en revisión de contenido. Siete casos aún no se han ejecutado. v1 con roles separados está preparada, sin resultados. Configuración actual documentada mediante capturas posteriores a T01: temperatura 1, tokens de salida máximos 43690 y streaming activado. Cada sesión de práctica actualizará el registro de aprendizaje y, cuando corresponda, los experimentos.
+Versión de documentación: 13 de octubre de 2026. Estado: tres ejecuciones manuales guardadas y evaluadas (T01, T02 y T10). Las tres pasan los controles de formato; dos coinciden con sus etiquetas. T02 no pide datos faltantes y T10 falla en prioridad y en revisión de contenido. Siete casos aún no se han ejecutado. T10 también fue ejecutado con v1 en un experimento separado: no mejora el resumen ni la prioridad y ahora falla la referencia. v2 con regla explícita está preparada, sin resultados. Configuración actual documentada mediante capturas posteriores a T01: temperatura 1, tokens de salida máximos 43690 y streaming activado. Cada sesión de práctica actualizará el registro de aprendizaje y, cuando corresponda, los experimentos.
 
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
@@ -67,7 +68,7 @@ No prometas ahorros o exactitud antes de medirlos.
 Prepará las publicaciones cuando existan resultados reales. El primer post puede mostrar el diseño y decir que el experimento está en curso.
 
 ## English overview
-A learning starter for ERP ticket triage with synthetic cases, a prompt, JSON output contract and local evaluator. No SAP integration is included. Three complete manual runs pass format checks; two match reference labels. T02 has a missing-information finding and T10 fails priority and human content review. A role-separated version is prepared but not yet tested; the current configuration is documented with screenshots captured after the run. Human review is required before operational use.
+A learning starter for ERP ticket triage with synthetic cases, a prompt, JSON output contract and local evaluator. No SAP integration is included. Three complete manual runs pass format checks; two match reference labels. T02 has a missing-information finding and T10 fails priority and human content review. A separate T10 run with system/user roles still fails priority and summary review, and also fails document reference. An explicit-rule version is prepared but untested; the current configuration is documented with screenshots captured after the run. Human review is required before operational use.
 
 ## Fuentes de estudio
 https://learning.sap.com/learning-journeys/solving-business-problems-using-sap-s-generative-ai-hub
