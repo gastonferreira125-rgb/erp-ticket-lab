@@ -1,0 +1,18 @@
+{
+  "observed_date": "2026-10-13",
+  "timezone": "America/Montevideo",
+  "observation_stage": "after_T01_execution",
+  "model_display_name": "Gemini 2.5 Flash Lite (001)",
+  "api_model_identifier": null,
+  "api_model_version": null,
+  "message_role": "user",
+  "temperature": 1,
+  "max_output_tokens": 43690,
+  "streaming": true,
+  "evidence": [
+    "parameters.png",
+    "max-output-tokens.png",
+    "temperature.png"
+  ],
+  "note": "Current UI values observed after T01. User was instructed to reveal tooltips without moving controls."
+}

@@ -9,7 +9,7 @@ Fecha: 13 de octubre de 2026 (America/Montevideo). Hora exacta de ejecución no 
 - Bloque de mensaje: Usuario, según las instrucciones y la captura previa.
 - Prompt: v0-baseline; [texto indicado para esta ejecución](prompt.txt).
 - La captura del resultado no incluye el prompt. Una segunda captura muestra el selector de modelo y los parámetros expandidos.
-- Parámetros en la captura posterior: streaming activado; temperatura con rango 0.00–2.00 y tokens de salida máximos con rango 1–65536. Los rangos no indican el valor elegido: ambos valores numéricos actuales siguen pendientes de registrar. No se deducen de la posición de los controles ni se asumen valores predeterminados.
+- Parámetros actuales confirmados mediante etiquetas en capturas posteriores a T01: temperatura 1; tokens de salida máximos 43690; streaming activado. Son valores observados después de la ejecución, siguiendo la instrucción de no mover los controles. No se confundieron los extremos de los rangos con los valores seleccionados.
 - Entrada: únicamente id y texto del ticket T01; las etiquetas esperadas no forman parte del prompt.
 - Ejecución manual por Gastón; respuesta copiada al chat y contrastada con la captura.
 
@@ -23,6 +23,14 @@ Fecha: 13 de octubre de 2026 (America/Montevideo). Hora exacta de ejecución no 
 Captura posterior de configuración:
 
 ![Modelo y controles de parámetros, sin valores numéricos actuales visibles](parameters.png)
+
+Valores exactos visibles en las etiquetas:
+
+![Tokens de salida máximos: 43690](max-output-tokens.png)
+
+![Temperatura: 1](temperature.png)
+
+- [Configuración actual registrada](configuration-observed.json)
 
 ## Resultado automático
 El evaluador del repositorio se ejecutó sobre responses.json:
@@ -44,5 +52,5 @@ No se interpreta la ausencia de T02–T10 como una respuesta errónea de un mode
 
 ## Aprendizaje y próximo paso
 Conceptos explicados: prompt, JSON, clasificación frente a diagnóstico, prioridad según impacto explícito y null.
-Comprensión del alumno: pendiente de comprobar.
-Siguiente acción: capturar los parámetros actuales antes de cambiarlos; después ejecutar T02 manteniendo el mismo modelo y las mismas reglas.
+Comprobación de aprendizaje: Gastón respondió correctamente que prioridad Alta requiere que el texto afirme que un proceso está detenido para todo un equipo. Esta comprobación cubre la regla de prioridad; los demás conceptos seguirán revisándose con ejercicios.
+Siguiente acción: ejecutar T02 manteniendo modelo, reglas y parámetros actuales. Cambiar únicamente el identificador y el texto de entrada.
