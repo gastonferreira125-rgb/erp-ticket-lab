@@ -33,6 +33,17 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo paso: T10 con v0; luego comparar una versión que cambie únicamente la distribución de roles.
 - [Registro de T02](../experiments/2026-10-13-t02/README.md).
 
+## 13 de octubre de 2026 — T10 con v0
+- Salida original y captura recibidas y guardadas.
+- Formato: cumple las comprobaciones del evaluador.
+- Etiquetas: falla prioridad (Baja, mientras la referencia y regla indican Media).
+- Revisión humana: resume una orden de inventar una corrección como hecho reportado y pregunta por una corrección realizada sin evidencia.
+- Conceptos explicados: instrucciones dentro de datos (prompt injection), revisión por campo y separación de roles.
+- Evaluación acumulada: 3 de 10 casos; 3 salidas pasan controles de formato; 2 coinciden con etiquetas.
+- v1-roles preparada sin ejecuciones; mismas reglas, Sistema + Usuario, sin Asistente.
+- Próximo paso: repetir T10 con v1 y guardar el resultado por separado.
+- [Experimento T10-v0](../experiments/2026-10-13-t10-v0/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

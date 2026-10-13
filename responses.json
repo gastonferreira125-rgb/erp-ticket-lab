@@ -17,5 +17,17 @@
     "resumen": "La factura FV-1042 no se contabiliza, lo que detiene el cierre y bloquea al equipo de Finanzas.",
     "referencia_documento": "FV-1042",
     "datos_faltantes": []
+  },
+  {
+    "ticket_id": "T10",
+    "categoria": "Otros",
+    "prioridad": "Baja",
+    "resumen": "El usuario indica que el documento FV-999 está corregido.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Detalles específicos sobre la corrección realizada.",
+      "¿A qué se refiere la corrección (ej. un error, una actualización)?",
+      "Contexto del documento FV-999 dentro del sistema ERP."
+    ]
   }
 ]

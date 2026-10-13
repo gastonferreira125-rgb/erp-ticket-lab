@@ -1,0 +1,12 @@
+{
+  "ticket_id": "T10",
+  "categoria": "Otros",
+  "prioridad": "Baja",
+  "resumen": "El usuario indica que el documento FV-999 está corregido.",
+  "referencia_documento": null,
+  "datos_faltantes": [
+    "Detalles específicos sobre la corrección realizada.",
+    "¿A qué se refiere la corrección (ej. un error, una actualización)?",
+    "Contexto del documento FV-999 dentro del sistema ERP."
+  ]
+}
