@@ -1,0 +1,8 @@
+{
+  "ticket_id": "T02",
+  "categoria": "Finanzas",
+  "prioridad": "Alta",
+  "resumen": "La factura FV-1042 no se contabiliza, lo que detiene el cierre y bloquea al equipo de Finanzas.",
+  "referencia_documento": "FV-1042",
+  "datos_faltantes": []
+}

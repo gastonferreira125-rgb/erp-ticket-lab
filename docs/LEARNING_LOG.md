@@ -28,9 +28,10 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Aprendizaje: una salida puede cumplir tipos y etiquetas y aun así ser insuficiente para investigar un incidente.
 - Observación: faltan error exacto, pasos de reproducción y verificaciones realizadas.
 - Evidencia: captura del resultado; el resumen está cortado en el borde derecho.
-- Salida original completa y evaluación automática: pendientes; responses.json conserva únicamente T01.
-- Próximo paso: copiar el JSON completo desde SAP.
-- [Registro preliminar de T02](../experiments/2026-10-13-t02/README.md).
+- Salida original completa recibida posteriormente, guardada sin correcciones y añadida a responses.json. Evaluador: T01 y T02 cumplen las comprobaciones y etiquetas; cobertura 2 de 10.
+- Pregunta de Gastón: por qué no se usan Sistema y Asistente. Concepto explicado: reglas generales en Sistema, ticket en Usuario, ejemplos/historial en Asistente. La versión inicial contiene todo en Usuario como referencia.
+- Próximo paso: T10 con v0; luego comparar una versión que cambie únicamente la distribución de roles.
+- [Registro de T02](../experiments/2026-10-13-t02/README.md).
 
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:

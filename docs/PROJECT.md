@@ -11,7 +11,7 @@ Los tickets ERP llegan con texto libre, detalles incompletos y distintos niveles
 - Evaluador local en Python sin dependencias externas.
 - Práctica manual iniciada en SAP AI Launchpad y Generative AI Hub.
 
-Estado al 13 de octubre de 2026: acceso al entorno confirmado, T01 guardado y evaluado, y T02 observado por captura con revisión preliminar. T02 muestra etiquetas coherentes y datos_faltantes vacío; falta el texto completo para evaluarlo automáticamente. Ocho casos aún no se ejecutaron; la configuración actual posterior a T01 ya está documentada (temperatura 1; tokens de salida máximos 43690; streaming activado). No hay integración con ERP, medición de tiempos ni comparación de modelos.
+Estado al 13 de octubre de 2026: acceso al entorno confirmado, T01 y T02 guardados y evaluados. Ambos cumplen las comprobaciones del evaluador y sus etiquetas coinciden; T02 conserva el hallazgo funcional de datos_faltantes vacío. Ocho casos aún no se ejecutaron; la configuración actual posterior a T01 ya está documentada (temperatura 1; tokens de salida máximos 43690; streaming activado). No hay integración con ERP, medición de tiempos ni comparación de modelos.
 
 ## Flujo experimental
 1. Seleccionar un ticket y copiar únicamente su id y texto al modelo.
@@ -31,4 +31,4 @@ Las etiquetas esperadas se usan después de generar la respuesta, nunca como ent
 - Revisión humana previa a cualquier uso operativo.
 
 ## Próximas entregas
-Obtener el texto original completo de T02, evaluarlo y revisar por qué no pide datos adicionales. Los parámetros actuales ya se capturaron y Gastón identificó correctamente la regla de prioridad Alta. Después completar los diez casos, comparar versiones del prompt y construir una demo con resultados documentados.
+Ejecutar T10 con v0 y estudiar la separación de mensajes Sistema/Usuario. Comparar una versión con roles separados sin cambiar a la vez las reglas; después probar una mejora específica para los datos faltantes. Los parámetros actuales ya se capturaron y Gastón identificó correctamente la regla de prioridad Alta. Después completar los diez casos, comparar versiones del prompt y construir una demo con resultados documentados.
