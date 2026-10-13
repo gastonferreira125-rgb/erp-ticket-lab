@@ -11,7 +11,7 @@ Los tickets ERP llegan con texto libre, detalles incompletos y distintos niveles
 - Evaluador local en Python sin dependencias externas.
 - Práctica manual iniciada en SAP AI Launchpad y Generative AI Hub.
 
-Estado al 13 de octubre de 2026: acceso al entorno confirmado y primera respuesta de modelo guardada (T01). El caso pasa las comprobaciones del evaluador y coincide con las etiquetas de referencia. Nueve casos siguen pendientes; los parámetros del modelo aún no se han capturado. No hay integración con ERP, medición de tiempos ni comparación de modelos.
+Estado al 13 de octubre de 2026: acceso al entorno confirmado y primera respuesta de modelo guardada (T01). El caso pasa las comprobaciones del evaluador y coincide con las etiquetas de referencia. Nueve casos siguen pendientes; los valores numéricos de los parámetros siguen pendientes de confirmar. No hay integración con ERP, medición de tiempos ni comparación de modelos.
 
 ## Flujo experimental
 1. Seleccionar un ticket y copiar únicamente su id y texto al modelo.

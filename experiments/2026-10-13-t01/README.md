@@ -4,12 +4,12 @@ Fecha: 13 de octubre de 2026 (America/Montevideo). Hora exacta de ejecución no 
 
 ## Entorno y trazabilidad
 - SAP AI Launchpad, sistema de práctica compartido identificado en la captura previa.
-- Modelo mostrado en la captura previa: Gemini 2.5 Flash Lite (001).
+- Modelo confirmado en la captura de configuración posterior a T01: Gemini 2.5 Flash Lite (001).
 - La versión API y el identificador técnico del modelo no se han confirmado.
 - Bloque de mensaje: Usuario, según las instrucciones y la captura previa.
 - Prompt: v0-baseline; [texto indicado para esta ejecución](prompt.txt).
-- La captura del resultado no incluye el prompt ni el selector de modelo. Falta una captura de la configuración para completar la trazabilidad.
-- Parámetros: no visibles; valores pendientes de registrar. No se asumen valores predeterminados.
+- La captura del resultado no incluye el prompt. Una segunda captura muestra el selector de modelo y los parámetros expandidos.
+- Parámetros en la captura posterior: streaming activado; temperatura con rango 0.00–2.00 y tokens de salida máximos con rango 1–65536. Los rangos no indican el valor elegido: ambos valores numéricos actuales siguen pendientes de registrar. No se deducen de la posición de los controles ni se asumen valores predeterminados.
 - Entrada: únicamente id y texto del ticket T01; las etiquetas esperadas no forman parte del prompt.
 - Ejecución manual por Gastón; respuesta copiada al chat y contrastada con la captura.
 
@@ -19,6 +19,10 @@ Fecha: 13 de octubre de 2026 (America/Montevideo). Hora exacta de ejecución no 
 - Captura aportada por el usuario, limitada al panel de respuesta:
 
 ![Respuesta de T01 en SAP AI Launchpad](response.png)
+
+Captura posterior de configuración:
+
+![Modelo y controles de parámetros, sin valores numéricos actuales visibles](parameters.png)
 
 ## Resultado automático
 El evaluador del repositorio se ejecutó sobre responses.json:

@@ -12,7 +12,7 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 ## 13 de octubre de 2026
 - Objetivo: retomar el laboratorio y ejecutar T01.
 - Acceso a SAP AI Launchpad: confirmado por captura del editor.
-- Modelo visible: Gemini 2.5 Flash Lite (001); versión API y parámetros pendientes de confirmar.
+- Modelo confirmado por captura posterior: Gemini 2.5 Flash Lite (001). Streaming activado en esa captura; valores numéricos de temperatura y tokens de salida pendientes de confirmar.
 - Conceptos explicados: prompt, JSON y clasificación frente a diagnóstico.
 - Acción realizada: primera ejecución manual de T01 en el bloque Usuario.
 - Evidencia: respuesta original y captura del panel de respuesta aportadas por Gastón.
