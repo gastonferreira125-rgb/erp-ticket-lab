@@ -8,17 +8,18 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tick
 - [Registro de aprendizaje](docs/LEARNING_LOG.md)
 - [Plan de publicaciones](docs/LINKEDIN_PLAN.md)
 - [Plantilla para registrar experimentos](experiments/TEMPLATE.md)
+- [Primera ejecución: T01](experiments/2026-10-13-t01/README.md)
 
-Versión de documentación: 12 de octubre de 2026. Estado: laboratorio en preparación; ejecuciones reales pendientes. Cada sesión de práctica actualizará el registro de aprendizaje y, cuando corresponda, los experimentos.
+Versión de documentación: 13 de octubre de 2026. Estado: primera ejecución manual registrada (T01); nueve casos pendientes. Parámetros de ejecución pendientes de capturar. Cada sesión de práctica actualizará el registro de aprendizaje y, cuando corresponda, los experimentos.
 
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
 - prompt.txt: instrucciones iniciales listas para probar.
 - schema.json: contrato de salida.
-- responses.json: lista vacía; todavía NO hay resultados de modelos.
+- responses.json: una respuesta real registrada para T01; nueve casos pendientes.
 - evaluate.py: evaluación local de respuestas guardadas, sin dependencias externas.
 
-Este paquete NO se conecta a SAP Business One ni llama a un modelo. Es la base reproducible de una práctica. No atribuye resultados a ningún modelo.
+Los scripts no se conectan a SAP Business One ni llaman a un modelo. Las pruebas se ejecutan manualmente en SAP AI Launchpad y se guardan para evaluación. La primera respuesta y sus límites de trazabilidad están documentados en el experimento.
 
 ## Primer ejercicio, sin programar
 1. Abrí prompt.txt.
@@ -62,7 +63,7 @@ No prometas ahorros o exactitud antes de medirlos.
 Prepará las publicaciones cuando existan resultados reales. El primer post puede mostrar el diseño y decir que el experimento está en curso.
 
 ## English overview
-A learning starter for ERP ticket triage with synthetic cases, a prompt, JSON output contract and local evaluator. No SAP integration or live model results are included. Human review is required before operational use.
+A learning starter for ERP ticket triage with synthetic cases, a prompt, JSON output contract and local evaluator. No SAP integration is included. One manually collected model response is documented; generation parameters still need to be captured. Human review is required before operational use.
 
 ## Fuentes de estudio
 https://learning.sap.com/learning-journeys/solving-business-problems-using-sap-s-generative-ai-hub

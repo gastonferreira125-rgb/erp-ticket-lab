@@ -9,9 +9,9 @@ Los tickets ERP llegan con texto libre, detalles incompletos y distintos niveles
 - Diez incidentes ficticios con etiquetas de referencia.
 - Prompt inicial y contrato JSON.
 - Evaluador local en Python sin dependencias externas.
-- Práctica manual prevista en SAP AI Launchpad y Generative AI Hub.
+- Práctica manual iniciada en SAP AI Launchpad y Generative AI Hub.
 
-Estado al 12 de octubre de 2026: preparación del experimento. No hay respuestas de modelos guardadas, integración con ERP ni métricas de rendimiento medidas.
+Estado al 13 de octubre de 2026: acceso al entorno confirmado y primera respuesta de modelo guardada (T01). El caso pasa las comprobaciones del evaluador y coincide con las etiquetas de referencia. Nueve casos siguen pendientes; los parámetros del modelo aún no se han capturado. No hay integración con ERP, medición de tiempos ni comparación de modelos.
 
 ## Flujo experimental
 1. Seleccionar un ticket y copiar únicamente su id y texto al modelo.
@@ -31,4 +31,4 @@ Las etiquetas esperadas se usan después de generar la respuesta, nunca como ent
 - Revisión humana previa a cualquier uso operativo.
 
 ## Próximas entregas
-Primero acceder al entorno y comprender sus componentes. Luego ejecutar un caso, completar diez casos, comparar versiones del prompt y, cuando haya evidencia, construir una demo y publicar resultados.
+Completar la trazabilidad de T01 capturando los parámetros, comprobar la comprensión del alumno y ejecutar T02. Después completar los diez casos, comparar versiones del prompt y construir una demo con resultados documentados.
