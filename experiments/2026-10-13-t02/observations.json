@@ -1,0 +1,15 @@
+{
+  "ticket_id": "T02",
+  "source": "user_supplied_screenshot",
+  "response_complete": false,
+  "visible_fields": {
+    "ticket_id": "T02",
+    "categoria": "Finanzas",
+    "prioridad": "Alta",
+    "referencia_documento": "FV-1042",
+    "datos_faltantes": []
+  },
+  "summary_visibility": "right_edge_clipped",
+  "automatic_evaluation_status": "pending_original_response",
+  "human_review_finding": "Missing-data list is empty although the incident lacks exact error, reproduction steps and checks already performed."
+}

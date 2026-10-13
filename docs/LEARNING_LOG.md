@@ -22,6 +22,16 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo paso: ejecutar T02 con la misma configuración, cambiando únicamente id y texto.
 - [Registro del experimento](../experiments/2026-10-13-t01/README.md).
 
+## 13 de octubre de 2026 — T02
+- Segunda ejecución manual observada mediante captura.
+- Campos legibles: Finanzas, Alta, FV-1042 y datos_faltantes vacío.
+- Aprendizaje: una salida puede cumplir tipos y etiquetas y aun así ser insuficiente para investigar un incidente.
+- Observación: faltan error exacto, pasos de reproducción y verificaciones realizadas.
+- Evidencia: captura del resultado; el resumen está cortado en el borde derecho.
+- Salida original completa y evaluación automática: pendientes; responses.json conserva únicamente T01.
+- Próximo paso: copiar el JSON completo desde SAP.
+- [Registro preliminar de T02](../experiments/2026-10-13-t02/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
