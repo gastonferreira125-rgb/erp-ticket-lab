@@ -1,0 +1,10 @@
+[
+  {
+    "ticket_id": "T04",
+    "categoria": "Inventario",
+    "prioridad": "Media",
+    "resumen": "Se solicita revisar el stock del artículo ART-310 en el almacén central por discrepancia con el conteo físico.",
+    "referencia_documento": "ART-310",
+    "datos_faltantes": []
+  }
+]

@@ -272,6 +272,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo T04 sin cambiar v6 para evaluar dato ya informado y concreción; luego T06/T10 según resultados.
 - [Repetición 2](../experiments/2026-10-14-t02-v6-r2/README.md).
 
+## 14 de octubre de 2026 — T04-v6
+- Inventario, Media y ART-310 conformes según evaluate.py. Fuente: JSON pegado, sin captura.
+- Resumen fiel conserva artículo y almacén central. datos_faltantes vacío: objetivo no cumplido; faltan cantidades del sistema/conteo y fecha de conteo útil.
+- Frente a v5, deja de pedir almacén ya informado pero elimina toda información faltante. No es mejora suficiente del campo; no atribuir causalidad a variación del resumen.
+- v6: tres ejecuciones sobre dos tickets, todas con etiquetas correctas y listas vacías. Cobertura única 2/10, no 3/10. Total entre versiones: 36 ejecuciones sobre doce tickets distintos.
+- Próximo: T06 y luego T10 con v6 sin cambios antes de decidir otro ajuste.
+- [T04-v6](../experiments/2026-10-14-t04-v6/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

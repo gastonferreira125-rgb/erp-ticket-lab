@@ -1,0 +1,11 @@
+{
+  "ticket_id": "T04",
+  "intended_prompt_version": "v6-missing-data-rule",
+  "source": "JSON pegado; sin captura",
+  "labels": "conformes",
+  "summary": "Fiel, conserva artículo y almacén central sin inventar causa o solución",
+  "missing_information_objective": "no cumplido en esta salida",
+  "missing_information_reason": "Lista vacía pese a faltar cantidades de stock del sistema y conteo físico; fecha del conteo también sería útil",
+  "comparison_to_v5": "Ya no pide almacén informado, pero tampoco conserva información útil de investigación",
+  "next_step": "T06 con v6 sin cambios para controlar una solicitud planificada; después T10"
+}
