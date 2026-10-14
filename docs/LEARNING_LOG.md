@@ -287,6 +287,15 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Total entre versiones: 37 ejecuciones sobre doce tickets distintos. Próximo T10 con v6 sin cambios; luego revisar antes de otro ajuste.
 - [T06-v6](../experiments/2026-10-14-t06-v6/README.md).
 
+## 14 de octubre de 2026 — T10 y cierre de controles v6; v7 preparada
+- T10 conserva Otros, Media, null y pide describir incidente, sin afirmar corrección. evaluate.py confirma etiquetas/formato. Fuente textual, sin captura.
+- Controles v6: cinco ejecuciones, cuatro tickets únicos, todas conformes en etiquetas; cobertura 4/10. T02/T04 listas vacías, T06/T10 información pertinente. No mejora uniforme de datos faltantes.
+- Consolidación conserva ambas T02 en runs.json; evaluación por ticket usa última T02 por convención explícita, no selección de mejor salida. No mezclar con ronda v5 completa.
+- Total entre versiones: 38 ejecuciones sobre doce tickets distintos.
+- Técnica siguiente: few-shot prompting con dos ejemplos Usuario/Asistente; documentación oficial SAP/Google consultada. System v6 idéntico; EX01/EX02 diseñados fuera del benchmark y no contados como ejecuciones. Campos/tipos y referencias verificados localmente.
+- v7 preparada sin resultados. Próximo T02 real como último Usuario de seis mensajes, luego T04/T06/T10. Revisar utilidad de información y no copiar ids/respuestas de ejemplos.
+- [v6 consolidada](../experiments/2026-10-14-v6-controls/README.md), [v7 preparada](../prompts/v7-few-shot/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

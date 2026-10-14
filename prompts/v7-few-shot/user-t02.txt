@@ -1,0 +1,5 @@
+ENTRADA:
+ticket_id: T02
+<ticket>
+La factura FV-1042 no se contabiliza. Todo el equipo de Finanzas está bloqueado y el cierre está detenido.
+</ticket>

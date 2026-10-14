@@ -1,0 +1,18 @@
+[
+  {
+    "role": "user",
+    "content": "ENTRADA:\nticket_id: EX01\n<ticket>\nNo puedo contabilizar la factura FC-620. Solo afecta a mi usuario y no guardé el mensaje de error.\n</ticket>"
+  },
+  {
+    "role": "assistant",
+    "content": "{\n  \"ticket_id\": \"EX01\",\n  \"categoria\": \"Finanzas\",\n  \"prioridad\": \"Media\",\n  \"resumen\": \"El usuario no puede contabilizar la factura FC-620.\",\n  \"referencia_documento\": \"FC-620\",\n  \"datos_faltantes\": [\n    \"Mensaje de error exacto al contabilizar\",\n    \"Pasos realizados antes de que aparezca el error\"\n  ]\n}"
+  },
+  {
+    "role": "user",
+    "content": "ENTRADA:\nticket_id: EX02\n<ticket>\nEl stock del artículo ART-845 no coincide con el conteo físico en el depósito norte.\n</ticket>"
+  },
+  {
+    "role": "assistant",
+    "content": "{\n  \"ticket_id\": \"EX02\",\n  \"categoria\": \"Inventario\",\n  \"prioridad\": \"Media\",\n  \"resumen\": \"El stock de ART-845 en el depósito norte difiere del conteo físico.\",\n  \"referencia_documento\": \"ART-845\",\n  \"datos_faltantes\": [\n    \"Cantidad registrada en el sistema\",\n    \"Cantidad obtenida en el conteo físico\",\n    \"Fecha del conteo físico\"\n  ]\n}"
+  }
+]
