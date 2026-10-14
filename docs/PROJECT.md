@@ -11,7 +11,9 @@ Los tickets ERP llegan con texto libre, detalles incompletos y distintos niveles
 - Evaluador local en Python sin dependencias externas.
 - Práctica manual iniciada en SAP AI Launchpad y Generative AI Hub.
 
-Estado al 14 de octubre de 2026: nueve ejecuciones guardadas, cinco tickets distintos y resultados por versión separados. T10-v2 cumple la regla explícita y T02-v2 pasa la revisión de regresión. T05-v2 falla categoría, aunque formato, prioridad y resumen son conformes. T05-v3 coincide con Autorizaciones y T06-v3 con Reportes: ambos pasan etiquetas y revisión humana. Falta comprobar otros casos y repeticiones. No hay integración operativa con ERP, medición de tiempos ni comparación de modelos. Faltan cinco tickets del conjunto, repeticiones y casos nuevos; valores actuales y guardado en SAP pendientes de confirmar.
+Estado al 14 de octubre de 2026: 17 ejecuciones sobre diez tickets distintos. Ronda v3 completa: 10/10 respuestas conformes en formato y 7/10 coincidencias completas de etiquetas; categorías 9/10, prioridades 10/10, referencias 8/10. T03/T04 omiten referencias, y T07 falla categoría. T04 expone una ambigüedad del contrato para códigos de artículo. T01/T02/T10 conservan etiquetas previamente correctas en estas ejecuciones. [Ronda y revisión humana](../experiments/2026-10-14-v3-round/README.md).
+
+No hay integración operativa con ERP, medición de tiempos ni comparación de modelos. Faltan repeticiones y casos nuevos independientes del ajuste; valores actuales y guardado en SAP pendientes de confirmar.
 
 ## Flujo experimental
 1. Seleccionar un ticket y copiar únicamente su id y texto al modelo.
@@ -31,4 +33,4 @@ Las etiquetas esperadas se usan después de generar la respuesta, nunca como ent
 - Revisión humana previa a cualquier uso operativo.
 
 ## Próximas entregas
-Ejecutar T07 con v3, completar los casos restantes y después repetir T02/T10 como regresión. Mantener modelo, parámetros y las demás reglas; conservar salidas originales separadas por versión. Luego completar casos restantes, repetir pruebas, incluir casos nuevos y comparar modelos antes de preparar la demo y las publicaciones.
+Crear una versión nueva para aclarar Integraciones como problema principal de intercambio entre sistemas y repetir T07 con controles. Hacer una mejora por versión para facilitar la comparación. Luego revisar el alcance de referencia_documento, alineando prompt, esquema y conjunto esperado sin alterar retroactivamente v3. Repetir casos, añadir entradas nuevas y comparar modelos antes de preparar la demo y publicaciones.

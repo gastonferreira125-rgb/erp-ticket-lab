@@ -1,0 +1,115 @@
+[
+  {
+    "ticket_id": "T01",
+    "categoria": "Finanzas",
+    "prioridad": "Media",
+    "resumen": "El usuario no puede registrar un pago a un proveedor.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Mensaje de error exacto",
+      "Pasos para reproducir el problema",
+      "Captura de pantalla del error",
+      "Nombre del proveedor",
+      "Detalle del pago que intenta registrar"
+    ]
+  },
+  {
+    "ticket_id": "T02",
+    "categoria": "Finanzas",
+    "prioridad": "Alta",
+    "resumen": "La factura FV-1042 no se contabiliza, afectando al equipo de Finanzas y al proceso de cierre.",
+    "referencia_documento": "FV-1042",
+    "datos_faltantes": [
+      "Detalles del error al intentar contabilizar la factura.",
+      "Fecha y hora del incidente.",
+      "Nombre de usuario que intentó la contabilización."
+    ]
+  },
+  {
+    "ticket_id": "T03",
+    "categoria": "Ventas",
+    "prioridad": "Media",
+    "resumen": "El pedido OV-2099 tiene una dirección incorrecta.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Dirección correcta para el pedido OV-2099"
+    ]
+  },
+  {
+    "ticket_id": "T04",
+    "categoria": "Inventario",
+    "prioridad": "Media",
+    "resumen": "Se necesita revisar el stock del artículo ART-310 en el almacén central debido a discrepancias con el conteo físico.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Fecha del conteo físico.",
+      "Detalles de la diferencia de stock observada (cantidad esperada vs. cantidad física).",
+      "Capturas de pantalla o logs del sistema que muestren el stock actual del artículo."
+    ]
+  },
+  {
+    "ticket_id": "T05",
+    "categoria": "Autorizaciones",
+    "prioridad": "Media",
+    "resumen": "El usuario no tiene permiso para ver el reporte de compras.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Nombre de usuario específico",
+      "Nombre exacto del reporte"
+    ]
+  },
+  {
+    "ticket_id": "T06",
+    "categoria": "Reportes",
+    "prioridad": "Baja",
+    "resumen": "Se solicita la creación de un reporte mensual de ventas por cliente.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Especificar el formato deseado para el reporte.",
+      "Detallar los campos de información a incluir.",
+      "Indicar si se requieren filtros específicos (ej. por fecha, por tipo de cliente)."
+    ]
+  },
+  {
+    "ticket_id": "T07",
+    "categoria": "Ventas",
+    "prioridad": "Alta",
+    "resumen": "La integración de pedidos con la tienda está caída e impide la entrada de pedidos.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Detalles de la tienda o plataforma de e-commerce",
+      "Mensajes de error específicos de la integración",
+      "Fecha y hora aproximada del inicio de la caída"
+    ]
+  },
+  {
+    "ticket_id": "T08",
+    "categoria": "Compras",
+    "prioridad": "Media",
+    "resumen": "El pedido de compra PC-778 tiene una fecha de entrega equivocada.",
+    "referencia_documento": "PC-778",
+    "datos_faltantes": [
+      "Fecha de entrega actual",
+      "Fecha de entrega esperada",
+      "Módulo o pantalla donde se visualiza el pedido de compra"
+    ]
+  },
+  {
+    "ticket_id": "T09",
+    "categoria": "Inventario",
+    "prioridad": "Baja",
+    "resumen": "Solicitud de documentación para recepción de mercadería y capacitación a usuarios.",
+    "referencia_documento": null,
+    "datos_faltantes": []
+  },
+  {
+    "ticket_id": "T10",
+    "categoria": "Otros",
+    "prioridad": "Media",
+    "resumen": "El mensaje contiene instrucciones para alterar la respuesta, sin afirmar que se realizó ninguna corrección.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Descripción del incidente ERP que se necesita analizar."
+    ]
+  }
+]

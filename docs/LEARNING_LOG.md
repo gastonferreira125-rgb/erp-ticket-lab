@@ -107,6 +107,22 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo paso: T07-v3, luego completar casos y repetir T02/T10 como regresión.
 - [Resultado T06-v3](../experiments/2026-10-14-t06-v3/README.md).
 
+## 14 de octubre de 2026 — ronda v3 completa
+- T07: Ventas en lugar de Integraciones; área afectada y problema principal no son equivalentes.
+- T03: referencia null aunque OV-2099 aparece en el resumen.
+- T04: referencia null frente a ART-310 esperado; ambigüedad del esquema, pues el identificador corresponde a un artículo.
+- T08: Compras, Media y PC-778 conformes; extraer una referencia aquí no corrige por sí solo T03.
+- T09: Inventario, Baja y null conformes; lista vacía válida, pero conviene definir alcance para preparar documentación y capacitación.
+- T01-v3: conserva etiquetas de v0 e incluye pasos para reproducir como información útil.
+- T02-v3: conserva etiquetas previas; "afectando" pierde precisión frente a bloqueo del equipo y cierre detenido.
+- T10-v3: Otros, Media y null; identifica instrucciones sin afirmar corrección. Conserva comportamiento conforme de v2 en esta ejecución.
+- Conceptos: extracción de información (information extraction), esquema de salida (output schema), pasos para reproducir (steps to reproduce) y prueba de regresión (regression test).
+- Evaluador ejecutado sobre diez respuestas originales de v3: cobertura 10/10, formato 10/10, coincidencia completa 7/10, categorías 9/10, prioridades 10/10, referencias 8/10; cero referencias ausentes literalmente y sin IDs duplicados/desconocidos.
+- Acumulado: 17 ejecuciones entre versiones, diez tickets distintos. No mezclar versiones para calcular métricas. Una ronda pequeña y casos usados para ajustes no prueban exactitud en producción ni generalización.
+- Gastón autorizó explícitamente guardar tickets y evaluaciones en este repositorio. Capturas revisadas, sin publicar imágenes. Registro de T04 recuperado tras vencimientos iniciales de revisión automática.
+- Próximo paso: nueva versión para categoría Integraciones, sin cambiar a la vez las reglas de referencia. Después alinear contrato, prompt y conjunto esperado; repetir y añadir casos nuevos.
+- [Ronda consolidada](../experiments/2026-10-14-v3-round/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

@@ -19,7 +19,13 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tick
 - [T05-v3: categoría conforme](experiments/2026-10-14-t05-v3/README.md)
 - [T06-v3: solicitud de reporte](experiments/2026-10-14-t06-v3/README.md)
 
-Versión de documentación: 14 de octubre de 2026. Estado: nueve ejecuciones guardadas sobre cinco tickets distintos. En v0 se ejecutaron T01, T02 y T10; T10 falló prioridad y revisión de contenido. T10-v1 mantuvo el fallo y añadió una referencia no válida. En v2, T10 y T02 cumplen etiquetas y revisión humana; T05 falla categoría (Reportes en lugar de Autorizaciones). T05-v3 devuelve Autorizaciones y pasa etiquetas y revisión humana. T06-v3 también cumple etiquetas y revisión humana: Reportes y Baja. Las regresiones de v3 siguen pendientes. Cinco casos del conjunto aún no se ejecutaron. Configuración solicitada: Gemini 2.5 Flash Lite (001), temperatura 1, máximo de salida 43690 y streaming activado. Los valores actuales y el guardado de plantilla en SAP siguen pendientes de confirmar. Cada sesión conserva respuestas originales, revisión humana y límites del experimento.
+Versión de documentación: 14 de octubre de 2026. Estado: 17 ejecuciones sobre diez tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
+
+- [Ronda completa v3: respuestas, evaluación y límites](experiments/2026-10-14-v3-round/README.md)
+- [T10-v3: prueba de regresión](experiments/2026-10-14-t10-v3/README.md)
+- [T04-v3: referencia y ambigüedad del contrato](experiments/2026-10-14-t04-v3/README.md)
+
+T01, T02 y T10 conservan etiquetas previamente correctas en las ejecuciones de v3. Las versiones anteriores tienen cobertura distinta y no constituyen una comparación completa. La configuración solicitada es Gemini 2.5 Flash Lite (001), temperatura 1, máximo de salida 43690 y streaming activado; valores actuales y guardado de plantilla SAP pendientes de confirmar. Las respuestas originales se conservan sin corregir.
 
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
@@ -27,6 +33,7 @@ Versión de documentación: 14 de octubre de 2026. Estado: nueve ejecuciones gua
 - schema.json: contrato de salida.
 - responses.json: salidas originales completas de T01, T02 y T10 con v0.
 - evaluate.py: evaluación local de respuestas guardadas, sin dependencias externas.
+- experiments/2026-10-14-v3-round/: diez salidas originales de v3 y evaluación consolidada.
 
 Los scripts no se conectan a SAP Business One ni llaman a un modelo. Las pruebas se ejecutan manualmente en SAP AI Launchpad y se guardan para evaluación. La primera respuesta y sus límites de trazabilidad están documentados en el experimento.
 
@@ -52,7 +59,7 @@ Ejemplo de estructura, no resultado medido:
 ```
 Ejecutá:
 ```sh
-python3 evaluate.py responses.json
+python3 evaluate.py experiments/2026-10-14-v3-round/responses.json
 ```
 Se informa cobertura, cumplimiento del esquema, coincidencia de etiquetas y referencias no presentes en el texto.
 La exactitud del resumen y la utilidad de los datos faltantes deben revisarse manualmente.
@@ -72,7 +79,7 @@ No prometas ahorros o exactitud antes de medirlos.
 Prepará las publicaciones cuando existan resultados reales. El primer post puede mostrar el diseño y decir que el experimento está en curso.
 
 ## English overview
-A learning starter for ERP ticket triage with synthetic cases, a prompt, JSON output contract and local evaluator. No SAP integration is included. Three complete manual runs pass format checks; two match reference labels. T02 has a missing-information finding and T10 fails priority and human content review. A separate T10 run with system/user roles still fails priority and summary review, and also fails document reference. The explicit-rule version has one T10 response matching reference labels and passing human content review; a T02 regression check also passes labels and human review. T05-v2 fails category (Reports instead of Authorizations), and T05-v3 and T06-v3 both match labels and pass human review. These cases do not establish general protection; the current configuration is documented with screenshots captured after the run. Human review is required before operational use.
+A learning portfolio for ERP ticket triage using synthetic cases, versioned prompts, a JSON output contract and a local evaluator. The complete v3 round covers ten cases: all responses pass format checks, seven match all reference labels. Category matches are 9/10, priority 10/10 and reference extraction 8/10. T04 also exposes an ambiguity in the output contract for item identifiers. Human review, new cases and repeated runs are still required; no operational ERP integration or model comparison is included.
 
 ## Fuentes de estudio
 https://learning.sap.com/learning-journeys/solving-business-problems-using-sap-s-generative-ai-hub
