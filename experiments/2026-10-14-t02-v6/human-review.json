@@ -1,0 +1,11 @@
+{
+  "ticket_id": "T02",
+  "intended_prompt_version": "v6-missing-data-rule",
+  "prompt_in_launchpad_verified": false,
+  "source": "JSON pegado por el usuario; sin captura en este mensaje",
+  "labels": "conformes",
+  "missing_information_objective": "no cumplido en la salida recibida",
+  "missing_information_reason": "datos_faltantes está vacío aunque no se aportan error exacto ni pasos para reproducir la contabilización fallida",
+  "summary_observation": "Ahora conserva la detención del cierre; no atribuir ese cambio causalmente a la regla de datos faltantes",
+  "next_step": "Verificar bloque v6 en Sistema del Launchpad antes de ajustar instrucciones"
+}

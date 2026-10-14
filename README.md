@@ -19,7 +19,7 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tick
 - [T05-v3: categoría conforme](experiments/2026-10-14-t05-v3/README.md)
 - [T06-v3: solicitud de reporte](experiments/2026-10-14-t06-v3/README.md)
 
-Versión de documentación: 14 de octubre de 2026. Estado: 33 ejecuciones sobre doce tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
+Versión de documentación: 14 de octubre de 2026. Estado: 34 ejecuciones sobre doce tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
 
 - [Ronda completa v3: respuestas, evaluación y límites](experiments/2026-10-14-v3-round/README.md)
 - [T10-v3: prueba de regresión](experiments/2026-10-14-t10-v3/README.md)
@@ -37,7 +37,7 @@ Conjunto original: T07/T08/T10 conformes, 3/3 entre ejecutados y cobertura 3/10.
 
 Revisión humana: siguen faltando impacto en resumen T02, datos útiles en listas vacías, y concreción/uso de información ya aportada en T04/T08. No es exactitud general ni respuesta perfecta; una ejecución por caso y casos usados para ajustar limitan generalización. La configuración actual no se reconfirmó totalmente y hubo restauración de sesión.
 
-[v6-missing-data-rule](prompts/v6-missing-data-rule/README.md) preparada, sin resultados: mejora únicamente datos_faltantes. v5 congelada sin corregir respuestas. Próximo T02 con v6; resumen se ajustará por separado.
+[v6-missing-data-rule](prompts/v6-missing-data-rule/README.md): primera salida T02 recibida, formato/etiquetas conformes (1/1 entre ejecutados, cobertura 1/10), pero datos_faltantes sigue vacío. Objetivo humano del ajuste no cumplido en esa salida. Aplicación del bloque v6 en Sistema del Launchpad pendiente de verificar. v5 congelada sin corregir respuestas; verificar antes de añadir más instrucciones.
 
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
@@ -91,7 +91,7 @@ No prometas ahorros o exactitud antes de medirlos.
 Prepará las publicaciones cuando existan resultados reales. El primer post puede mostrar el diseño y decir que el experimento está en curso.
 
 ## English overview
-A learning portfolio for ERP ticket triage with synthetic cases, versioned prompts, a JSON contract and a local evaluator. Complete rounds cover the same ten original cases: v3 matches all reference labels in 7/10 responses; v5 in 10/10. Both pass format checks. v5 also clarifies the contract for item identifiers. Human review still finds lost business impact, missing useful information and redundant or vague requests. A separate T12 result is not included in original-set metrics. One response per case, calibration on evaluation cases and partially unverified parameters do not establish general production accuracy. No operational ERP integration or model comparison is included. v6 is prepared to improve only missing-information quality; no v6 result has been received.
+A learning portfolio for ERP ticket triage with synthetic cases, versioned prompts, a JSON contract and a local evaluator. Complete rounds cover the same ten original cases: v3 matches all reference labels in 7/10 responses; v5 in 10/10. Both pass format checks. v5 also clarifies the contract for item identifiers. Human review still finds lost business impact, missing useful information and redundant or vague requests. A separate T12 result is not included in original-set metrics. One response per case, calibration on evaluation cases and partially unverified parameters do not establish general production accuracy. No operational ERP integration or model comparison is included. The first response under the intended v6 procedure matches labels but still has an empty missing-information list; actual inclusion of the v6 rule in SAP's system message is not yet verified.
 
 ## Fuentes de estudio
 https://learning.sap.com/learning-journeys/solving-business-problems-using-sap-s-generative-ai-hub

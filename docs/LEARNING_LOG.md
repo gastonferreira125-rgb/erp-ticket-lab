@@ -250,6 +250,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo: T02-v6 y controles T04/T06/T10; luego casos nuevos/repeticiones.
 - [Ronda v5](../experiments/2026-10-14-v5-round/README.md), [v6 preparada](../prompts/v6-missing-data-rule/README.md).
 
+## 14 de octubre de 2026 — primera salida bajo procedimiento v6, T02
+- Finanzas, Alta y FV-1042 conformes según evaluate.py. Fuente: JSON pegado, sin captura.
+- datos_faltantes sigue vacío: objetivo dirigido no cumplido en esta respuesta, ya que faltan error exacto y reproducción. Resumen conserva cierre detenido; no atribuir causalidad al cambio de regla.
+- No se verificó aplicación del bloque v6 en Sistema SAP; el archivo GitHub previsto sí contiene la regla. No asumir que faltó copiar ni que el modelo incumple de forma general.
+- Versión indicada v6: una salida recibida, etiquetas 1/1 entre ejecutados, cobertura 1/10. Revisión humana del objetivo desfavorable; v5 permanece 10/10 aparte.
+- Total entre versiones: 34 ejecuciones sobre doce tickets distintos. Próximo: captura del final de Sistema con bloque de calidad, luego repetición/control T02 y T04/T06/T10 según verificación. No añadir regla nueva todavía.
+- [T02-v6](../experiments/2026-10-14-t02-v6/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

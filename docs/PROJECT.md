@@ -11,7 +11,7 @@ Los tickets ERP llegan con texto libre, detalles incompletos y distintos niveles
 - Evaluador local en Python sin dependencias externas.
 - Práctica manual iniciada en SAP AI Launchpad y Generative AI Hub.
 
-Estado al 14 de octubre de 2026: 33 ejecuciones sobre doce tickets distintos. Ronda v3 completa: 10/10 respuestas conformes en formato y 7/10 coincidencias completas de etiquetas; categorías 9/10, prioridades 10/10, referencias 8/10. T03/T04 omiten referencias, y T07 falla categoría. T04 expone una ambigüedad del contrato para códigos de artículo. T01/T02/T10 conservan etiquetas previamente correctas en estas ejecuciones. [Ronda y revisión humana](../experiments/2026-10-14-v3-round/README.md).
+Estado al 14 de octubre de 2026: 34 ejecuciones sobre doce tickets distintos. Ronda v3 completa: 10/10 respuestas conformes en formato y 7/10 coincidencias completas de etiquetas; categorías 9/10, prioridades 10/10, referencias 8/10. T03/T04 omiten referencias, y T07 falla categoría. T04 expone una ambigüedad del contrato para códigos de artículo. T01/T02/T10 conservan etiquetas previamente correctas en estas ejecuciones. [Ronda y revisión humana](../experiments/2026-10-14-v3-round/README.md).
 
 No hay integración operativa con ERP, medición de tiempos ni comparación de modelos. Faltan repeticiones y casos nuevos independientes del ajuste; valores actuales y guardado en SAP pendientes de confirmar.
 
@@ -37,7 +37,7 @@ T07/T08/T10 conformes del conjunto original (3/3 entre ejecutados, cobertura 3/1
 
 v5 completó los diez tickets del conjunto original: 10/10 en formato y todas las etiquetas. v3: 7/10 en etiquetas del mismo conjunto. T12 complementario conforme (1/1), aparte. La aclaración de códigos de artículo resolvió una ambigüedad del contrato; no atribuir toda diferencia únicamente a capacidad del modelo. Revisión humana mantiene pérdidas de impacto y utilidad de datos faltantes. [Comparación y límites](../experiments/2026-10-14-v5-round/README.md).
 
-v5 congelada. v6 preparada sin ejecuciones, añade únicamente calidad de datos_faltantes; resumen pendiente para otro ajuste.
+v5 congelada. v6 añade únicamente calidad de datos_faltantes. Primera salida T02: etiquetas conformes, lista vacía; objetivo de contenido no cumplido. Aplicación real del bloque v6 en Sistema de Launchpad pendiente de confirmar por captura; no inferir incumplimiento general o error de copia.
 
 ## Próximas entregas
-T02 con v6 y controles T04/T06/T10, conservando las demás reglas y configuración solicitada. Revisar información faltante de forma humana (ausente, concreta y útil), además de etiquetas. Después añadir casos nuevos y repeticiones; tratar el impacto en resúmenes en otro ajuste separado. Comparar modelos y preparar demo/publicaciones con límites explícitos después de medir. No prometer calidad en producción o ahorros a partir de esta ronda educativa.
+Verificar captura del final de Sistema en Launchpad con la regla de v6 antes de modificar más instrucciones. Después repetir/controlar T02 y ejecutar controles T04/T06/T10 según lo observado, preservando salidas por ejecución. Revisar datos ausentes, concretos y útiles, además de etiquetas. Luego casos nuevos y repeticiones; impacto en resumen en ajuste separado. Comparación de modelos y demo pendientes.
