@@ -233,6 +233,13 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo: T08/T09 sin modificar v5; luego consolidar ronda completa y revisión humana.
 - [T06-v5](../experiments/2026-10-14-t06-v5/README.md).
 
+## 14 de octubre de 2026 — T08-v5
+- Compras, Media y PC-778 conformes. evaluate.py confirma formato y etiquetas. Fuente: JSON pegado, sin captura.
+- Resumen fiel. datos_faltantes "Procedimiento a revisar" es poco concreto; faltan fecha registrada y fecha correcta esperada, pedidas en versiones previas. Registrar deterioro de utilidad sin causalidad demostrada.
+- v5: 9/9 conformes entre ejecutados del conjunto original (cobertura 9/10), y 1/1 complementario. Total entre versiones: 32 ejecuciones sobre doce tickets distintos.
+- Resta T09 con v5 sin cambios; luego consolidar diez salidas originales, métricas separadas y revisión humana.
+- [T08-v5](../experiments/2026-10-14-t08-v5/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

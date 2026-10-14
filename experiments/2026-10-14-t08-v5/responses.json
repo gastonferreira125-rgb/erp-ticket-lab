@@ -1,0 +1,12 @@
+[
+  {
+    "ticket_id": "T08",
+    "categoria": "Compras",
+    "prioridad": "Media",
+    "resumen": "El pedido de compra PC-778 tiene una fecha de entrega equivocada.",
+    "referencia_documento": "PC-778",
+    "datos_faltantes": [
+      "Procedimiento a revisar"
+    ]
+  }
+]
