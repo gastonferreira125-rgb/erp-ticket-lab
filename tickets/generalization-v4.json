@@ -1,0 +1,12 @@
+[
+  {
+    "id": "T11",
+    "text": "Desde esta mañana, algunos pedidos de la tienda no llegan al ERP. Otros pedidos sí se importan y el equipo de ventas continúa trabajando.",
+    "expected": {
+      "ticket_id": "T11",
+      "categoria": "Integraciones",
+      "prioridad": "Media",
+      "referencia_documento": null
+    }
+  }
+]

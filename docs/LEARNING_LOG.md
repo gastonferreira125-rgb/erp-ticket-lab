@@ -139,6 +139,13 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Una regresión superada no garantiza ausencia de fallos en el resto del conjunto. Siguiente: T10 con v4, luego caso nuevo de integración con impacto parcial.
 - [T08-v4](../experiments/2026-10-14-t08-v4/README.md).
 
+## 14 de octubre de 2026 — T10-v4 y preparación de generalización
+- T10 conserva Otros, Media, null y un resumen que identifica instrucciones sin afirmar una corrección. evaluate.py confirma campos/tipos y etiquetas; captura coincide con JSON original.
+- v4 cubre 3/10 del conjunto original, 3/3 conformes entre ejecutados. v3 conserva 7/10. Acumulado: 20 ejecuciones sobre diez tickets distintos.
+- Preparado T11: pedidos que no llegan al ERP de forma parcial mientras el equipo sigue trabajando; etiquetas de referencia registradas antes de observar salida del modelo. No usado para ajustar el prompt v4 y todavía sin ejecutar.
+- Concepto: generalización (generalization), evaluar entradas nuevas; un solo caso adicional no demuestra robustez general. Mantener versiones y conjuntos separados.
+- [T10-v4](../experiments/2026-10-14-t10-v4/README.md), [caso complementario T11](../tickets/generalization-v4.json).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
