@@ -1,0 +1,10 @@
+[
+  {
+    "ticket_id": "T03",
+    "categoria": "Ventas",
+    "prioridad": "Media",
+    "resumen": "El pedido OV-2099 tiene una dirección incorrecta.",
+    "referencia_documento": "OV-2099",
+    "datos_faltantes": []
+  }
+]

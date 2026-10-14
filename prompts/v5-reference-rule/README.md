@@ -6,8 +6,8 @@ Aclaración semántica: referencia_documento incluye el identificador del docume
 
 Motivos del ajuste: omisiones de referencias de pedidos (T03-v3 y T12-v4), y ambigüedad del código de artículo T04. El conjunto original y resultados históricos se conservan.
 
-Primera ejecución: [T12-v5](../../experiments/2026-10-14-t12-v5/README.md) devuelve OV-3301 y coincide con etiquetas. Resumen y datos_faltantes vacío requieren revisión humana. Cobertura de v5: un caso complementario, 1/1 conforme; ninguno de los diez casos originales ejecutado todavía.
+Primera ejecución: [T12-v5](../../experiments/2026-10-14-t12-v5/README.md) devuelve OV-3301 y coincide con etiquetas. Resumen y datos_faltantes vacío requieren revisión humana. T03-v5 también devuelve OV-2099 y coincide en etiquetas. Cobertura de v5: un caso original conforme (1/1 entre ejecutados, cobertura 1/10), y un complementario conforme (1/1). Ambos tienen lista de datos faltantes vacía, con oportunidad de pedir dirección correcta.
 
 T12 fue usado para ajustar v5, por lo que no es una prueba independiente de generalización para esta versión. No inferir causalidad o robustez general de una respuesta.
 
-Siguiente: T03/T04 y regresiones de instrucciones e integración (T10/T07), sin cambios adicionales del prompt. Registrar configuración verificada y conservar respuestas originales.
+Siguiente: T04 y regresiones de instrucciones e integración (T10/T07), sin cambios adicionales del prompt. Registrar configuración verificada y conservar respuestas originales.

@@ -19,7 +19,7 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tick
 - [T05-v3: categoría conforme](experiments/2026-10-14-t05-v3/README.md)
 - [T06-v3: solicitud de reporte](experiments/2026-10-14-t06-v3/README.md)
 
-Versión de documentación: 14 de octubre de 2026. Estado: 23 ejecuciones sobre doce tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
+Versión de documentación: 14 de octubre de 2026. Estado: 24 ejecuciones sobre doce tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
 
 - [Ronda completa v3: respuestas, evaluación y límites](experiments/2026-10-14-v3-round/README.md)
 - [T10-v3: prueba de regresión](experiments/2026-10-14-t10-v3/README.md)
@@ -33,7 +33,7 @@ Conjunto original: T07/T08/T10 conformes, 3/3 entre ejecutados y cobertura 3/10.
 [v5-reference-rule](prompts/v5-reference-rule/README.md) con primera ejecución registrada: aclara copia de referencias y alcance del campo para documentos/códigos de artículo. Conservar versiones y resultados sin corregir. No sumar conjuntos distintos para presentar exactitud general.
 
 ## Avance de v5
-[T12-v5](experiments/2026-10-14-t12-v5/README.md) devuelve OV-3301 y coincide en etiquetas (1/1 caso complementario ejecutado). El resumen puede precisar a qué se aplica la carga manual, y datos_faltantes vacío pierde información útil pedida en v4. No hay casos del conjunto original ejecutados con v5 aún. T12 fue usado para ajustar esta versión; no demuestra generalización independiente.
+[T03-v5](experiments/2026-10-14-t03-v5/README.md) devuelve OV-2099 y coincide en el conjunto original (1/1 entre ejecutados, cobertura 1/10). [T12-v5](experiments/2026-10-14-t12-v5/README.md) devuelve OV-3301 y coincide en el complementario (1/1). En ambos, datos_faltantes vacío omite la dirección correcta, útil para atender el caso. Resumen de T12 requiere precisión. Ambos casos motivaron el ajuste de extracción; no demuestran generalización independiente. No mezclar versiones ni conjuntos.
 
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.

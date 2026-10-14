@@ -170,6 +170,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Acumulado: 23 ejecuciones sobre doce tickets distintos. Próximo: T03, T04 y controles T10/T07 con v5 sin cambios.
 - [T12-v5](../experiments/2026-10-14-t12-v5/README.md).
 
+## 14 de octubre de 2026 — T03-v5
+- T03 devuelve Ventas, Media y OV-2099. evaluate.py confirma campos/tipos y etiquetas; captura coincide con original.
+- Referencia null en v3, OV-2099 en v5. La comparación cruza dos cambios de reglas (v4 y v5); no demuestra causalidad de una regla aislada. Caso usado para motivar el ajuste, no nuevo independiente.
+- Resumen fiel, pero omite alcance a un pedido. datos_faltantes vacío omite dirección correcta, patrón también observado en T12-v5.
+- v5: 1/1 conforme entre ejecutados del conjunto original (cobertura 1/10), y 1/1 complementario. Total entre versiones: 24 ejecuciones sobre doce tickets distintos.
+- Próximo: T04 y controles T10/T07 sin modificar v5. Mejora de datos faltantes pendiente para otra versión.
+- [T03-v5](../experiments/2026-10-14-t03-v5/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
