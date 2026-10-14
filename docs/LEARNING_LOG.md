@@ -154,6 +154,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - T12 preparado sin respuesta para contrastar mención de tienda frente a problema en pedido cargado manualmente; valores esperados registrados antes de generación. Próximo paso: ejecutar con v4.
 - [Resultado T11](../experiments/2026-10-14-t11-v4/README.md), [T12 preparado](../tickets/generalization-v4-t12.json).
 
+## 14 de octubre de 2026 — T12-v4 y preparación de v5
+- T12 devuelve Ventas y Media conformes; referencia null frente a OV-3301 esperado. evaluate.py aplicado al conjunto complementario confirma formato correcto y falla de etiquetas. Captura coincide con respuesta original.
+- La mención de tienda no desvió la categoría, pero el identificador aparece en resumen/datos_faltantes y falta en referencia_documento. Patrón similar a T03-v3, sin atribuir causa interna al modelo.
+- v4: 3/3 conformes entre ejecutados del conjunto original (cobertura 3/10) y 1/2 complementarios conformes. Total entre versiones: 22 ejecuciones, doce tickets distintos. v3 conserva 7/10.
+- v5 preparada, sin ejecutar: extracción literal de identificadores del incidente y alcance explícito del campo para documentos/códigos de artículo. Misma estructura; descripción de esquema versionada, sin cambiar retrospectivamente etiquetas o respuestas.
+- Próximo: repetir T12 con v5, después T03/T04 y controles T10/T07. T12 ahora se usa para ajustar v5 y deja de ser una prueba independiente de generalización para esa versión.
+- [T12-v4](../experiments/2026-10-14-t12-v4/README.md), [v5 preparada](../prompts/v5-reference-rule/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

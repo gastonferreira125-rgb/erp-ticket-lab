@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ticket_id",
+    "categoria",
+    "prioridad",
+    "resumen",
+    "referencia_documento",
+    "datos_faltantes"
+  ],
+  "properties": {
+    "ticket_id": {
+      "type": "string"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "Finanzas",
+        "Ventas",
+        "Inventario",
+        "Autorizaciones",
+        "Reportes",
+        "Integraciones",
+        "Compras",
+        "Otros"
+      ]
+    },
+    "prioridad": {
+      "type": "string",
+      "enum": [
+        "Alta",
+        "Media",
+        "Baja"
+      ]
+    },
+    "resumen": {
+      "type": "string",
+      "minLength": 1
+    },
+    "referencia_documento": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Identificador literal del objeto del incidente: documento ERP (factura o pedido) o código de artículo. null si no hay referencia explícita vinculada al incidente o si el mensaje solo dicta instrucciones. La pertinencia requiere evaluación semántica; el tipo JSON no la verifica."
+    },
+    "datos_faltantes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

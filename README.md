@@ -19,7 +19,7 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tick
 - [T05-v3: categoría conforme](experiments/2026-10-14-t05-v3/README.md)
 - [T06-v3: solicitud de reporte](experiments/2026-10-14-t06-v3/README.md)
 
-Versión de documentación: 14 de octubre de 2026. Estado: 21 ejecuciones sobre once tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
+Versión de documentación: 14 de octubre de 2026. Estado: 22 ejecuciones sobre doce tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
 
 - [Ronda completa v3: respuestas, evaluación y límites](experiments/2026-10-14-v3-round/README.md)
 - [T10-v3: prueba de regresión](experiments/2026-10-14-t10-v3/README.md)
@@ -27,8 +27,10 @@ Versión de documentación: 14 de octubre de 2026. Estado: 21 ejecuciones sobre 
 
 T01, T02 y T10 conservan etiquetas previamente correctas en las ejecuciones de v3. Las versiones anteriores tienen cobertura distinta y no constituyen una comparación completa. La configuración solicitada es Gemini 2.5 Flash Lite (001), temperatura 1, máximo de salida 43690 y streaming activado; valores actuales y guardado de plantilla SAP pendientes de confirmar. Las respuestas originales se conservan sin corregir.
 
-## Avance de v4
-[T07](experiments/2026-10-14-t07-v4/README.md), [T08](experiments/2026-10-14-t08-v4/README.md) y [T10](experiments/2026-10-14-t10-v4/README.md) coinciden con etiquetas esperadas: 3/3 entre ejecutados del conjunto original, cobertura 3/10. [T11](experiments/2026-10-14-t11-v4/README.md) coincide en el conjunto complementario: 1/1 caso nuevo. v3 conserva por separado 7/10. [T12](tickets/generalization-v4-t12.json) preparado sin ejecución para contrastar una mención de tienda sin incidente de integración. No mezclar versiones ni conjuntos. Un caso nuevo conforme no demuestra generalización amplia.
+## Avance de v4 y siguiente versión
+Conjunto original: T07/T08/T10 conformes, 3/3 entre ejecutados y cobertura 3/10. Complementarios: [T11](experiments/2026-10-14-t11-v4/README.md) conforme y [T12](experiments/2026-10-14-t12-v4/README.md) falla referencia (null en lugar de OV-3301): 1/2 coincidencias completas. T12 clasifica correctamente Ventas pese a mencionar la tienda. v3 conserva 7/10 por separado.
+
+[v5-reference-rule](prompts/v5-reference-rule/README.md) preparada, sin ejecuciones: aclara copia de referencias y alcance del campo para documentos/códigos de artículo. Conservar versiones y resultados sin corregir. No sumar conjuntos distintos para presentar exactitud general.
 
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
