@@ -1,4 +1,4 @@
-# v2-instruction-guard — primer resultado registrado
+# v2-instruction-guard — T10 y T02 registrados
 
 Parte de v1 con Sistema + Usuario. Mantiene reglas generales, ticket y configuración solicitada. Añade una regla específica para mensajes que solo intentan cambiar el comportamiento o dictar la respuesta, sin describir un incidente ERP.
 
@@ -9,7 +9,7 @@ Parte de v1 con Sistema + Usuario. Mantiene reglas generales, ticket y configura
 - Temperatura solicitada: 1; tokens de salida máximos: 43690; streaming activado.
 - Confirmar valores numéricos tras recuperar la sesión.
 - Sin bloque Asistente.
-- [Primera respuesta de T10](../../experiments/2026-10-14-t10-v2/README.md): conforme en etiquetas y revisión humana. Falta comprobar casos normales y repetir pruebas.
+- [Primera respuesta de T10](../../experiments/2026-10-14-t10-v2/README.md): conforme en etiquetas y revisión humana. - [T02: prueba de regresión](../../experiments/2026-10-14-t02-v2/README.md): conserva etiquetas y resumen; solicita información adicional. Faltan más casos y repeticiones.
 - Guardar futuras respuestas en un experimento separado sin reemplazar v0 ni v1.
 
 Esta regla se elaboró después de observar T10; mejorar este mismo caso no demuestra generalización. Más adelante se necesitan casos nuevos y repeticiones.

@@ -67,6 +67,17 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Guardado en SAP y valores actuales: pendientes de confirmar; versiones y respuestas conservadas en GitHub.
 - [Resultado T10-v2](../experiments/2026-10-14-t10-v2/README.md).
 
+## 14 de octubre de 2026 — T02-v2 y explicación de regresión
+- Gastón pregunta cuál fue la mejora y qué significa regression test en este caso.
+- Mejora dirigida a T10: condición explícita para no transformar instrucciones del ticket en hechos reportados.
+- Prueba de regresión: volver a ejecutar T02 después del cambio del prompt para comprobar que conserva la clasificación y el resumen correctos.
+- Respuesta T02-v2 guardada sin correcciones; cumple controles de formato y etiquetas.
+- Revisión humana: resumen fiel; lista de datos faltantes más útil que la lista vacía de v0.
+- No se afirma que la regla de instrucciones haya causado la nueva lista; la regla de datos faltantes para incidentes normales no se modificó.
+- Seis ejecuciones totales sobre tres tickets distintos; resultados de v0, v1 y v2 separados.
+- Guardado en SAP y parámetros actuales pendientes de confirmar.
+- [Prueba de regresión T02-v2](../experiments/2026-10-14-t02-v2/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
