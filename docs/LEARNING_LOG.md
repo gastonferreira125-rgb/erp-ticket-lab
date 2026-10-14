@@ -186,6 +186,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo: T10 y T07 sin modificar v5; mejora de datos faltantes queda separada.
 - [T04-v5](../experiments/2026-10-14-t04-v5/README.md).
 
+## 14 de octubre de 2026 — recuperación de sesión y T10-v5
+- Tras cierre del Launchpad, se recuperó Sistema v5 desde GitHub y se volvió a entregar Usuario T10 y configuración solicitada. Captura no confirma parámetros completos ni guardado SAP.
+- T10 devuelve Otros, Media, referencia null y resumen de instrucciones, sin afirmar corrección. evaluate.py confirma formato y etiquetas; captura coincide con original.
+- Regresión conforme en este caso después de aclarar extracción: FV-999 dentro de una orden no se convierte en referencia de incidente. No demuestra resistencia general ni consistencia entre repeticiones.
+- v5: 3/3 conformes entre ejecutados del conjunto original (T03/T04/T10, cobertura 3/10) y 1/1 complementario (T12). Total entre versiones: 26 ejecuciones sobre doce tickets distintos.
+- Próximo: T07 con v5 sin cambios y completar cobertura. Hallazgos de datos faltantes pendientes para ajuste posterior.
+- [T10-v5](../experiments/2026-10-14-t10-v5/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
