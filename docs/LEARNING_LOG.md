@@ -202,6 +202,13 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Mantener v5 sin cambios para T01/T02/T05/T06/T08/T09 y consolidar diez casos. Mejoras de datos faltantes y resumen pendientes para otra versión.
 - [T07-v5](../experiments/2026-10-14-t07-v5/README.md).
 
+## 14 de octubre de 2026 — T01-v5
+- Finanzas, Media y null conformes. evaluate.py confirma campos/tipos y etiquetas. Fuente: JSON pegado, sin captura.
+- Resumen fiel e información faltante útil pero amplia ("etc."); faltan pasos de reproducción pedidos en v3. Registrar variación de contenido sin atribuirla causalmente al ajuste de referencias.
+- v5: 5/5 conformes entre ejecutados del conjunto original (cobertura 5/10) y 1/1 complementario. Total entre versiones: 28 ejecuciones sobre doce tickets distintos.
+- Próximo: T02/T05/T06/T08/T09 sin modificar v5, empezando por T02. Hallazgos de información faltante pendientes para otra versión.
+- [T01-v5](../experiments/2026-10-14-t01-v5/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

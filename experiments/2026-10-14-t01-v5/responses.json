@@ -1,0 +1,13 @@
+[
+  {
+    "ticket_id": "T01",
+    "categoria": "Finanzas",
+    "prioridad": "Media",
+    "resumen": "El usuario no puede registrar un pago a un proveedor.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Mensaje de error",
+      "Detalles del pago (proveedor, importe, fecha, etc.)"
+    ]
+  }
+]
