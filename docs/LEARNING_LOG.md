@@ -240,6 +240,16 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Resta T09 con v5 sin cambios; luego consolidar diez salidas originales, métricas separadas y revisión humana.
 - [T08-v5](../experiments/2026-10-14-t08-v5/README.md).
 
+## 14 de octubre de 2026 — T09 y ronda v5 completa
+- T09: Inventario, Baja, null; resumen de solicitud pendiente y datos_faltantes vacío. Fuente: JSON pegado, sin captura. Falta alcance para preparar documentación/capacitación; lista vacía también observada en v3.
+- Evaluación consolidada ejecutada sobre respuestas originales v3/v5 y mismo tickets.json: formato 10/10 ambas; etiquetas completas 7/10 v3 y 10/10 v5. Categoría 9/10→10/10; prioridad 10/10→10/10; referencia 8/10→10/10. No se modificaron etiquetas históricas. T12 complementario aparte.
+- Revisión humana comparativa: v5 mejora etiquetas y extracción, pero T02 pierde impacto/error, T03 pierde dirección correcta, T04 pide almacén ya dado y omite cantidades, T08 omite fechas y pide procedimiento vago. Otros casos mantienen datos útiles; no se calculó calidad humana global con rúbrica previa.
+- Límites: casos usados para ajustes, una respuesta por versión, parámetros no reconfirmados totalmente, restauración de sesión y ambigüedad aclarada T04. No demostrar causalidad ni exactitud general de producción.
+- Total: 33 ejecuciones entre versiones, doce tickets distintos. v5 congelada con ronda original completa 10/10.
+- v6 preparada, sin resultados: solo calidad de datos_faltantes (usar información aportada, pedir datos ausentes útiles/concretos, reservar lista vacía cuando baste para siguiente paso). Resumen se ajustará aparte.
+- Próximo: T02-v6 y controles T04/T06/T10; luego casos nuevos/repeticiones.
+- [Ronda v5](../experiments/2026-10-14-v5-round/README.md), [v6 preparada](../prompts/v6-missing-data-rule/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

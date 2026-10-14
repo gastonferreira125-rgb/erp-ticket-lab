@@ -1,29 +1,11 @@
-# v5-reference-rule — primera ejecución registrada
+# v5-reference-rule — ronda original completa
 
-Deriva de v4-integration-rule. Solo añade la regla de extracción en added-rule.txt, incluida al final de system.txt. Mantiene categorías, prioridad, regla de instrucciones y los seis campos/tipos.
+Deriva de v4-integration-rule. Añade solo la regla de extracción de added-rule.txt, incluida al final de system.txt. Conserva categorías, prioridad, regla de instrucciones y seis claves/tipos.
 
-Aclaración semántica: referencia_documento incluye el identificador del documento ERP o código de artículo afectado. Se mantiene el nombre para conservar compatibilidad con el laboratorio; un nombre más general podría estudiarse en otra versión. schema.json copia el esquema original con descripción añadida al campo; esa descripción no impone validación semántica por sí misma.
+referencia_documento incluye identificador del documento ERP o código de artículo afectado. El nombre se conserva para compatibilidad con el laboratorio; schema.json copia el esquema original con descripción añadida, que no valida semántica por sí misma. Conjunto original y respuestas históricas sin modificar.
 
-Motivos del ajuste: omisiones de referencias de pedidos (T03-v3 y T12-v4), y ambigüedad del código de artículo T04. El conjunto original y resultados históricos se conservan.
+[Ronda completa](../../experiments/2026-10-14-v5-round/README.md): diez respuestas originales, 10/10 en formato y etiquetas. v3 había dado 7/10 en etiquetas del mismo conjunto. Caso complementario T12 conforme (1/1), evaluado aparte. Los casos que motivaron ajustes no demuestran generalización independiente.
 
-Primera ejecución: [T12-v5](../../experiments/2026-10-14-t12-v5/README.md) devuelve OV-3301 y coincide con etiquetas. Resumen y datos_faltantes vacío requieren revisión humana. T03-v5 también devuelve OV-2099 y coincide en etiquetas. Cobertura de v5: nueve casos originales conformes, T01/T02/T03/T04/T05/T06/T07/T08/T10 (9/9 entre ejecutados, cobertura 9/10), y un complementario conforme (1/1). Ambos tienen lista de datos faltantes vacía, con oportunidad de pedir dirección correcta.
+La revisión humana conserva hallazgos: pérdida de impacto en resumen T02, listas vacías T02/T03, solicitud redundante de almacén T04 y datos poco concretos T08. El acierto de etiquetas no equivale a calidad uniforme de todos los campos.
 
-T12 fue usado para ajustar v5, por lo que no es una prueba independiente de generalización para esta versión. No inferir causalidad o robustez general de una respuesta.
-
-T04 también devuelve ART-310. Solicita almacén ya informado y omite cantidades; hallazgo de contenido pendiente.
-
-T10 conserva Otros, Media y null en el control de instrucciones.
-
-T07 conserva Integraciones, Alta y null en esta ejecución.
-
-T01 conserva Finanzas, Media y null; datos_faltantes útil pero amplio y sin pasos de reproducción.
-
-T02 conserva etiquetas pero omite impacto del cierre/equipo y datos útiles para investigar; deterioro cualitativo observado en esta ejecución.
-
-T05 conserva Autorizaciones, Media y null, con información faltante útil.
-
-T06 conserva Reportes, Baja y null y pide requisitos útiles.
-
-T08 conserva Compras, Media y PC-778, pero omite fechas útiles y pide procedimiento de forma poco concreta.
-
-Siguiente: completar T09 del conjunto original y consolidar ronda, sin cambios adicionales del prompt. Registrar configuración verificada y conservar respuestas originales.
+v5 queda congelada. [v6 preparada](../v6-missing-data-rule/README.md) busca mejorar únicamente datos_faltantes, todavía sin resultados. Precisión del impacto en resumen queda para otro ajuste.

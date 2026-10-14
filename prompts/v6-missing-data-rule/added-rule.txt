@@ -1,0 +1,6 @@
+Regla de calidad para datos_faltantes:
+- Usá primero la información ya incluida en el ticket. Pedí solo datos ausentes que sean útiles para investigar el incidente o definir una solicitud planificada.
+- No vuelvas a pedir un dato ya informado. Si necesitás mayor precisión, indicá exactamente qué detalle adicional falta.
+- Formulá cada elemento de manera concreta y accionable. Evitá solicitudes vagas como "más detalles" o "procedimiento a revisar" sin precisar qué información se necesita.
+- Si falta información útil para el siguiente paso de investigación o definición, incluila en la lista. Poder clasificar el ticket no significa tener información suficiente para atenderlo.
+- Usá [] únicamente cuando la información disponible sea suficiente para ese siguiente paso. No inventes datos, causas ni soluciones.

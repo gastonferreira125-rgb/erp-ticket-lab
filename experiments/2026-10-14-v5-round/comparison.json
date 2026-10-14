@@ -1,0 +1,180 @@
+{
+  "v3": {
+    "evaluation": {
+      "total_cases": 10,
+      "responses": 10,
+      "schema_valid": 10,
+      "labels_match": 7,
+      "invented_references": 0,
+      "duplicate_ids": [],
+      "unknown_ids": [],
+      "note": "Summary accuracy and missing-data usefulness require human review.",
+      "cases": [
+        {
+          "ticket_id": "T01",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T02",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T03",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": false,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T04",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": false,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T05",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T06",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T07",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": false,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T08",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T09",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T10",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        }
+      ]
+    },
+    "fields": {
+      "categoria": 9,
+      "prioridad": 10,
+      "referencia_documento": 8
+    }
+  },
+  "v5": {
+    "evaluation": {
+      "total_cases": 10,
+      "responses": 10,
+      "schema_valid": 10,
+      "labels_match": 10,
+      "invented_references": 0,
+      "duplicate_ids": [],
+      "unknown_ids": [],
+      "note": "Summary accuracy and missing-data usefulness require human review.",
+      "cases": [
+        {
+          "ticket_id": "T01",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T02",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T03",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T04",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T05",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T06",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T07",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T08",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T09",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        },
+        {
+          "ticket_id": "T10",
+          "present": true,
+          "schema_valid": true,
+          "labels_match": true,
+          "invented_reference": false
+        }
+      ]
+    },
+    "fields": {
+      "categoria": 10,
+      "prioridad": 10,
+      "referencia_documento": 10
+    }
+  }
+}
