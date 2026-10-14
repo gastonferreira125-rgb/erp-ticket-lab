@@ -178,6 +178,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo: T04 y controles T10/T07 sin modificar v5. Mejora de datos faltantes pendiente para otra versión.
 - [T03-v5](../experiments/2026-10-14-t03-v5/README.md).
 
+## 14 de octubre de 2026 — T04-v5
+- T04 devuelve Inventario, Media y ART-310. evaluate.py confirma formato y etiquetas; captura coincide con original. Contrato ahora explícito para códigos de artículo, alineado con conjunto original sin modificarlo.
+- Resumen fiel pero omite almacén. datos_faltantes solicita almacén pese a la entrada "almacén central"; si se requiere código, debe pedirlo específicamente. Fecha de conteo útil; falta stock del sistema y cantidad física para dimensionar diferencia.
+- v5: 2/2 conformes entre ejecutados del conjunto original (cobertura 2/10), y 1/1 complementario. Total entre versiones: 25 ejecuciones sobre doce tickets distintos.
+- Aclaración del contrato y extracción observada no prueban robustez ni causalidad del modelo. Datos faltantes necesitan usar lo ya informado y solicitar información útil restante.
+- Próximo: T10 y T07 sin modificar v5; mejora de datos faltantes queda separada.
+- [T04-v5](../experiments/2026-10-14-t04-v5/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

@@ -1,0 +1,14 @@
+[
+  {
+    "ticket_id": "T04",
+    "categoria": "Inventario",
+    "prioridad": "Media",
+    "resumen": "Se necesita revisar el stock de un artículo que difiere del conteo físico.",
+    "referencia_documento": "ART-310",
+    "datos_faltantes": [
+      "Almacén específico",
+      "Fecha del conteo físico",
+      "Fecha de la última transacción del artículo"
+    ]
+  }
+]
