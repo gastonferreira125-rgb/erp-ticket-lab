@@ -123,6 +123,15 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo paso: nueva versión para categoría Integraciones, sin cambiar a la vez las reglas de referencia. Después alinear contrato, prompt y conjunto esperado; repetir y añadir casos nuevos.
 - [Ronda consolidada](../experiments/2026-10-14-v3-round/README.md).
 
+## 14 de octubre de 2026 — primera ejecución v4
+- Regla añadida únicamente para categorías de integración; no cambia la extracción de referencias.
+- T07 devuelve Integraciones, Alta y null, frente a Ventas observado con v3. Formato y etiquetas conformes según evaluate.py.
+- Captura coincide con el JSON original, conservado sin correcciones. Resumen fiel pero menos preciso sobre el bloqueo total; datos faltantes útiles.
+- 18 ejecuciones acumuladas; v4 cubre solo T07 (1/1 conforme entre ejecutados, cobertura 1/10). v3 conserva 7/10. No construir una métrica mezclando versiones.
+- Una prueba dirigida al mismo caso usado para ajustar el prompt no demuestra generalización ni causalidad.
+- Próximo paso: T08 como control de regresión de Compras con v4; luego otros controles y casos nuevos.
+- [Experimento T07-v4](../experiments/2026-10-14-t07-v4/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

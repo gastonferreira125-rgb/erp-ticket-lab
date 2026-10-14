@@ -1,0 +1,14 @@
+[
+  {
+    "ticket_id": "T07",
+    "categoria": "Integraciones",
+    "prioridad": "Alta",
+    "resumen": "La integración de pedidos con la tienda no está funcionando y afecta al equipo de ventas.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Detalles específicos de la caída de la integración (fechas, horas).",
+      "Mensajes de error observados, si los hay.",
+      "Información sobre el sistema de tienda y el sistema ERP involucrados."
+    ]
+  }
+]

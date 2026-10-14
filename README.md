@@ -19,13 +19,16 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tick
 - [T05-v3: categoría conforme](experiments/2026-10-14-t05-v3/README.md)
 - [T06-v3: solicitud de reporte](experiments/2026-10-14-t06-v3/README.md)
 
-Versión de documentación: 14 de octubre de 2026. Estado: 17 ejecuciones sobre diez tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
+Versión de documentación: 14 de octubre de 2026. Estado: 18 ejecuciones sobre diez tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
 
 - [Ronda completa v3: respuestas, evaluación y límites](experiments/2026-10-14-v3-round/README.md)
 - [T10-v3: prueba de regresión](experiments/2026-10-14-t10-v3/README.md)
 - [T04-v3: referencia y ambigüedad del contrato](experiments/2026-10-14-t04-v3/README.md)
 
 T01, T02 y T10 conservan etiquetas previamente correctas en las ejecuciones de v3. Las versiones anteriores tienen cobertura distinta y no constituyen una comparación completa. La configuración solicitada es Gemini 2.5 Flash Lite (001), temperatura 1, máximo de salida 43690 y streaming activado; valores actuales y guardado de plantilla SAP pendientes de confirmar. Las respuestas originales se conservan sin corregir.
+
+## Avance de v4
+[Primera ejecución T07-v4](experiments/2026-10-14-t07-v4/README.md): Integraciones, Alta y null conformes; 1/1 caso ejecutado, cobertura 1/10. v3 conserva su resultado separado 7/10. El resumen de T07-v4 pierde precisión sobre el bloqueo total; controles de regresión de v4 pendientes.
 
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
