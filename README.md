@@ -19,7 +19,7 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tick
 - [T05-v3: categoría conforme](experiments/2026-10-14-t05-v3/README.md)
 - [T06-v3: solicitud de reporte](experiments/2026-10-14-t06-v3/README.md)
 
-Versión de documentación: 14 de octubre de 2026. Estado: 30 ejecuciones sobre doce tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
+Versión de documentación: 14 de octubre de 2026. Estado: 31 ejecuciones sobre doce tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
 
 - [Ronda completa v3: respuestas, evaluación y límites](experiments/2026-10-14-v3-round/README.md)
 - [T10-v3: prueba de regresión](experiments/2026-10-14-t10-v3/README.md)
@@ -33,7 +33,7 @@ Conjunto original: T07/T08/T10 conformes, 3/3 entre ejecutados y cobertura 3/10.
 [v5-reference-rule](prompts/v5-reference-rule/README.md) con primera ejecución registrada: aclara copia de referencias y alcance del campo para documentos/códigos de artículo. Conservar versiones y resultados sin corregir. No sumar conjuntos distintos para presentar exactitud general.
 
 ## Avance de v5
-T01/T02/T03/T04/T05/T07/T10 coinciden en el conjunto original (7/7 entre ejecutados, cobertura 7/10); [T12](experiments/2026-10-14-t12-v5/README.md) coincide en el complementario (1/1). [T05-v5](experiments/2026-10-14-t05-v5/README.md) conserva Autorizaciones y solicita datos pertinentes. [T02-v5](experiments/2026-10-14-t02-v5/README.md) y otros registros documentan pérdidas de impacto/información útil pese a etiquetas conformes. Restan T06/T08/T09 sin modificar v5. No mezclar versiones ni conjuntos. T01/T02/T05/T07-v5 recibidos como texto sin captura.
+T01/T02/T03/T04/T05/T06/T07/T10 coinciden en el conjunto original (8/8 entre ejecutados, cobertura 8/10); [T12](experiments/2026-10-14-t12-v5/README.md) coincide en el complementario (1/1). [T06-v5](experiments/2026-10-14-t06-v5/README.md) reconoce solicitud de reporte, Baja, y pide requisitos pertinentes. Otros registros conservan hallazgos de pérdidas de impacto/información útil pese a etiquetas correctas. Restan T08/T09 sin modificar v5. No mezclar versiones ni conjuntos. T01/T02/T05/T06/T07-v5 recibidos como texto sin captura.
 
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
