@@ -1,0 +1,5 @@
+ENTRADA:
+ticket_id: T05
+<ticket>
+Mi usuario no tiene permiso para ver el reporte de compras. Otros usuarios sí pueden verlo.
+</ticket>

@@ -78,6 +78,16 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Guardado en SAP y parámetros actuales pendientes de confirmar.
 - [Prueba de regresión T02-v2](../experiments/2026-10-14-t02-v2/README.md).
 
+## 14 de octubre de 2026 — T05-v2 y criterio de categoría
+- Antes de ejecutar, Gastón identificó correctamente problema de acceso, no del reporte, y ausencia de bloqueo de todo el equipo.
+- Respuesta modelo: Reportes, Media, resumen fiel, referencia null, usuario y nombre del reporte como datos faltantes.
+- Evaluador: formato conforme; categoría incorrecta frente a Autorizaciones esperada.
+- Aprendizaje: distinguir el recurso mencionado del problema principal reportado; no diagnosticar la causa técnica del permiso faltante.
+- v3 preparada con regla de categoría, sin resultados. Mantiene prioridad y regla de instrucciones de v2.
+- Próximo paso: T05-v3; luego T06 como regresión.
+- Siete ejecuciones sobre cuatro tickets distintos; seis casos del conjunto aún no ejecutados.
+- [Fallo T05-v2](../experiments/2026-10-14-t05-v2/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
