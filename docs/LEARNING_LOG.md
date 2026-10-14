@@ -258,6 +258,12 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Total entre versiones: 34 ejecuciones sobre doce tickets distintos. Próximo: captura del final de Sistema con bloque de calidad, luego repetición/control T02 y T04/T06/T10 según verificación. No añadir regla nueva todavía.
 - [T02-v6](../experiments/2026-10-14-t02-v6/README.md).
 
+## 14 de octubre de 2026 — verificación textual de Sistema v6
+- Usuario pegó Sistema completo. Comparación con system.txt guardado: coincide tras normalizar saltos de línea/extremos; bloque de calidad completo.
+- Fuente textual, sin captura ni payload retrospectivo. Confirma contenido aportado, no todos los parámetros de la primera ejecución. No cambia el conteo: siguen 34 ejecuciones, doce tickets distintos.
+- Mantener v6 y repetir T02 una vez sin cambiar entrada/configuración solicitada; conservar ejecución aparte para observar consistencia o variación antes de otro ajuste.
+- [Verificación](../experiments/2026-10-14-t02-v6/system-confirmation.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

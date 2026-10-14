@@ -8,4 +8,4 @@ referencia_documento incluye identificador del documento ERP o código de artíc
 
 La revisión humana conserva hallazgos: pérdida de impacto en resumen T02, listas vacías T02/T03, solicitud redundante de almacén T04 y datos poco concretos T08. El acierto de etiquetas no equivale a calidad uniforme de todos los campos.
 
-v5 queda congelada. [v6](../v6-missing-data-rule/README.md) busca mejorar únicamente datos_faltantes. Primera salida T02 conserva etiquetas y lista vacía; aplicación del bloque en SAP pendiente de verificar. Precisión del impacto en resumen queda para otro ajuste.
+v5 queda congelada. [v6](../v6-missing-data-rule/README.md) busca mejorar únicamente datos_faltantes. Primera salida T02 conserva etiquetas y lista vacía; el texto Sistema aportado por el usuario coincide con v6; repetición sin cambios pendiente. Precisión del impacto en resumen queda para otro ajuste.

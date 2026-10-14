@@ -34,4 +34,6 @@ Fuente: JSON pegado, sin captura. La versión v6 es la indicada en el procedimie
 
 v6 tiene una salida recibida del conjunto original (T02): etiquetas 1/1 entre ejecutados, cobertura 1/10. Objetivo humano de datos faltantes no cumplido en esta salida. v5 permanece 10/10 del conjunto original, separado.
 
-Próximo paso: captura del final de Sistema en Launchpad con el bloque "Regla de calidad para datos_faltantes". Mantener instrucciones sin cambios hasta verificar. Después repetir/controlar T02 y ejecutar T04/T06/T10 según lo observado, preservando cada ejecución por separado.
+Verificación posterior: el usuario pegó Sistema completo y coincide con v6 guardada, tras normalizar saltos de línea/extremos. [Evidencia textual](system-confirmation.md). No hay captura ni payload retrospectivo; el contenido aportado sí incluye la regla completa.
+
+Próximo: repetir T02 una vez sin cambios, guardar ejecución separada, luego controles T04/T06/T10 según lo observado.

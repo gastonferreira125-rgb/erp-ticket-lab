@@ -7,5 +7,8 @@
   "missing_information_objective": "no cumplido en la salida recibida",
   "missing_information_reason": "datos_faltantes está vacío aunque no se aportan error exacto ni pasos para reproducir la contabilización fallida",
   "summary_observation": "Ahora conserva la detención del cierre; no atribuir ese cambio causalmente a la regla de datos faltantes",
-  "next_step": "Verificar bloque v6 en Sistema del Launchpad antes de ajustar instrucciones"
+  "next_step": "Repetir T02 una vez sin modificar Sistema/Usuario ni configuración solicitada y guardar la nueva respuesta por separado",
+  "system_text_provided_by_user_matches_v6": true,
+  "system_text_confirmation_source": "Texto completo pegado posteriormente, comparación exacta tras normalizar saltos de línea y extremos",
+  "previous_execution_payload_verified": false
 }
