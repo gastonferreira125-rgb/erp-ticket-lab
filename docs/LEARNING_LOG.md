@@ -97,6 +97,16 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo caso: T06, solicitud de reporte sin interrupción. Luego repetir casos previos como regresión.
 - [Resultado T05-v3](../experiments/2026-10-14-t05-v3/README.md).
 
+## 14 de octubre de 2026 — T06-v3
+- Respuesta original y captura recibidas: Reportes, Baja, resumen de solicitud, referencia null, formato/campos/filtros como datos faltantes.
+- Evaluador: campos/tipos y etiquetas conformes.
+- Revisión humana: reconoce solicitud sin afirmar que ya fue implementada.
+- Comparación conceptual con T05: recurso reporte puede corresponder a Autorizaciones por permiso, o a Reportes por creación/modificación.
+- T06 es un caso nuevo ejecutado con v3; no se repitió una ejecución previa de T06.
+- Nueve ejecuciones sobre cinco tickets distintos; cinco casos del conjunto todavía no ejecutados.
+- Próximo paso: T07-v3, luego completar casos y repetir T02/T10 como regresión.
+- [Resultado T06-v3](../experiments/2026-10-14-t06-v3/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
