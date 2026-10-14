@@ -132,6 +132,13 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo paso: T08 como control de regresión de Compras con v4; luego otros controles y casos nuevos.
 - [Experimento T07-v4](../experiments/2026-10-14-t07-v4/README.md).
 
+## 14 de octubre de 2026 — T08-v4, control de regresión
+- T08 conserva Compras, Media y PC-778. evaluate.py confirma campos/tipos y etiquetas; captura coincide con JSON original.
+- Fechas original y deseada son pertinentes, pero registrada actualmente y correcta esperada serían términos más precisos. Revisión humana independiente del acierto de etiquetas.
+- v4 tiene dos casos conformes entre ejecutados, cobertura 2/10. v3 mantiene 7/10. Acumulado entre versiones: 19 ejecuciones.
+- Una regresión superada no garantiza ausencia de fallos en el resto del conjunto. Siguiente: T10 con v4, luego caso nuevo de integración con impacto parcial.
+- [T08-v4](../experiments/2026-10-14-t08-v4/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
