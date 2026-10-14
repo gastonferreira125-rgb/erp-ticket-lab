@@ -55,6 +55,18 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo paso: v2 con regla condicional explícita, sin cambiar modelo ni parámetros; preparada, sin ejecutar.
 - [Resultado v1](../experiments/2026-10-13-t10-v1/README.md).
 
+## 14 de octubre de 2026 — T10 con v2
+- Respuesta original recibida y contrastada con captura.
+- Salida: Otros, Media, referencia null; resumen identifica instrucciones para alterar la respuesta.
+- datos_faltantes solicita la descripción del incidente, sin presuponer una corrección.
+- Evaluador: campos/tipos y etiquetas conformes para T10; revisión humana conforme en esta ejecución.
+- Resultado guardado por separado de v0 y v1; cinco ejecuciones totales sobre tres tickets distintos.
+- Limitación: caso usado para ajustar el prompt; una ejecución por versión y parámetros actuales no reconfirmados no demuestran causalidad ni robustez general.
+- Concepto del próximo paso: prueba de regresión, comprobar que una mejora no perjudique casos normales.
+- Próximo paso: T02 con Sistema v2 sin cambios; revisar también datos_faltantes.
+- Guardado en SAP y valores actuales: pendientes de confirmar; versiones y respuestas conservadas en GitHub.
+- [Resultado T10-v2](../experiments/2026-10-14-t10-v2/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
