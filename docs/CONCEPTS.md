@@ -152,6 +152,32 @@ Temperature influye en la selección de la salida durante la generación; el má
 
 Referencia: [Google, parámetros de prompts](https://ai.google.dev/gemini-api/docs/prompting-strategies).
 
+## 15. MCP y su relación con las skills (Model Context Protocol)
+
+MCP es un protocolo abierto que estandariza cómo una aplicación de IA se comunica con herramientas y datos externos. Un servidor MCP expone capacidades; el cliente de la aplicación las descubre y permite invocarlas. La operación la ejecuta el servidor y devuelve un resultado que el asistente puede usar.
+
+Una skill aporta el procedimiento para usar esas capacidades: qué revisar, en qué orden y cómo presentar el resultado. Puede funcionar con herramientas MCP, con otras herramientas o solo con instrucciones y recursos.
+
+| Concepto | Función | Ejemplo aplicado |
+| --- | --- | --- |
+| Prompt | Define la tarea que recibe el modelo. | Clasificar un ticket con seis campos JSON. |
+| Skill | Describe un procedimiento reutilizable. | Revisar el resultado, evaluar y documentar la prueba. |
+| MCP | Estandariza la comunicación con capacidades externas. | Acceder a herramientas del conector GitHub. |
+| Herramienta (tool) | Ejecuta una operación concreta. | Leer docs/CONCEPTS.md o crear un commit. |
+| API | Interfaz de un sistema para operaciones y datos. | Una integración futura podría usar una API del ERP detrás de un servidor MCP. |
+
+**Ejemplo real del laboratorio:** al actualizar la guía, el asistente usa las herramientas del conector GitHub disponibles mediante MCP para leer los archivos, preparar los cambios y guardarlos en un commit. El procedimiento de revisar, guardar y verificar podría empaquetarse en nuestra skill conceptual “Revisar pruebas de tickets ERP”. No hay una skill propia instalada todavía.
+
+**Ejemplo futuro, no implementado:** un servidor MCP para el ERP podría exponer una herramienta consultar_factura con el identificador FV-1042. El asistente podría solicitar esa consulta y usar su resultado como evidencia adicional. Eso necesitaría una integración concreta y permisos para la operación. Nombrar una herramienta no la crea ni da acceso al ERP.
+
+En nuestro estado actual, Gemini clasifica manualmente en SAP AI Launchpad el texto que pegamos. No consulta SAP ERP por MCP. La conexión GitHub usada desde este chat es distinta de la ejecución del modelo en Launchpad.
+
+**Ejercicio:** imaginá una skill que revisa T04. Identificá el paso que se resuelve leyendo el ticket, el que requeriría consultar stock real y el que guarda el informe en GitHub.
+
+**Comprobación:** ¿qué aporta la skill y qué aporta el servidor MCP? ¿Qué conexión adicional necesitaríamos para consultar stock del ERP?
+
+Fuente: [OpenAI, MCP server](https://developers.openai.com/plugins/concepts/mcp-server) y [relación entre skills y MCP](https://developers.openai.com/plugins/concepts/skills).
+
 ## Método para las próximas prácticas
 
 Cada concepto nuevo se documentará con explicación en español, término en inglés, ejemplo ERP, ejercicio y comprobación de comprensión. Se enlazará al experimento donde se aplica y se distinguirá entre preparado, ejecutado y verificado.

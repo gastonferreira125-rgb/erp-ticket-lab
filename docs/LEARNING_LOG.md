@@ -305,6 +305,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Método acordado por solicitud del usuario: acompañar nuevas prácticas con teoría aplicada y registro en la guía; las preguntas quedan pendientes de respuesta, sin dar por demostrada la comprensión.
 - Sin nuevas salidas de modelo: continúan 38 ejecuciones sobre doce tickets distintos. Próxima prueba: T02 con v7.
 
+## 14 de octubre de 2026 — MCP y relación con skills
+- Pregunta del usuario: qué es MCP y cómo se relaciona con una skill.
+- Añadida sección 15 en [la guía de conceptos](CONCEPTS.md#15-mcp-y-su-relación-con-las-skills-model-context-protocol), con definición, comparación de prompt/skill/MCP/tool/API y ejercicio aplicado a T04.
+- Ejemplo real: las herramientas del conector GitHub disponibles mediante MCP permiten leer y guardar documentación desde este chat.
+- Ejemplo futuro explícito: consultar una factura o stock mediante un servidor MCP del ERP; esa integración no está implementada en el laboratorio.
+- Una skill aporta el procedimiento reutilizable; MCP estandariza comunicación con herramientas/datos. No se creó una skill ni un servidor ERP.
+- Documentación oficial OpenAI consultada. No hay nuevas ejecuciones: 38 sobre doce tickets, v7 aún preparada sin resultados.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
