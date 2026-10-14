@@ -1,0 +1,14 @@
+[
+  {
+    "ticket_id": "T07",
+    "categoria": "Integraciones",
+    "prioridad": "Alta",
+    "resumen": "La integración de pedidos con la tienda está caída, impidiendo el ingreso de pedidos.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Detalles sobre la tienda con la que se integra",
+      "Mensajes de error específicos de la integración",
+      "Fecha y hora aproximada del inicio de la falla"
+    ]
+  }
+]

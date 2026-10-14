@@ -194,6 +194,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo: T07 con v5 sin cambios y completar cobertura. Hallazgos de datos faltantes pendientes para ajuste posterior.
 - [T10-v5](../experiments/2026-10-14-t10-v5/README.md).
 
+## 14 de octubre de 2026 — T07-v5 y cierre de controles dirigidos
+- T07 conserva Integraciones, Alta y null de v4. evaluate.py confirma campos/tipos y etiquetas. Fuente: JSON pegado, sin captura en este mensaje.
+- Resumen refleja caída y falta de ingreso de pedidos, omite detención total del equipo. Datos faltantes útiles: tienda, error y momento de inicio.
+- v5: 4/4 conformes entre ejecutados del conjunto original (cobertura 4/10) y 1/1 complementario. Total entre versiones: 27 ejecuciones sobre doce tickets distintos.
+- Controles T07/T10 conformes en estas observaciones; no garantizan ausencia de regresiones fuera de esos casos.
+- Mantener v5 sin cambios para T01/T02/T05/T06/T08/T09 y consolidar diez casos. Mejoras de datos faltantes y resumen pendientes para otra versión.
+- [T07-v5](../experiments/2026-10-14-t07-v5/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
