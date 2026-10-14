@@ -1,9 +1,13 @@
-# v5-reference-rule — preparada, sin ejecuciones
+# v5-reference-rule — primera ejecución registrada
 
-Deriva de v4-integration-rule. Solo añade la regla de extracción en added-rule.txt, incluida al final de system.txt. No cambia las categorías, prioridad, regla de instrucciones ni los seis campos/tipos.
+Deriva de v4-integration-rule. Solo añade la regla de extracción en added-rule.txt, incluida al final de system.txt. Mantiene categorías, prioridad, regla de instrucciones y los seis campos/tipos.
 
-Aclaración semántica: referencia_documento incluye el identificador del documento ERP o código de artículo afectado. Se mantiene el nombre para conservar compatibilidad con el laboratorio; un nombre más general podría estudiarse en otra versión. schema.json es una copia del esquema original con descripción añadida al campo; esa descripción no impone validación semántica por sí misma.
+Aclaración semántica: referencia_documento incluye el identificador del documento ERP o código de artículo afectado. Se mantiene el nombre para conservar compatibilidad con el laboratorio; un nombre más general podría estudiarse en otra versión. schema.json copia el esquema original con descripción añadida al campo; esa descripción no impone validación semántica por sí misma.
 
-Resuelve dos oportunidades de diseño: omisiones de referencias de pedidos (T03-v3 y T12-v4) y ambigüedad del código de artículo T04. No implica resultados medidos. El conjunto original no se modifica para mejorar retroactivamente el puntaje.
+Motivos del ajuste: omisiones de referencias de pedidos (T03-v3 y T12-v4), y ambigüedad del código de artículo T04. El conjunto original y resultados históricos se conservan.
 
-Siguiente prueba: T12 con las mismas entradas y parámetros solicitados, cambiando Sistema v4 por v5. Comparar salida original; luego T03/T04 y regresiones de instrucciones e integración. T12 pasa a ser un caso usado para ajustar v5, por lo que su resultado no será evidencia independiente de generalización.
+Primera ejecución: [T12-v5](../../experiments/2026-10-14-t12-v5/README.md) devuelve OV-3301 y coincide con etiquetas. Resumen y datos_faltantes vacío requieren revisión humana. Cobertura de v5: un caso complementario, 1/1 conforme; ninguno de los diez casos originales ejecutado todavía.
+
+T12 fue usado para ajustar v5, por lo que no es una prueba independiente de generalización para esta versión. No inferir causalidad o robustez general de una respuesta.
+
+Siguiente: T03/T04 y regresiones de instrucciones e integración (T10/T07), sin cambios adicionales del prompt. Registrar configuración verificada y conservar respuestas originales.

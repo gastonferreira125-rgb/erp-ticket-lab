@@ -162,6 +162,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo: repetir T12 con v5, después T03/T04 y controles T10/T07. T12 ahora se usa para ajustar v5 y deja de ser una prueba independiente de generalización para esa versión.
 - [T12-v4](../experiments/2026-10-14-t12-v4/README.md), [v5 preparada](../prompts/v5-reference-rule/README.md).
 
+## 14 de octubre de 2026 — primera ejecución T12-v5
+- T12 ahora devuelve OV-3301 en referencia_documento y coincide con Ventas/Media. evaluate.py sobre conjunto complementario: formato y etiquetas 1/1. Captura coincide con original.
+- Revisión humana: el resumen vincula carga manual a dirección cuando la entrada la vincula al pedido. datos_faltantes vacío omite la dirección correcta, útil para atender la solicitud y pedida en v4.
+- Extracción mejor en esta observación; contenido no mejora uniformemente. No atribuir causalidad a una sola ejecución por versión ni a parámetros no reconfirmados.
+- v5 solo tiene este caso complementario (1/1 conforme), usado para ajustar el prompt. Todavía sin casos del conjunto original; mantener métricas separadas de v4/v3.
+- Acumulado: 23 ejecuciones sobre doce tickets distintos. Próximo: T03, T04 y controles T10/T07 con v5 sin cambios.
+- [T12-v5](../experiments/2026-10-14-t12-v5/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

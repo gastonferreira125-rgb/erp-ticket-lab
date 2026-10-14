@@ -1,0 +1,10 @@
+[
+  {
+    "ticket_id": "T12",
+    "categoria": "Ventas",
+    "prioridad": "Media",
+    "resumen": "El pedido de venta OV-3301 tiene una dirección incorrecta cargada manualmente.",
+    "referencia_documento": "OV-3301",
+    "datos_faltantes": []
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "T12",
+    "text": "El pedido de venta OV-3301 tiene una dirección incorrecta. Fue cargado manualmente en el ERP; la tienda se usa solo para consultar el catálogo. Solo ocurre con este pedido.",
+    "expected": {
+      "ticket_id": "T12",
+      "categoria": "Ventas",
+      "prioridad": "Media",
+      "referencia_documento": "OV-3301"
+    }
+  }
+]
