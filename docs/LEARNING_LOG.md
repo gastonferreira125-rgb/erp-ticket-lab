@@ -217,6 +217,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo: T05/T06/T08/T09 sin modificar v5. Después consolidar y preparar mejora de impacto en resumen e información faltante.
 - [T02-v5](../experiments/2026-10-14-t02-v5/README.md).
 
+## 14 de octubre de 2026 — T05-v5
+- Autorizaciones, Media y null conformes. evaluate.py confirma formato y etiquetas. Fuente: JSON pegado, sin captura.
+- Reconoce problema de permisos pese al recurso reporte de compras; resumen fiel y datos faltantes pertinentes (usuario y reporte exacto), sin diagnosticar causa técnica.
+- Conserva categoría de v3 en esta observación; caso usado para ajustar v3, no nuevo independiente.
+- v5: 7/7 conformes entre ejecutados del conjunto original (cobertura 7/10), y 1/1 complementario. Total entre versiones: 30 ejecuciones sobre doce tickets distintos.
+- Próximo: T06/T08/T09 sin modificar v5, empezando por solicitud de reporte T06.
+- [T05-v5](../experiments/2026-10-14-t05-v5/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

@@ -1,0 +1,13 @@
+[
+  {
+    "ticket_id": "T05",
+    "categoria": "Autorizaciones",
+    "prioridad": "Media",
+    "resumen": "Usuario no tiene permiso para ver el reporte de compras.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Usuario afectado",
+      "Nombre del reporte específico"
+    ]
+  }
+]
