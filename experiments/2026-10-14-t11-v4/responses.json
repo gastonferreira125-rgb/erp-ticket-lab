@@ -1,0 +1,15 @@
+[
+  {
+    "ticket_id": "T11",
+    "categoria": "Integraciones",
+    "prioridad": "Media",
+    "resumen": "Algunos pedidos de la tienda no llegan al ERP.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "URL o sistema de origen de los pedidos",
+      "Ejemplo de pedido que no se importó",
+      "Ejemplo de pedido que sí se importó",
+      "Hora aproximada del primer pedido afectado"
+    ]
+  }
+]

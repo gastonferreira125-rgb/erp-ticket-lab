@@ -11,7 +11,7 @@ Los tickets ERP llegan con texto libre, detalles incompletos y distintos niveles
 - Evaluador local en Python sin dependencias externas.
 - Práctica manual iniciada en SAP AI Launchpad y Generative AI Hub.
 
-Estado al 14 de octubre de 2026: 20 ejecuciones sobre diez tickets distintos. Ronda v3 completa: 10/10 respuestas conformes en formato y 7/10 coincidencias completas de etiquetas; categorías 9/10, prioridades 10/10, referencias 8/10. T03/T04 omiten referencias, y T07 falla categoría. T04 expone una ambigüedad del contrato para códigos de artículo. T01/T02/T10 conservan etiquetas previamente correctas en estas ejecuciones. [Ronda y revisión humana](../experiments/2026-10-14-v3-round/README.md).
+Estado al 14 de octubre de 2026: 21 ejecuciones sobre once tickets distintos. Ronda v3 completa: 10/10 respuestas conformes en formato y 7/10 coincidencias completas de etiquetas; categorías 9/10, prioridades 10/10, referencias 8/10. T03/T04 omiten referencias, y T07 falla categoría. T04 expone una ambigüedad del contrato para códigos de artículo. T01/T02/T10 conservan etiquetas previamente correctas en estas ejecuciones. [Ronda y revisión humana](../experiments/2026-10-14-v3-round/README.md).
 
 No hay integración operativa con ERP, medición de tiempos ni comparación de modelos. Faltan repeticiones y casos nuevos independientes del ajuste; valores actuales y guardado en SAP pendientes de confirmar.
 
@@ -33,7 +33,7 @@ Las etiquetas esperadas se usan después de generar la respuesta, nunca como ent
 - Revisión humana previa a cualquier uso operativo.
 
 ## Avance v4
-T07, T08 y T10 coinciden con etiquetas esperadas (3/3 entre ejecutados, cobertura 3/10). T08 conserva la clasificación de Compras; T10 conserva el manejo conforme de instrucciones dentro del ticket en estas ejecuciones. Oportunidades humanas: precisión del impacto de T07 y fechas de T08. No mezclar con v3. Caso complementario T11 preparado, sin respuesta, con valores esperados definidos antes de ejecutar.
+T07, T08 y T10 conformes en el conjunto original (3/3 entre ejecutados, cobertura 3/10). T11, caso nuevo del conjunto complementario, coincide con Integraciones, Media y null (1/1). Su falla parcial no implica un equipo detenido. T12 está preparado, sin respuesta, para probar la mera mención de tienda en un problema de pedido manual. Valores esperados definidos antes de generación; no mezclar conjuntos ni versiones. [T11](../experiments/2026-10-14-t11-v4/README.md).
 
 ## Próximas entregas
-v4 ya aclara Integraciones como problema principal de intercambio entre sistemas y T07 devuelve la categoría esperada. T08 y T10 ya conservan sus etiquetas en estos controles; ejecutar T11 como caso nuevo sin modificar v4. Hacer una mejora por versión para facilitar la comparación. Luego revisar el alcance de referencia_documento, alineando prompt, esquema y conjunto esperado sin alterar retroactivamente v3. Repetir casos, añadir entradas nuevas y comparar modelos antes de preparar la demo y publicaciones.
+v4 ya aclara Integraciones como problema principal de intercambio entre sistemas y T07 devuelve la categoría esperada. T08 y T10 conservan etiquetas y T11 coincide en el primer caso nuevo. Ejecutar T12 como contraste sin modificar v4. Hacer una mejora por versión para facilitar la comparación. Luego revisar el alcance de referencia_documento, alineando prompt, esquema y conjunto esperado sin alterar retroactivamente v3. Repetir casos, añadir entradas nuevas y comparar modelos antes de preparar la demo y publicaciones.

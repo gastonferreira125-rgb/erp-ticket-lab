@@ -146,6 +146,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Concepto: generalización (generalization), evaluar entradas nuevas; un solo caso adicional no demuestra robustez general. Mantener versiones y conjuntos separados.
 - [T10-v4](../experiments/2026-10-14-t10-v4/README.md), [caso complementario T11](../tickets/generalization-v4.json).
 
+## 14 de octubre de 2026 — T11-v4, primer caso nuevo
+- T11 devuelve Integraciones, Media y null, coincidiendo con valores esperados guardados antes de la ejecución. Captura y JSON coinciden; evaluate.py aplicado al conjunto complementario confirma formato y etiquetas (1/1).
+- Categoría por intercambio entre sistemas; prioridad por impacto parcial, conservando Media aunque la integración falle. Resumen fiel; pares de ejemplos que entran/no entran son datos útiles para comparar.
+- v4: 3/3 entre casos ejecutados del conjunto original (cobertura 3/10) y 1/1 caso complementario. No mezclar conjuntos con v3. Total entre versiones: 21 ejecuciones, once tickets distintos.
+- Generalización: observación de un caso nuevo sin cambiar antes el prompt para ese caso. No demuestra robustez general.
+- T12 preparado sin respuesta para contrastar mención de tienda frente a problema en pedido cargado manualmente; valores esperados registrados antes de generación. Próximo paso: ejecutar con v4.
+- [Resultado T11](../experiments/2026-10-14-t11-v4/README.md), [T12 preparado](../tickets/generalization-v4-t12.json).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
