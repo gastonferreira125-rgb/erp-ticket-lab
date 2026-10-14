@@ -6,7 +6,9 @@ Desde la raíz del repositorio:
 python3 evaluate.py responses.json
 ```
 
-El archivo inicial contiene una lista vacía: ejecutarlo comprueba el funcionamiento local, no mide ningún modelo.
+responses.json conserva las tres respuestas iniciales de v0. Para evaluar una versión posterior, indicá su archivo de respuestas; los resultados de distintas versiones se mantienen separados. La utilidad del contenido requiere revisión humana.
+
+[Conceptos de evaluación, regresión y generalización](CONCEPTS.md).
 
 ## Medidas automáticas
 | Medida | Interpretación |

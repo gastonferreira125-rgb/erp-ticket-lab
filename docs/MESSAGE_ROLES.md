@@ -1,28 +1,38 @@
 # Roles de mensajes en el laboratorio
 
 ## Concepto
-- Sistema (System): comportamiento general, reglas y contrato de respuesta.
+
+- Sistema (System): en nuestra plantilla contiene comportamiento general, reglas y contrato de respuesta.
 - Usuario (User): solicitud y datos del ticket que se quiere clasificar.
-- Asistente (Assistant): respuestas previas del modelo o ejemplos de respuesta que se aportan como contexto. Seleccionar este rol en el editor añade una entrada de ese tipo; no es un botón para generar una respuesta.
+- Asistente (Assistant): respuestas previas o ejemplos aportados como contexto. Escribir un mensaje con este rol no genera una nueva respuesta del modelo.
 
-SAP AI Launchpad permite especificar roles, instrucciones y ejemplos. Los mensajes de sistema orientan el comportamiento; no garantizan que el modelo siempre cumpla las reglas o resista instrucciones incluidas en los datos.
+Separar roles ayuda a expresar la tarea, pero no garantiza cumplimiento. [Guía de conceptos y ejemplos](CONCEPTS.md).
 
-## Estado actual: v0
-T01, T02 y T10 se probaron con un único mensaje Usuario que contiene reglas y ticket, según las instrucciones del laboratorio. No se usa un mensaje Asistente porque esta referencia inicial no incluye ejemplos ni historial.
+## Historia de las pruebas
 
-No se concluye que los datos_faltantes vacíos de T02 se deban a ese diseño de roles.
+v0 usó un único Usuario con reglas y ticket. v1 mantuvo las reglas y las distribuyó en Sistema y Usuario; T10 siguió fallando. No se atribuyen las listas vacías de T02 al diseño de roles.
 
-## Siguiente comparación
-1. T10 ya ejecutado con v0: prioridad errónea y contenido no sustentado; resultado conservado.
-2. v1-roles preparada, pendiente de ejecución: mover el texto de instrucciones anterior a ENTRADA a Sistema y conservar id y ticket en Usuario. Mantener reglas, modelo y parámetros.
-3. Repetir los mismos casos y guardar sus respuestas por separado.
-4. Probar después otra versión que precise la regla de datos_faltantes.
-5. Si se añaden ejemplos en Asistente (few-shot prompting), usar casos adicionales que no sean los tickets reservados para evaluar.
+Las versiones v2–v6 precisaron distintas reglas y conservaron Sistema/Usuario. Los resultados y límites están en el [registro de aprendizaje](LEARNING_LOG.md); el diseño histórico v1 está en [v1-roles](../prompts/v1-roles/README.md).
 
-No cambiar roles y reglas a la vez si se quiere estudiar el efecto de separar roles. Cualquier mejora debe medirse; todavía no hay resultados de v1.
+## Propuesta actual: v7 preparada, sin resultados
 
-La preparación concreta está en [prompts/v1-roles](../prompts/v1-roles/README.md).
+Sistema v6 se conserva íntegro. Se añaden dos pares de demostraciones, con esta secuencia:
+
+| Posición | Rol | Contenido |
+| --- | --- | --- |
+| 1 | Sistema | Reglas v6 completas. |
+| 2 | Usuario | Ejemplo EX01: factura que no se contabiliza. |
+| 3 | Asistente | JSON preparado para EX01. |
+| 4 | Usuario | Ejemplo EX02: diferencia de stock. |
+| 5 | Asistente | JSON preparado para EX02. |
+| 6 | Usuario | T02 real, sin su respuesta esperada. |
+
+Los ejemplos son few-shot prompting. EX01/EX02 no son ejecuciones del modelo ni tickets del conjunto de evaluación. Cambiar solo el último Usuario permite probar los siguientes casos manteniendo las demostraciones.
+
+Ver [v7-few-shot](../prompts/v7-few-shot/README.md) y [mensajes completos para T02](../prompts/v7-few-shot/messages-t02.json). Añadir ejemplos es un cambio del prompt; sus efectos todavía no se han medido.
 
 ## Fuentes
-- https://help.sap.com/docs/ai-launchpad/sap-ai-launchpad-user-guide/templating
-- https://ai.google.dev/gemini-api/docs/text-generation
+
+- [SAP, few-shot learning](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/few-shot-learning-7ffdf9a6d89c465d8058634e7c4bb19c).
+- [SAP Launchpad, Templating](https://help.sap.com/docs/ai-launchpad/sap-ai-launchpad/11d44e657b5946f6880729da08eba0da.html).
+- [Google, estrategias de prompts](https://ai.google.dev/gemini-api/docs/prompting-strategies).

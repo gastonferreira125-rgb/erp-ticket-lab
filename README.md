@@ -3,6 +3,8 @@
 Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tickets ERP con IA generativa, datos sintéticos y revisión humana.
 
 ## Documentación
+
+- [Guía de conceptos: teoría y ejemplos de nuestros tickets](docs/CONCEPTS.md)
 - [Alcance y flujo del proyecto](docs/PROJECT.md)
 - [Evaluación y límites](docs/EVALUATION.md)
 - [Registro de aprendizaje](docs/LEARNING_LOG.md)

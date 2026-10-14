@@ -296,6 +296,15 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - v7 preparada sin resultados. Próximo T02 real como último Usuario de seis mensajes, luego T04/T06/T10. Revisar utilidad de información y no copiar ids/respuestas de ejemplos.
 - [v6 consolidada](../experiments/2026-10-14-v6-controls/README.md), [v7 preparada](../prompts/v7-few-shot/README.md).
 
+## 14 de octubre de 2026 — conceptos integrados al laboratorio
+- Gastón pidió explicar skill con un ejemplo del proyecto y conservar este y otros conceptos en GitHub.
+- Se añadió [CONCEPTS.md](CONCEPTS.md): catorce temas con explicación en español, término en inglés, ejemplo ERP y pregunta de comprensión.
+- Skill queda documentada como procedimiento reutilizable; el ejemplo de revisión ERP es conceptual, no una skill instalada.
+- La guía distingue prompt, roles, few-shot y herramientas; desarrolla clasificación/extracción/diagnóstico, esquema, instrucciones en datos, afirmaciones no sustentadas, benchmark, evaluación humana/automática, regresión, generalización, versionado y parámetros.
+- Se actualizó el documento de roles para separar el historial v0/v1 del estado actual y la propuesta v7.
+- Método acordado por solicitud del usuario: acompañar nuevas prácticas con teoría aplicada y registro en la guía; las preguntas quedan pendientes de respuesta, sin dar por demostrada la comprensión.
+- Sin nuevas salidas de modelo: continúan 38 ejecuciones sobre doce tickets distintos. Próxima prueba: T02 con v7.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
