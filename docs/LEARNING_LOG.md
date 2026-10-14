@@ -88,6 +88,15 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Siete ejecuciones sobre cuatro tickets distintos; seis casos del conjunto aún no ejecutados.
 - [Fallo T05-v2](../experiments/2026-10-14-t05-v2/README.md).
 
+## 14 de octubre de 2026 — T05-v3
+- Salida original y captura recibidas. Autorizaciones, Media, referencia null, resumen fiel y datos faltantes pertinentes.
+- Evaluador: campos/tipos y etiquetas conformes para T05.
+- Comparación: v2 había devuelto Reportes; v3 coincide con el criterio funcional previamente expresado por Gastón.
+- Límite: caso usado para ajustar el prompt; una ejecución no demuestra generalización.
+- Ocho ejecuciones totales sobre cuatro tickets distintos; seis casos del conjunto todavía no ejecutados.
+- Próximo caso: T06, solicitud de reporte sin interrupción. Luego repetir casos previos como regresión.
+- [Resultado T05-v3](../experiments/2026-10-14-t05-v3/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
