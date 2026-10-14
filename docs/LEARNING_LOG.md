@@ -209,6 +209,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo: T02/T05/T06/T08/T09 sin modificar v5, empezando por T02. Hallazgos de información faltante pendientes para otra versión.
 - [T01-v5](../experiments/2026-10-14-t01-v5/README.md).
 
+## 14 de octubre de 2026 — T02-v5
+- Finanzas, Alta y FV-1042 conformes. evaluate.py confirma formato y etiquetas. Fuente: JSON pegado, sin captura.
+- Resumen pierde bloqueo de todo el equipo y cierre detenido; datos_faltantes vacío omite error exacto y reproducción. Registrar deterioro cualitativo frente a v3 sin inferir causalidad de una regla específica.
+- Aprendizaje: coincidencia de etiquetas y utilidad para atender el ticket se evalúan por separado. La ronda puede mejorar etiquetas sin mejorar uniformemente otros campos.
+- v5: 6/6 conformes entre ejecutados del conjunto original (cobertura 6/10), y 1/1 complementario. Total entre versiones: 29 ejecuciones sobre doce tickets distintos.
+- Próximo: T05/T06/T08/T09 sin modificar v5. Después consolidar y preparar mejora de impacto en resumen e información faltante.
+- [T02-v5](../experiments/2026-10-14-t02-v5/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
