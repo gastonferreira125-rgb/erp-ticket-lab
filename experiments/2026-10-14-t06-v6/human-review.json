@@ -1,0 +1,11 @@
+{
+  "ticket_id": "T06",
+  "intended_prompt_version": "v6-missing-data-rule",
+  "source": "JSON pegado; sin captura",
+  "labels": "conformes",
+  "summary": "Solicitud pendiente, sin afirmar implementación realizada",
+  "missing_information_objective": "Información útil y concreta en esta salida",
+  "missing_information_reason": "Campos y filtros no especificados en la entrada; pedirlos permite definir requisitos",
+  "comparison_to_v5": "Mantiene solicitud útil de requisitos, aunque v5 también pedía ordenamiento y formato",
+  "next_step": "T10 con v6 sin cambios para controlar precedencia de instrucciones"
+}

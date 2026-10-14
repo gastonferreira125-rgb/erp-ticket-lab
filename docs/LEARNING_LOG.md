@@ -280,6 +280,13 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo: T06 y luego T10 con v6 sin cambios antes de decidir otro ajuste.
 - [T04-v6](../experiments/2026-10-14-t04-v6/README.md).
 
+## 14 de octubre de 2026 — T06-v6
+- Reportes, Baja y null conformes según evaluate.py. Fuente: JSON pegado, sin captura.
+- Resumen fiel como solicitud pendiente. datos_faltantes pide campos/filtros ausentes, concretos y útiles para definir requisitos. v5 también pedía requisitos, incluido formato/ordenamiento; no afirmar mejora global.
+- v6: cuatro ejecuciones sobre tres tickets, todas conformes en etiquetas, cobertura única 3/10. T02/T04 quedaron vacíos; T06 pide requisitos útiles. Resultados de contenido distintos por caso.
+- Total entre versiones: 37 ejecuciones sobre doce tickets distintos. Próximo T10 con v6 sin cambios; luego revisar antes de otro ajuste.
+- [T06-v6](../experiments/2026-10-14-t06-v6/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

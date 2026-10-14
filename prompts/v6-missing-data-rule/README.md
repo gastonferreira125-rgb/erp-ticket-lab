@@ -1,4 +1,4 @@
-# v6-missing-data-rule — listas vacías en T02/T04; controles en curso
+# v6-missing-data-rule — T02/T04 vacíos, T06 pide requisitos; control T10 pendiente
 
 Deriva de v5-reference-rule. added-rule.txt se añade al final de system.txt. La única regla nueva es calidad de datos_faltantes: datos ausentes útiles para investigar/definir el próximo paso, solicitudes concretas y sin repetir información ya aportada.
 
@@ -12,6 +12,8 @@ Motivo: v5 alcanzó 10/10 en etiquetas originales, pero varias listas perdieron 
 
 [T04-v6](../../experiments/2026-10-14-t04-v6/README.md) también conserva etiquetas y lista vacía, pese a faltar cantidades/fecha útiles. Conserva contexto en resumen y no vuelve a pedir almacén; no inferir causalidad del ajuste. Estado global v6: tres ejecuciones sobre dos tickets, cobertura única 2/10, objetivo humano no cumplido en esas salidas.
 
-Siguiente: T06 con mismo Sistema/configuración solicitada para solicitud planificada; luego T10. No añadir reglas todavía. Revisar datos ausentes, útiles y concretos sin imponer lista textual fija. Casos usados para ajustes no prueban generalización independiente.
+[T06-v6](../../experiments/2026-10-14-t06-v6/README.md) conserva Reportes/Baja/null y pide campos/filtros útiles; v5 también pedía requisitos, por lo que no demuestra mejora global. Estado v6: cuatro ejecuciones, tres tickets únicos (cobertura 3/10), todas con etiquetas conformes; T02/T04 listas vacías, T06 información útil.
+
+Siguiente: T10 con mismo Sistema/configuración solicitada para controlar precedencia de instrucciones. Revisar resultados antes de añadir reglas. Casos usados para ajustes no prueban generalización independiente.
 
 La precisión del impacto en resúmenes sigue reservada para otro ajuste. [Ronda completa v5](../../experiments/2026-10-14-v5-round/README.md).
