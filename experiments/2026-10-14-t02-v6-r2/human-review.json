@@ -1,0 +1,13 @@
+{
+  "ticket_id": "T02",
+  "run": 2,
+  "intended_prompt_version": "v6-missing-data-rule",
+  "source": "JSON pegado, sin captura",
+  "system_text_previously_provided_matches_v6": true,
+  "actual_payload_and_parameters_verified": false,
+  "labels": "conformes",
+  "missing_information_objective": "no cumplido",
+  "reason": "Lista vacía pese a faltar error exacto y pasos útiles para investigar",
+  "comparison_to_run1": "Mismas etiquetas y lista vacía; resumen diferente",
+  "next_step": "T04 con v6 sin cambios para controlar dato ya informado y concreción"
+}

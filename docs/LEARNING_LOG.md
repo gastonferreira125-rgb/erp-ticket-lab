@@ -264,6 +264,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Mantener v6 y repetir T02 una vez sin cambiar entrada/configuración solicitada; conservar ejecución aparte para observar consistencia o variación antes de otro ajuste.
 - [Verificación](../experiments/2026-10-14-t02-v6/system-confirmation.md).
 
+## 14 de octubre de 2026 — T02-v6 repetición 2
+- Sistema/Usuario y configuración solicitada sin cambios; previamente se comparó el texto Sistema aportado con v6. Fuente del resultado: JSON pegado, sin captura ni payload que confirme parámetros.
+- evaluate.py: formato y etiquetas conformes. datos_faltantes sigue vacío; objetivo de contenido no cumplido en segunda observación. Resumen cambió, mantiene cierre detenido y omite bloqueo total del equipo.
+- Dos ejecuciones T02 conservan lista vacía; no demostrar incumplimiento universal, determinismo o causa interna. Guardado separado, primera salida intacta.
+- v6: dos ejecuciones de un ticket, cobertura única 1/10. Total entre versiones: 35 ejecuciones, doce tickets distintos. No contar una repetición como nuevo ticket.
+- Próximo T04 sin cambiar v6 para evaluar dato ya informado y concreción; luego T06/T10 según resultados.
+- [Repetición 2](../experiments/2026-10-14-t02-v6-r2/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
