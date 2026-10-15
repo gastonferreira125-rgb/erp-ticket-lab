@@ -60,10 +60,27 @@ No marcar T02 resuelto solo porque fue clasificado. Tampoco suspender automátic
 ## Contratos separados
 v8 conserva seis claves. Un flujo posterior puede tener estado, área sugerida, decisión de revisión y acciones propuestas en un registro separado. No añadir esos campos al JSON de clasificación ni decir que ya fueron ejecutados.
 
-## Ejercicio 1 — pendiente de respuesta
-Para T02, ¿qué harías en paralelo: organizar atención prioritaria y solicitar los datos, o dejar todo en espera hasta recibir el error? Explicá brevemente por qué.
+## Ejercicio 1 — respuesta recibida
+Gastón indicó que gestionaría la atención y la solicitud de información en paralelo para avanzar. La respuesta coincide con el criterio explicado para T02: bloqueo de equipo con prioridad Alta y recopilación de datos en paralelo.
 
-El tutor no registra comprensión demostrada hasta recibir la respuesta. La explicación anterior no equivale a validación humana de todos los experimentos.
+Esto comprueba ese criterio puntual de la lección. No equivale a aprobar todas las respuestas del modelo ni a validar todas las observaciones cualitativas de la etapa 1.
 
-## Criterio para seguir
-Tras la respuesta, definir juntos estados y decisiones de dos ejemplos (incidente y solicitud planificada). Después preparar una simulación local del flujo, conservando el clasificador v8. No hay llamada nueva al modelo, automatización externa o integración ERP en esta lección.
+## Segunda lección: prioridad y estados (priority / status)
+La prioridad expresa urgencia relativa según nuestra política. El estado expresa en qué situación está el trabajo. Tener datos pendientes no obliga a bajar la prioridad ni a dejar toda la atención detenida.
+
+Propuesta educativa de metadatos separados para simular T02, después de validar la propuesta:
+
+| Dato | Valor propuesto | Significado |
+| --- | --- | --- |
+| prioridad | Alta | El proceso está detenido para todo el equipo |
+| estado_atencion | En atención | Se organiza la respuesta al bloqueo |
+| estado_informacion | Pendiente | Se recopilan error exacto y pasos |
+
+Estos valores son un ejemplo simulado, no un ticket real actualizado. Prioridad ya existe en la clasificación; los dos estados pertenecen al flujo propuesto y no se agregan al JSON de seis claves de v8.
+
+“Pendiente de información” describe una necesidad de investigación, no demuestra resolución ni determina por sí solo la urgencia. Si una herramienta falla al consultar datos, eso tampoco prueba que el incidente ERP esté resuelto.
+
+## Ejercicio 2 — pendiente de respuesta
+T06 solicita un reporte mensual de ventas por cliente y no hay interrupción del negocio. Falta acordar campos y filtros. ¿Qué prioridad le corresponde? ¿Lo tratarías como atención de un bloqueo urgente o como definición de una solicitud planificada?
+
+Todavía no se definieron todos los estados/transiciones ni se implementó una simulación local. Tras la respuesta, concretar reglas de transición con ambos ejemplos. Sin nuevas llamadas al modelo ni acciones externas.

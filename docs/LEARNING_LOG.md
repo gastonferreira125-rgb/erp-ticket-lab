@@ -450,6 +450,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Ejercicio de comprensión pendiente de respuesta. No se registra aprobación humana de experimentos.
 - Sin nuevas llamadas al modelo: siguen 48 respuestas sobre trece tickets. Etapa 1 cerrada; etapa 2 recién iniciada en diseño teórico.
 
+## 15 de octubre de 2026 — respuesta de comprensión y estados
+- Gastón respondió que gestionaría T02 en paralelo para avanzar. Se registra comprensión del criterio puntual: atención prioritaria y recopilación de datos simultáneas.
+- No se interpreta como validación humana de todo el modelo/experimentos.
+- [Lección de etapa 2](STAGE_2_ORCHESTRATION.md) ampliada: prioridad frente a estados de atención e información, con ejemplo simulado T02 Alta / En atención / Información pendiente.
+- Estados propuestos separados del contrato de seis campos; no se modifica v8 ni se actualiza un ticket externo.
+- Ejercicio 2 T06 pendiente: distinguir definición de solicitud planificada de atención urgente de un bloqueo.
+- Continúan 48 respuestas sobre trece tickets. Sin nuevas ejecuciones ni automatización implementada.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
