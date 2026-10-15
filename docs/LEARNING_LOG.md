@@ -407,6 +407,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - No se creó salida esperada para enviar al modelo; criterios de evaluación están separados.
 - Preparada, sin resultados. Siguen 44 respuestas sobre trece tickets distintos. Próximo T02-v8; luego tres controles y cierre con comparación, validación humana pendiente si no hay intervención explícita.
 
+## 15 de octubre de 2026 — T02-v8, objetivo de investigación observado
+- Usuario aportó respuesta original: Finanzas/Alta/FV-1042, pide error exacto y pasos, sin inventar causa/solución. Resumen incluye cierre detenido.
+- evaluate.py ejecutado: formato/etiquetas conformes, sin ids desconocidos/duplicados ni referencias ausentes literalmente.
+- Análisis asistido por IA: mejora de datos_faltantes frente a las dos T02-v7 vacías; no demuestra causalidad/robustez general. Validación humana no inferida.
+- Fuente textual sin captura/payload completo v8. Temperatura/streaming se verificaron en pantalla previa; máximo de tokens seleccionado no verificado.
+- v8: 1/4 controles del cierre recibidos, cobertura 1/10. Quedan T04/T06/T10 con reglas/ejemplos sin cambios y conclusión, sin nuevas versiones automáticas.
+- Total entre versiones: 45 respuestas sobre trece tickets distintos. [T02-v8](../experiments/2026-10-15-t02-v8/README.md).
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

@@ -1,4 +1,4 @@
-# v8 — datos de investigación para transacciones fallidas — preparada, sin resultados
+# v8 — datos de investigación para transacciones fallidas — T02 registrado
 
 Único cambio del prompt frente a v7: añadir [addendum.txt](addendum.txt) al final de Sistema. [system.txt](system.txt) incluye el texto completo. [messages-t02.json](messages-t02.json) conserva los seis mensajes con EX01/EX02 idénticos y último Usuario T02. [examples.json](examples.json) conserva las mismas demostraciones.
 
@@ -28,3 +28,6 @@ Al registrar las cuatro respuestas y la conclusión, cerrar el ejercicio con res
 La cobertura será parcial (estos cuatro tickets de los diez originales); el resto, casos nuevos independientes, repeticiones adicionales, comparación de modelos, integración ERP y precisión del resumen quedan como siguientes tareas, no como requisito para finalizar este ejercicio educativo hoy.
 
 No enviar etiquetas esperadas de los controles al modelo. Preparar v8 no añade ejecuciones: total permanece 44 respuestas sobre trece tickets distintos.
+
+## Avance observado
+Primera [T02-v8](../../experiments/2026-10-15-t02-v8/README.md) recibida: formato/etiquetas conformes y solicita error exacto/pasos ausentes. Objetivo observado en este caso frente a dos listas vacías v7, sin prueba de robustez general. Análisis asistido por IA pendiente de validación humana; fuente textual sin payload completo. 1 de 4 controles de cierre, cobertura 1/10; quedan T04/T06/T10. Total acumulado 45 respuestas sobre trece tickets.
