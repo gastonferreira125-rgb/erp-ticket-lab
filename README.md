@@ -43,6 +43,10 @@ Revisión humana: siguen faltando impacto en resumen T02, datos útiles en lista
 
 [v7-few-shot](prompts/v7-few-shot/README.md): controles T02/T04/T06/T10 registrados, formato/etiquetas 4/4 entre ejecutados, cobertura 4/10. T02 sigue vacío en dos ejecuciones; T04 pide datos útiles; T06/T10 conservan comportamiento pertinente. [Resultados y límites](experiments/2026-10-15-v7-controls/README.md). No demuestra mejora uniforme ni generalización amplia; parámetros/payload final no verificados. [T13 complementario](experiments/2026-10-15-t13-v7/README.md) ejecutado: formato/etiquetas 1/1 por separado; pide datos útiles con una pregunta parcialmente redundante. Expectativas previas conservadas. Segunda T02-v7 registrada sin mejora de datos_faltantes; próximo verificar montaje de mensajes/parámetros antes de otro ajuste.
 
+## Cierre acotado de la etapa de prompts
+
+[v8 preparada](prompts/v8-transaction-investigation/README.md), sin resultados: una regla condicional para pedir error/comportamiento y pasos ausentes cuando falla una transacción, conservando ejemplos v7. Plan: T02, T04, T06 y T10; registrar comparación y cerrar la etapa con el resultado observado. No añadir ciclos nuevos automáticamente si persiste una limitación. Preparación no aumenta las 44 ejecuciones.
+
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
 - prompt.txt: instrucciones iniciales listas para probar.

@@ -399,6 +399,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Formato propio del laboratorio, no export nativo SAP. No se verificó importación directa; no se diagnostica la causa del guardado fallido.
 - Sin nueva ejecución ni v8: 44 respuestas sobre trece tickets distintos.
 
+## 15 de octubre de 2026 — v8 preparada y alcance de cierre
+- Usuario pidió terminar hoy para avanzar. Se acota a un último ajuste, cuatro controles T02/T04/T06/T10 y conclusión; persistencias o regresiones se documentan como pendientes sin abrir nuevas versiones automáticamente.
+- [v8](../prompts/v8-transaction-investigation/README.md) conserva Sistema v7 y añade regla condicional para transacciones fallidas: pedir error/comportamiento y pasos cuando faltan, aun con prioridad Alta. Preserva precedencia de instrucciones dentro del ticket.
+- Ejemplos, último Usuario inicial T02, categorías, esquema y regla de resumen sin cambios. Se comprobó igualdad de los cinco mensajes no Sistema frente a v7.
+- Técnica: instrucciones condicionales con verificación de datos ausentes, sin codificar ticket_id o factura del benchmark. Hipótesis de mejora no demostrada.
+- No se creó salida esperada para enviar al modelo; criterios de evaluación están separados.
+- Preparada, sin resultados. Siguen 44 respuestas sobre trece tickets distintos. Próximo T02-v8; luego tres controles y cierre con comparación, validación humana pendiente si no hay intervención explícita.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

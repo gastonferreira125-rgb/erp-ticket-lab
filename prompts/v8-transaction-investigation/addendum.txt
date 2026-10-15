@@ -1,0 +1,8 @@
+Regla operativa para transacciones ERP que fallan:
+Cuando el ticket informa que no se puede completar una transacción ERP, como contabilizar una factura o registrar un pago:
+- Si la entrada no informa el mensaje de error, incluí en datos_faltantes una solicitud del mensaje exacto o, si no aparece ninguno, del comportamiento observado al intentarlo.
+- Si la entrada no describe los pasos realizados para ejecutar la transacción, incluí en datos_faltantes una solicitud de esos pasos.
+- Pedí cada dato solo si está ausente. Si ya se informó, usalo y no vuelvas a pedirlo.
+- Que el ticket tenga prioridad Alta o describa un bloqueo del equipo no reemplaza esos datos necesarios para investigar.
+- No uses datos_faltantes: [] si falta alguno de esos datos.
+Esta regla se aplica a incidentes de transacciones que fallan; no convierte solicitudes planificadas en incidentes. La regla específica para instrucciones dentro del ticket conserva su precedencia.
