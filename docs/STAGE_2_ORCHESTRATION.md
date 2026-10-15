@@ -1,0 +1,69 @@
+# Etapa 2 — primera lección: orquestación de la atención de tickets
+
+Estado: diseño didáctico inicial, no implementado. Fecha: 15 de octubre de 2026. La etapa 1 permanece cerrada y v8 no se modifica.
+
+## Objetivo de aprendizaje
+Distinguir la clasificación de un ticket del flujo que usa esa clasificación. Explicar qué decide la aplicación y qué valida una persona. Aplicarlo a T02.
+
+## Qué significa orquestar (orchestration)
+En nuestro diseño, orquestar es coordinar pasos y decisiones: recibir el ticket, pedir una clasificación, comprobar la respuesta y definir el siguiente tratamiento. El modelo propone información; el proceso decide cómo usarla.
+
+Un workflow tiene entrada, pasos, condiciones y salidas. No necesita que cada paso llame a una IA: comprobar claves/tipos es una operación programada; evaluar utilidad y autorizar una derivación puede corresponder a una persona.
+
+## Dos usos del término que debemos separar
+
+| Uso | Qué coordina | Ejemplo |
+| --- | --- | --- |
+| Orquestación funcional del laboratorio | Etapas de atención y sus decisiones | Revisar propuesta y preparar derivación/pedido de datos |
+| SAP Orchestration Service | Configuración y módulos alrededor de llamadas a modelos | Plantilla, modelo y módulos como masking o filtering |
+
+La documentación SAP muestra módulos de templating, LLM, data masking y content filtering. Eso no demuestra que nuestra aplicación ya gestione la cola de soporte. El ejemplo oficial también explica que la aplicación ejecuta las herramientas solicitadas y que la gestión de estado conversacional queda a cargo del código cliente. No asumimos estas capacidades implementadas.
+
+Fuente oficial consultada:
+- [SAP Orchestration Service V2 API](https://help.sap.com/doc/generative-ai-hub-sdk/CLOUD/en-US/_reference/orchestration-service2.html).
+- [SAP Orchestration](https://help.sap.com/docs/sap-ai-core/generative-ai/orchestration?version=CLOUD).
+
+Esta lección es diseño funcional. Configuración real del servicio, módulos disponibles en el entorno y SDK se revisarán en una práctica posterior; no se deducen de una captura del editor de prompts.
+
+## Flujo inicial propuesto
+
+```mermaid
+flowchart TD
+    A["Ticket y propuesta v8"] --> B{"¿Formato válido?"}
+    B -->|No| C["Revisión manual de formato"]
+    B -->|Sí| D["Revisión funcional"]
+    D --> E{"¿Falta información útil?"}
+    E -->|Sí| F["Solicitar datos y atender según urgencia"]
+    E -->|No| G["Investigar con evidencia disponible"]
+    F -->|Al incorporar datos| G
+```
+
+Reglas del diseño:
+- La revisión funcional contrasta categoría, impacto, referencia, resumen y preguntas con el ticket. Pasar formato no equivale a aprobar contenido.
+- La condición sobre información faltante se decide con el ticket y la revisión, no únicamente con que datos_faltantes sea [] o no.
+- Una lista vacía no significa incidente resuelto.
+- Si faltan datos, prepararlos como solicitud de información. No inventarlos.
+- Urgencia y completitud son dimensiones distintas: un incidente Alta puede necesitar atención prioritaria y recopilación de datos en paralelo.
+- Derivar o pedir información todavía significa preparar una propuesta en esta práctica; no se envían mensajes ni se crean tickets externos.
+
+## Aplicación a T02
+La factura FV-1042 no se contabiliza, todo Finanzas está bloqueado y el cierre detenido. v8 propone Finanzas, Alta y pide error exacto/pasos.
+
+La clasificación aporta categoría y prioridad. La orquestación propuesta agrega:
+1. Comprobar el JSON.
+2. Una persona revisa y confirma el impacto y la propuesta.
+3. Preparar atención/derivación prioritaria a Finanzas y el pedido de error/pasos en paralelo.
+4. Registrar evidencia y continuar investigación al recibirla.
+
+No marcar T02 resuelto solo porque fue clasificado. Tampoco suspender automáticamente la atención de un bloqueo de equipo hasta reunir todos los datos. Estas son reglas educativas propuestas para el flujo, no una política universal de soporte.
+
+## Contratos separados
+v8 conserva seis claves. Un flujo posterior puede tener estado, área sugerida, decisión de revisión y acciones propuestas en un registro separado. No añadir esos campos al JSON de clasificación ni decir que ya fueron ejecutados.
+
+## Ejercicio 1 — pendiente de respuesta
+Para T02, ¿qué harías en paralelo: organizar atención prioritaria y solicitar los datos, o dejar todo en espera hasta recibir el error? Explicá brevemente por qué.
+
+El tutor no registra comprensión demostrada hasta recibir la respuesta. La explicación anterior no equivale a validación humana de todos los experimentos.
+
+## Criterio para seguir
+Tras la respuesta, definir juntos estados y decisiones de dos ejemplos (incidente y solicitud planificada). Después preparar una simulación local del flujo, conservando el clasificador v8. No hay llamada nueva al modelo, automatización externa o integración ERP en esta lección.

@@ -182,6 +182,16 @@ En nuestro estado actual, Gemini clasifica manualmente en SAP AI Launchpad el te
 
 Fuente: [OpenAI, MCP server](https://developers.openai.com/plugins/concepts/mcp-server) y [relación entre skills y MCP](https://developers.openai.com/plugins/concepts/skills).
 
+## 16. Orquestación y flujo de trabajo (orchestration / workflow)
+
+En el diseño del laboratorio, orquestar es coordinar pasos y decisiones alrededor de una propuesta del modelo. Un workflow define entrada, pasos, condiciones y salidas. La clasificación es uno de esos pasos; no resuelve por sí sola el incidente.
+
+Ejemplo T02: validar formato, revisar funcionalmente, preparar atención prioritaria y solicitar error/pasos en paralelo. datos_faltantes vacío no demuestra que el caso esté resuelto. La prioridad y la información disponible son dimensiones distintas.
+
+SAP Orchestration Service es una capacidad específica para combinar modelo, plantillas y módulos alrededor de la llamada. No equivale por sí sola a implementar nuestra gestión del ticket.
+
+[Primera lección, diagrama y ejercicio](STAGE_2_ORCHESTRATION.md). Diseño sin implementar; pregunta de comprensión pendiente. Fuentes SAP enlazadas en la lección.
+
 ## Método para las próximas prácticas
 
 Cada concepto nuevo se documentará con explicación en español, término en inglés, ejemplo ERP, ejercicio y comprobación de comprensión. Se enlazará al experimento donde se aplica y se distinguirá entre preparado, ejecutado y verificado.

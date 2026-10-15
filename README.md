@@ -13,6 +13,9 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira: clasificación de tick
 
 [Comparación completa de los cuatro casos v7–v8](experiments/2026-10-15-v8-controls/README.md). Estos resultados no prueban exactitud general, causalidad o preparación para producción.
 
+## Etapa 2 — aprendizaje de orquestación
+[Primera lección y diseño funcional](docs/STAGE_2_ORCHESTRATION.md): clasificar, validar y decidir el tratamiento. Diseño inicial sin implementación; v8 permanece congelada. Ejercicio T02 pendiente de respuesta.
+
 ## Recuperar la plantilla
 - [Sistema v8 completo](prompts/v8-transaction-investigation/system.txt).
 - [Seis mensajes con ejemplos y último Usuario T02](prompts/v8-transaction-investigation/messages-t02.json).

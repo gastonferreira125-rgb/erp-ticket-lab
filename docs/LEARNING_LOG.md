@@ -440,6 +440,16 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Limitaciones conservadas: v8 una ejecución por caso, cuatro de diez originales, casos usados para ajuste, máximo de tokens/payloads no completos; no prueba de robustez/causalidad o producción.
 - Pendientes posteriores: validación personal del análisis, ampliar evaluación, precisión de resúmenes y siguiente práctica de flujo/orquestación. No hay integración ERP ni skill/MCP ERP instalado.
 
+## 15 de octubre de 2026 — inicio teórico de etapa 2
+- Usuario reafirmó que quiere aprender y preguntó si se había explicado todo el teórico. Se aclaró que se trabajaron conceptos durante pruebas, con profundización todavía pendiente; documentación no equivale a dominio.
+- Método de tutoría reforzado: explicación, ejemplo ERP, ejercicio, comprobación y documentación.
+- Usuario indicó avanzar. Se añadió [lección inicial de orquestación](STAGE_2_ORCHESTRATION.md) y concepto 16, sin modificar v8.
+- Distinción: flujo funcional de atención frente al servicio SAP Orchestration. Documentación oficial SAP V2 consultada; no se configura el servicio ni se asume integración operativa.
+- Caso T02: atención prioritaria y recopilación de datos pueden ir en paralelo; clasificación/JSON válido/lista vacía no significan resolución.
+- Diseño de flujo con revisión de formato y contenido; metadatos futuros separados del contrato de seis campos.
+- Ejercicio de comprensión pendiente de respuesta. No se registra aprobación humana de experimentos.
+- Sin nuevas llamadas al modelo: siguen 48 respuestas sobre trece tickets. Etapa 1 cerrada; etapa 2 recién iniciada en diseño teórico.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
