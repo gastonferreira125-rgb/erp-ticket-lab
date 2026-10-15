@@ -361,6 +361,21 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Fuente textual, sin captura final/payload ni todos los parámetros numéricos actuales verificados.
 - Próximo repetir T02 con v7 sin cambios, guardar segunda ejecución por separado y observar datos_faltantes antes de otro ajuste. No contar repetición como nuevo ticket.
 
+## 15 de octubre de 2026 — aclaración de revisión humana
+- El usuario preguntó qué significa revisión humana. Se distingue validación automática del script, análisis cualitativo del tutor IA y decisión de una persona con criterio funcional.
+- Aclaración necesaria: varios registros previos usaron “revisión humana” para análisis redactados por IA. [EVALUATION.md](EVALUATION.md) deja explícito que son análisis asistidos por IA pendientes de validación humana, salvo intervención expresa del usuario en un criterio.
+- No inferir aprobación porque el usuario pega una salida o continúa la práctica. No atribuir al usuario mis observaciones; no hay puntuación humana agregada.
+- Ejemplos didácticos: T13, alcance parcial ya informado; T02, etiquetas conformes pero error exacto ausente.
+- Sin nuevas ejecuciones ni cambios de prompt: siguen 43 respuestas sobre trece tickets distintos. T02-v7 segunda ejecución continúa pendiente.
+
+## 15 de octubre de 2026 — segunda T02-v7
+- Mientras se aclaraba revisión humana, usuario aportó segunda respuesta T02-v7. Se guarda por separado, sin sobrescribir la primera.
+- evaluate.py ejecutado: formato/etiquetas conformes. datos_faltantes otra vez vacío; resumen conserva bloqueo del equipo y omite cierre detenido.
+- Observaciones de contenido redactadas por tutor IA: pendientes de validación humana, sin atribuir aprobación al usuario por pegar respuesta.
+- v7: cinco ejecuciones del conjunto original, cuatro tickets únicos (T02 dos veces), todas conformes en formato/etiquetas; cobertura 4/10. T13 complementario 1/1 aparte. runs.json conserva cinco ejecuciones y vista latest usa última cronológica por ticket, no mejor resultado.
+- Total entre versiones: 44 respuestas sobre trece tickets distintos. [Segunda T02-v7](../experiments/2026-10-15-t02-v7-r2/README.md).
+- No demuestra determinismo ni causa interna; payload final y parámetros actuales no capturados. Próximo verificar montaje de seis bloques/último Usuario y parámetros, y guardado SAP si es posible, antes de una nueva versión.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

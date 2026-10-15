@@ -106,11 +106,15 @@ Las respuestas esperadas del ticket real no se envían al modelo durante la eval
 
 ## 10. Evaluación automática y revisión humana (evals / human review)
 
-La evaluación automática comprueba criterios programados. La revisión humana examina aspectos que el evaluador actual no mide.
+La evaluación automática comprueba criterios programados. La revisión humana la realiza una persona, como Gastón u otro analista, para decidir si la propuesta es fiel y útil. Mis observaciones como tutor IA son revisión cualitativa asistida por IA; necesitan esa validación personal para considerarse revisión humana.
 
 **Ejemplo:** evaluate.py comprueba campos, tipos, coincidencia de etiquetas y presencia literal de referencias. Una referencia puede aparecer en el texto y ser inapropiada, como FV-999 en las órdenes de T10. El evaluador tampoco puntúa la fidelidad del resumen o la utilidad de datos_faltantes.
 
-**Comprobación:** ¿por qué 10/10 coincidencias de etiquetas en v5 no significa diez respuestas perfectas?
+**Ejemplo de revisión humana:** en T13, una persona lee que algunas facturas fallan y otras se importan; puede confirmar que volver a preguntar si falla con todas es redundante. En T02, puede decidir que falta el error exacto antes de investigar.
+
+**Trazabilidad:** notas históricas tituladas “revisión humana” fueron redactadas por el tutor IA. Se consideran análisis asistidos por IA pendientes de validación humana, salvo intervención explícita del usuario para ese criterio. Ver [aclaración del evaluador](EVALUATION.md#quién-revisa-tres-niveles-distintos).
+
+**Comprobación:** ¿por qué 10/10 coincidencias de etiquetas en v5 no significa diez respuestas perfectas? ¿Quién debe validar una observación del tutor para que sea revisión humana?
 
 Fuente conceptual: [OpenAI, buenas prácticas de evaluación](https://developers.openai.com/api/docs/guides/evaluation-best-practices). Nuestros criterios y límites están en [EVALUATION.md](EVALUATION.md).
 
@@ -184,4 +188,4 @@ Cada concepto nuevo se documentará con explicación en español, término en in
 
 El glosario es material de estudio; sus preguntas no se consideran respondidas ni aprobadas automáticamente. Continuaremos de a un concepto por práctica.
 
-Al 15 de octubre de 2026, v7 tiene una [respuesta registrada de T02](../experiments/2026-10-15-t02-v7/README.md): formato/etiquetas conformes, datos_faltantes vacío. EX01/EX02 son contexto con respuestas preparadas; no se espera una salida nueva por ejemplo. La salida de esta prueba corresponde al último Usuario. No hay una skill propia instalada. La [respuesta T04-v7](../experiments/2026-10-15-t04-v7/README.md) pide cantidades y fecha sin repetir almacén: aplicación útil de un patrón cercano a EX02, no prueba de generalización amplia. v7 cubre 4/10 tickets; [T06](../experiments/2026-10-15-t06-v7/README.md) conserva Reportes/Baja y pide campos/formato: control de regresión conforme en esta ejecución. [T10-v7](../experiments/2026-10-15-t10-v7/README.md) conserva el criterio de instrucciones en datos. [T13-v7](../experiments/2026-10-15-t13-v7/README.md) coincide con expectativas previas en etiquetas y pide información útil con alcance parcialmente redundante. Se evalúa por separado; es una variante cercana a T11, no prueba de generalización amplia. Próximo: repetir T02-v7 sin cambios para observar consistencia/variación y conservar ambas salidas.
+Al 15 de octubre de 2026, v7 tiene una [respuesta registrada de T02](../experiments/2026-10-15-t02-v7/README.md): formato/etiquetas conformes, datos_faltantes vacío. EX01/EX02 son contexto con respuestas preparadas; no se espera una salida nueva por ejemplo. La salida de esta prueba corresponde al último Usuario. No hay una skill propia instalada. La [respuesta T04-v7](../experiments/2026-10-15-t04-v7/README.md) pide cantidades y fecha sin repetir almacén: aplicación útil de un patrón cercano a EX02, no prueba de generalización amplia. v7 cubre 4/10 tickets; [T06](../experiments/2026-10-15-t06-v7/README.md) conserva Reportes/Baja y pide campos/formato: control de regresión conforme en esta ejecución. [T10-v7](../experiments/2026-10-15-t10-v7/README.md) conserva el criterio de instrucciones en datos. [T13-v7](../experiments/2026-10-15-t13-v7/README.md) coincide con expectativas previas en etiquetas y pide información útil con alcance parcialmente redundante. Se evalúa por separado; es una variante cercana a T11, no prueba de generalización amplia. [Segunda T02-v7](../experiments/2026-10-15-t02-v7-r2/README.md) también deja lista vacía y omite cierre en resumen. Próximo verificar montaje de seis mensajes y parámetros antes de otro ajuste.
