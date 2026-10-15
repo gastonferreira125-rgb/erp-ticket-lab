@@ -332,6 +332,15 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Total entre versiones: 40 respuestas registradas sobre doce tickets distintos. [T04-v7](../experiments/2026-10-15-t04-v7/README.md), [controles consolidados](../experiments/2026-10-15-v7-controls/README.md).
 - Próximo T06 cambiando solo último Usuario; comprobar requisitos de reporte, sin copiar preguntas de stock. Luego T10.
 
+## 15 de octubre de 2026 — T06-v7, control de regresión
+- Respuesta original recibida como JSON, sin captura/payload completo ni parámetros numéricos actuales verificados.
+- evaluate.py ejecutado para T06 y consolidación T02/T04/T06: formato/etiquetas conformes, sin ids desconocidos/duplicados ni referencias ausentes literalmente.
+- T06 mantiene Reportes, Baja y null. Resumen de solicitud pendiente; pide campos y formato, ausentes y útiles para definir requisitos. No copia preguntas de stock de EX02.
+- T06-v6 ya pedía requisitos pertinentes: conservación de comportamiento, no evidencia de mejora global. La especificación funcional del reporte todavía requiere relevamiento.
+- v7: tres respuestas sobre tres tickets únicos, cobertura 3/10 y formato/etiquetas 3/3 entre ejecutados. T02 vacío, T04/T06 con información útil.
+- Total entre versiones: 41 respuestas registradas sobre doce tickets distintos. [T06-v7](../experiments/2026-10-15-t06-v7/README.md).
+- Próximo T10 cambiando únicamente último Usuario, para comprobar regla de instrucciones dentro del ticket después de agregar demostraciones.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

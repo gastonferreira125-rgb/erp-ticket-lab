@@ -1,8 +1,8 @@
 {
   "total_cases": 10,
-  "responses": 2,
-  "schema_valid": 2,
-  "labels_match": 2,
+  "responses": 3,
+  "schema_valid": 3,
+  "labels_match": 3,
   "invented_references": 0,
   "duplicate_ids": [],
   "unknown_ids": [],
@@ -45,9 +45,9 @@
     },
     {
       "ticket_id": "T06",
-      "present": false,
-      "schema_valid": false,
-      "labels_match": false,
+      "present": true,
+      "schema_valid": true,
+      "labels_match": true,
       "invented_reference": false
     },
     {

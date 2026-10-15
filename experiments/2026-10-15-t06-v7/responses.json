@@ -1,0 +1,13 @@
+[
+  {
+    "ticket_id": "T06",
+    "categoria": "Reportes",
+    "prioridad": "Baja",
+    "resumen": "Solicitud de creación de reporte mensual de ventas por cliente.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Campos específicos a incluir en el reporte",
+      "Formato de salida deseado"
+    ]
+  }
+]
