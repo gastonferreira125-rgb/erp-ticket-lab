@@ -384,6 +384,13 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Sin nueva ejecución: 44 respuestas sobre trece tickets distintos.
 - Próximo desplegar parámetros y confirmar valores actuales sin cambiar reglas/ejemplos; después guardar plantilla.
 
+## 15 de octubre de 2026 — temperatura y streaming verificados
+- Captura de parámetros desplegados confirma temperatura 1 y streaming activado, coincidentes con lo solicitado.
+- Control de tokens muestra extremos 1/65536, no valor seleccionado. No inferir el máximo exacto a partir de posición del deslizador.
+- [Nota actualizada](../experiments/2026-10-15-t02-v7-r2/configuration-check.md). Texto íntegro/payload y guardado SAP siguen sin confirmar; observación actual no verifica retrospectivamente ejecuciones previas.
+- No se cambian mensajes/parámetros ni se añade ejecución. Siguen 44 respuestas sobre trece tickets.
+- Próximo abrir Guardar y conservar plantilla v7 antes de otro ajuste de reglas.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
