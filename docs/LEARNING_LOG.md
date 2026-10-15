@@ -422,6 +422,13 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - v8: 2/4 controles recibidos, cobertura 2/10; total 46 respuestas sobre trece tickets distintos.
 - [T04-v8](../experiments/2026-10-15-t04-v8/README.md). Quedan T06/T10 y cierre acotado, sin v9 automática.
 
+## 15 de octubre de 2026 — T06-v8
+- Tercer control recibido como JSON textual; evaluate.py confirma formato/etiquetas Reportes/Baja/null, sin ids desconocidos/duplicados ni referencias ausentes literalmente.
+- Análisis asistido por IA: resumen fiel, campos/filtros útiles y ausentes, sin preguntas de transacción o stock trasladadas. v7 pedía campos/formato: control de regresión conforme, no mejora global demostrada.
+- Validación humana no inferida. Parámetros/mensajes sin cambios solicitados, payload de esta ejecución no capturado; máximo de tokens exacto no verificado.
+- v8 3/4 controles de cierre, cobertura 3/10. Total 47 respuestas sobre trece tickets distintos. [T06-v8](../experiments/2026-10-15-t06-v8/README.md).
+- Solo queda T10 y cierre con comparación, sin abrir nuevas versiones automáticamente.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
