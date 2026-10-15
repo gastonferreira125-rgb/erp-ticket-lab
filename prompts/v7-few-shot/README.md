@@ -30,3 +30,6 @@ EX01/EX02 tienen respuestas Asistente preparadas, por lo que se usan como contex
 - Google Gemini prompt design, zero-shot/few-shot: https://ai.google.dev/gemini-api/docs/prompting-strategies
 
 La documentación SAP muestra System, ejemplos User/Assistant y un último User real. Estos ejemplos influyen en el contexto del prompt; no constituyen fine-tuning ni entrenamiento permanente de pesos.
+
+## Respaldo fuera de la sesión
+El usuario informó que Guardar no conserva la plantilla. Se creó [respaldo XML con los seis mensajes](backup/ERP_Tickets_v7_FewShot.xml) y [guía de recuperación](backup/README.md). Es formato propio legible; importación directa a SAP no verificada. Mensajes extraídos del XML coinciden exactamente con messages-t02.json. Sin nueva ejecución ni modificación de reglas.

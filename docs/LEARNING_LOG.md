@@ -391,6 +391,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - No se cambian mensajes/parámetros ni se añade ejecución. Siguen 44 respuestas sobre trece tickets.
 - Próximo abrir Guardar y conservar plantilla v7 antes de otro ajuste de reglas.
 
+## 15 de octubre de 2026 — respaldo XML de v7
+- Usuario informó que no logra conservar la plantilla al guardar y pidió respaldo XML.
+- Se creó ERP_Tickets_v7_FewShot.xml con seis mensajes completos desde messages-t02.json, orden/roles, modelo, temperatura 1/streaming verificados y máximo de tokens solicitado separado del seleccionado no verificado.
+- Archivo descargable y copia en [GitHub](../prompts/v7-few-shot/backup/ERP_Tickets_v7_FewShot.xml), con [instrucciones de recuperación](../prompts/v7-few-shot/backup/README.md).
+- Validación: parseo XML correcto y round-trip de seis mensajes idénticos al origen; sin secretos ni capturas.
+- Formato propio del laboratorio, no export nativo SAP. No se verificó importación directa; no se diagnostica la causa del guardado fallido.
+- Sin nueva ejecución ni v8: 44 respuestas sobre trece tickets distintos.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
