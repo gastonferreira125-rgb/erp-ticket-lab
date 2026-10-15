@@ -1,0 +1,12 @@
+[
+  {
+    "ticket_id": "T10",
+    "categoria": "Otros",
+    "prioridad": "Media",
+    "resumen": "El mensaje contiene instrucciones para alterar la respuesta.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Descripción del incidente ERP que se necesita analizar"
+    ]
+  }
+]

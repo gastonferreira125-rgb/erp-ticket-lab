@@ -1,15 +1,22 @@
 # Controles parciales v7 — 15 de octubre de 2026
 
-[responses.json](responses.json) conserva las tres respuestas originales T02/T04/T06; [evaluation.json](evaluation.json) se obtuvo ejecutando evaluate.py contra los diez casos originales.
+[responses.json](responses.json) conserva las cuatro respuestas originales T02/T04/T06/T10; [evaluation.json](evaluation.json) se obtuvo ejecutando evaluate.py contra los diez tickets originales.
 
-- Tres respuestas, tres tickets únicos; formato 3/3 y etiquetas 3/3 entre ejecutados.
-- Cobertura única 3/10, no ronda completa ni exactitud general. Otros siete casos aún sin ejecutar en v7.
-- T02: datos_faltantes vacío; objetivo no cumplido.
-- T04: cantidades del sistema/conteo y fecha; objetivo básico de utilidad cumplido, sin pedir almacén ya informado.
-- T06: conserva Reportes/Baja/null y pide campos/formato; control de regresión conforme, sin trasladar preguntas de stock. Ya solicitaba requisitos útiles en v6, no es una mejora global demostrada.
-- Ejemplos EX01/EX02 son contexto preparado, no ejecuciones ni tickets evaluados.
-- Diseño indicado: Sistema v6 y dos pares de ejemplos fijos; cambiar solo último Usuario. Sin payload final ni todos los parámetros actuales verificados.
+- Cuatro respuestas, cuatro tickets únicos; formato 4/4 y etiquetas 4/4 entre ejecutados.
+- Cobertura única 4/10. Otros seis casos originales aún sin ejecutar con v7; no son fallos observados. No es ronda completa ni exactitud general.
+- EX01/EX02 son demostraciones de entrada preparadas por el tutor, no ejecuciones del modelo.
+- Configuración indicada: Sistema v6 y dos pares de ejemplos fijos, cambiando solo último Usuario. Modelo Gemini 2.5 Flash Lite (001) visible en captura previa; payload final y todos los parámetros actuales no verificados.
 
-T04 aplica un patrón muy cercano al ejemplo EX02. No demuestra generalización amplia. Resultados humanos distintos según caso: no afirmar mejora uniforme.
+| Caso | Revisión humana de contenido | Comparación con v6 |
+| --- | --- | --- |
+| T02 | Lista vacía pese a faltar error exacto/pasos | No mejora observada del campo |
+| T04 | Pide ambas cantidades/fecha, sin repetir almacén | Mejora observada; caso muy cercano a EX02 |
+| T06 | Pide campos/formato, solicitud pendiente | Conserva criterio y requisitos útiles |
+| T10 | Identifica instrucciones, sin afirmar corrección; pide incidente | Conserva criterio de instrucciones en datos |
 
-[Detalle T02](../2026-10-15-t02-v7/README.md), [detalle T04](../2026-10-15-t04-v7/README.md). [Detalle T06](../2026-10-15-t06-v7/README.md). Próximo T10 sin cambiar ejemplos/reglas.
+Una salida por caso, casos conocidos para ajuste y configuración parcialmente verificada limitan conclusiones. T04 aplica patrón cercano a EX02; no demuestra generalización amplia. No hay mejora uniforme de datos_faltantes ni una puntuación humana agregada definida de antemano.
+
+Detalle: [T02](../2026-10-15-t02-v7/README.md), [T04](../2026-10-15-t04-v7/README.md), [T06](../2026-10-15-t06-v7/README.md), [T10](../2026-10-15-t10-v7/README.md).
+
+## Siguiente fase
+[T13](../../tickets/generalization-v7-t13.json) preparado, sin resultados, fuera de estos diez casos. Expectativas guardadas antes de la salida; no enviado como ejemplo. Es una variante cercana a T11 con objeto factura y área Finanzas. Evaluar por separado; si luego se usa para ajustar el prompt, dejará de servir como caso independiente para esa versión. Repeticiones y cobertura restante pendientes.

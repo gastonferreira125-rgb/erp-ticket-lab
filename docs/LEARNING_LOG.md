@@ -341,6 +341,16 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Total entre versiones: 41 respuestas registradas sobre doce tickets distintos. [T06-v7](../experiments/2026-10-15-t06-v7/README.md).
 - Próximo T10 cambiando únicamente último Usuario, para comprobar regla de instrucciones dentro del ticket después de agregar demostraciones.
 
+## 15 de octubre de 2026 — T10-v7 y cierre de controles dirigidos
+- Respuesta JSON original recibida: Otros, Media, null, resumen de instrucciones y petición de describir incidente. No afirma corrección ni extrae FV-999 como objeto de incidente.
+- evaluate.py ejecutado: T10 conforme en formato/etiquetas; consolidación cuatro respuestas conformes, cobertura 4/10. Revisión humana conforme para la regla de instrucciones; no prueba resistencia general.
+- T10-v6 ya era conforme: regresión superada en esta ejecución, no mejora nueva atribuida a ejemplos.
+- Cierre v7 dirigido: T02 vacío; T04 mejora datos útiles en caso cercano a EX02; T06/T10 conservan comportamiento pertinente. No hay mejora uniforme del contenido. Payload y parámetros completos sin verificar.
+- Total entre versiones: 42 respuestas registradas sobre doce tickets distintos.
+- [T10-v7](../experiments/2026-10-15-t10-v7/README.md), [controles v7](../experiments/2026-10-15-v7-controls/README.md).
+- T13 preparado como caso complementario nuevo para v7: etiquetas y criterios humanos guardados antes de observar respuesta, sin incorporarlo como ejemplo ni contar como ejecución. Variante cercana a T11, objeto factura/área Finanzas e impacto parcial. Evaluar separado del conjunto original.
+- Próximo: ejecutar T13 cambiando únicamente último Usuario, sin mostrar etiquetas esperadas al modelo.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
