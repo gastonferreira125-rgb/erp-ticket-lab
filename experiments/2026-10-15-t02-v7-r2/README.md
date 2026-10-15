@@ -30,3 +30,6 @@ v7 tiene seis respuestas registradas: cinco ejecuciones del conjunto original so
 Total entre versiones: 44 respuestas sobre trece tickets distintos. Se preservan respuestas sin corregir y ambas T02 por separado.
 
 Próximo: verificar en pantalla el montaje actual de seis mensajes, último Usuario T02 y parámetros, y guardar plantilla SAP si es posible antes de otra versión. No inferir que ya fue guardada ni que la ausencia de preguntas se deba a un error de copia. No se creó v8.
+
+## Verificación visual posterior
+Dos capturas posteriores confirman seis bloques, orden de roles e ids de ejemplos/T02 y modelo seleccionado. No muestran los textos íntegros ni parámetros desplegados. [Detalle y límites](configuration-check.md). Sigue pendiente revisar parámetros actuales y guardado de plantilla; no hay nueva ejecución.

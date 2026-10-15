@@ -376,6 +376,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Total entre versiones: 44 respuestas sobre trece tickets distintos. [Segunda T02-v7](../experiments/2026-10-15-t02-v7-r2/README.md).
 - No demuestra determinismo ni causa interna; payload final y parámetros actuales no capturados. Próximo verificar montaje de seis bloques/último Usuario y parámetros, y guardado SAP si es posible, antes de una nueva versión.
 
+## 15 de octubre de 2026 — verificación visual posterior de v7
+- Dos capturas recibidas tras segunda T02-v7: seis bloques, orden Sistema/Usuario/Asistente/Usuario/Asistente/Usuario, EX01/EX02 y último Usuario T02 visibles.
+- Modelo seleccionado Gemini 2.5 Flash Lite (001). Respuesta visible coincide con segunda T02-v7. Sin error observado en cantidad/orden de bloques.
+- Textos íntegros/payload no visibles. Parámetros (3) plegados; guardado SAP no confirmado. No extender esta verificación retrospectivamente a todas las ejecuciones.
+- Se guardó [nota textual de verificación](../experiments/2026-10-15-t02-v7-r2/configuration-check.md), sin publicar imágenes.
+- Sin nueva ejecución: 44 respuestas sobre trece tickets distintos.
+- Próximo desplegar parámetros y confirmar valores actuales sin cambiar reglas/ejemplos; después guardar plantilla.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:
