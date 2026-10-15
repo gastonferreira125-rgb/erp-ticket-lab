@@ -14,7 +14,7 @@ v0 usó un único Usuario con reglas y ticket. v1 mantuvo las reglas y las distr
 
 Las versiones v2–v6 precisaron distintas reglas y conservaron Sistema/Usuario. Los resultados y límites están en el [registro de aprendizaje](LEARNING_LOG.md); el diseño histórico v1 está en [v1-roles](../prompts/v1-roles/README.md).
 
-## Propuesta actual: v7 preparada, sin resultados
+## v7: diseño y primera respuesta T02
 
 Sistema v6 se conserva íntegro. Se añaden dos pares de demostraciones, con esta secuencia:
 
@@ -29,7 +29,9 @@ Sistema v6 se conserva íntegro. Se añaden dos pares de demostraciones, con est
 
 Los ejemplos son few-shot prompting. EX01/EX02 no son ejecuciones del modelo ni tickets del conjunto de evaluación. Cambiar solo el último Usuario permite probar los siguientes casos manteniendo las demostraciones.
 
-Ver [v7-few-shot](../prompts/v7-few-shot/README.md) y [mensajes completos para T02](../prompts/v7-few-shot/messages-t02.json). Añadir ejemplos es un cambio del prompt; sus efectos todavía no se han medido.
+Ver [v7-few-shot](../prompts/v7-few-shot/README.md) y [mensajes completos para T02](../prompts/v7-few-shot/messages-t02.json). Añadir ejemplos es un cambio del prompt. La [primera respuesta T02](../experiments/2026-10-15-t02-v7/README.md) conserva etiquetas y datos_faltantes vacío; no muestra mejora de ese campo en esta ejecución. No se verificó el payload final de seis mensajes.
+
+Los dos mensajes Asistente de ejemplo forman parte de la entrada. La salida nueva corresponde al último Usuario; no se espera un resultado separado por cada ejemplo. Seis mensajes de entrada no son seis ejecuciones del modelo.
 
 ## Fuentes
 

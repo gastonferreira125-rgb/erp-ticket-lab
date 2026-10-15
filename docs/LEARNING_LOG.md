@@ -313,6 +313,16 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Una skill aporta el procedimiento reutilizable; MCP estandariza comunicación con herramientas/datos. No se creó una skill ni un servidor ERP.
 - Documentación oficial OpenAI consultada. No hay nuevas ejecuciones: 38 sobre doce tickets, v7 aún preparada sin resultados.
 
+## 15 de octubre de 2026 — restauración y primera respuesta T02-v7
+- Se recuperaron Sistema y seis mensajes v7 desde GitHub. El usuario preguntó por qué Asistente estaba vacío antes: v0–v6 no contenían demostraciones; v7 añade ejemplos.
+- Captura previa mostró tres bloques (Sistema, Usuario EX01, Asistente EX01) y panel vacío. Se explicó que + crea bloques y los botones eligen rol; se reenviaron los seis mensajes completos. Sin evidencia para atribuir la ausencia de salida exclusivamente a esa configuración.
+- JSON posterior T02 recibido como texto. Configuración final de seis bloques/payload y parámetros numéricos no capturados; modelo visible previamente Gemini 2.5 Flash Lite (001).
+- evaluate.py ejecutado: formato/etiquetas conformes. Resumen conserva bloqueo del equipo y cierre, sin causas inventadas; datos_faltantes sigue vacío pese a faltar error exacto/pasos.
+- Comparación con dos T02-v6: ninguna pide datos útiles. Una ejecución v7 no demuestra resultado general ni causalidad del cambio de ejemplos.
+- Se explicó que EX01/EX02 son contexto con respuestas preparadas y la salida nueva responde al último Usuario T02. No contarlos como ejecuciones adicionales.
+- v7: una respuesta, un ticket, cobertura 1/10. Total entre versiones: 39 respuestas registradas sobre doce tickets distintos. Intentos sin salida verificable no sumados.
+- [Resultado T02-v7](../experiments/2026-10-15-t02-v7/README.md). Próximo T04 con Sistema/ejemplos sin cambios; revisar cantidades, fecha y uso del almacén informado.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

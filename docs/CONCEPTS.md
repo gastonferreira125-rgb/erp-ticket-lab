@@ -184,4 +184,4 @@ Cada concepto nuevo se documentará con explicación en español, término en in
 
 El glosario es material de estudio; sus preguntas no se consideran respondidas ni aprobadas automáticamente. Continuaremos de a un concepto por práctica.
 
-Al 14 de octubre de 2026, v7 está preparada sin resultados. Esta actualización de documentación no añade ejecuciones y no instala una skill. Próximo ejercicio: T02 con los seis mensajes de v7 y revisión específica de datos_faltantes.
+Al 15 de octubre de 2026, v7 tiene una [respuesta registrada de T02](../experiments/2026-10-15-t02-v7/README.md): formato/etiquetas conformes, datos_faltantes vacío. EX01/EX02 son contexto con respuestas preparadas; no se espera una salida nueva por ejemplo. La salida de esta prueba corresponde al último Usuario. No hay una skill propia instalada. Próximo ejercicio: T04 conservando ejemplos/Sistema y cambiando solo el último Usuario.
