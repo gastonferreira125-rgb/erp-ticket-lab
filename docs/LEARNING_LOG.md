@@ -323,6 +323,15 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - v7: una respuesta, un ticket, cobertura 1/10. Total entre versiones: 39 respuestas registradas sobre doce tickets distintos. Intentos sin salida verificable no sumados.
 - [Resultado T02-v7](../experiments/2026-10-15-t02-v7/README.md). Próximo T04 con Sistema/ejemplos sin cambios; revisar cantidades, fecha y uso del almacén informado.
 
+## 15 de octubre de 2026 — T04-v7
+- JSON original recibido como texto tras indicación de cambiar solo el último Usuario; sin captura final/payload ni parámetros completos.
+- evaluate.py ejecutado para T04 y consolidación T02/T04: formato/etiquetas conformes, sin referencias inventadas literalmente ni ids duplicados/desconocidos.
+- Resumen fiel conserva ART-310 y almacén central. datos_faltantes pide cantidad del sistema, cantidad física y fecha: datos ausentes concretos y útiles; no solicita de nuevo el almacén informado.
+- Mejora observada frente a T04-v6 con lista vacía. T04 es muy parecido a EX02: aplicación de patrón cercano, no prueba amplia de generalización. Caso previamente usado para ajuste, no independiente.
+- v7: dos respuestas sobre dos tickets, cobertura 2/10 y etiquetas/formato 2/2 entre ejecutados. T02 sigue vacío; no afirmar mejora uniforme.
+- Total entre versiones: 40 respuestas registradas sobre doce tickets distintos. [T04-v7](../experiments/2026-10-15-t04-v7/README.md), [controles consolidados](../experiments/2026-10-15-v7-controls/README.md).
+- Próximo T06 cambiando solo último Usuario; comprobar requisitos de reporte, sin copiar preguntas de stock. Luego T10.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

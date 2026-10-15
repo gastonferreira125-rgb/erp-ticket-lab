@@ -1,0 +1,1 @@
+{ "ticket_id": "T04", "categoria": "Inventario", "prioridad": "Media", "resumen": "El stock de ART-310 en el almacén central difiere del conteo físico.", "referencia_documento": "ART-310", "datos_faltantes": [ "Cantidad registrada en el sistema", "Cantidad obtenida en el conteo físico", "Fecha del conteo físico" ] }

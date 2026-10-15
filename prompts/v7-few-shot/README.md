@@ -1,4 +1,4 @@
-# v7-few-shot — primera respuesta T02 registrada
+# v7-few-shot — controles parciales T02/T04
 
 Único cambio frente a v6: añadir dos ejemplos sintéticos mediante pares de mensajes Usuario/Asistente. system.txt es idéntico al System v6; mismo modelo y parámetros solicitados. No se añaden nuevas reglas ni se cambian esquema/etiquetas.
 
@@ -18,11 +18,11 @@ Objetivo: observar si los ejemplos ayudan a pedir información concreta y útil 
 
 Pruebas previstas: T02, T04, T06 y T10. Revisar id/etiquetas y datos faltantes sin exigir lista textual idéntica al ejemplo. No guardar respuestas de demostración como resultados del modelo. Luego casos nuevos y repeticiones.
 
-## Primer resultado y siguiente paso
+## Resultados y siguiente paso
 
 15 de octubre: [T02-v7](../../experiments/2026-10-15-t02-v7/README.md), formato y etiquetas conformes; datos_faltantes vacío, sin mejora observada de ese campo frente a T02-v6. Cobertura 1/10. Resultado pegado como texto tras instrucciones de completar seis bloques; payload final y parámetros numéricos actuales no verificados.
 
-EX01/EX02 tienen respuestas Asistente preparadas, por lo que se usan como contexto; la salida nueva de esta prueba corresponde a T02. No son tres ejecuciones medidas. Próximo T04 cambiando solo el último Usuario; conservar reglas/ejemplos/configuración solicitada.
+EX01/EX02 tienen respuestas Asistente preparadas, por lo que se usan como contexto; la salida nueva de esta prueba corresponde a T02. No son tres ejecuciones medidas. [T04-v7](../../experiments/2026-10-15-t04-v7/README.md) añade preguntas útiles de cantidades y fecha sin volver a pedir almacén. Patrón muy cercano a EX02; mejora observada del caso, no generalización amplia. [Consolidación](../../experiments/2026-10-15-v7-controls/README.md): dos respuestas conformes en etiquetas/formato, cobertura 2/10; contenido no mejora uniformemente porque T02 sigue vacío. Próximo T06 cambiando solo el último Usuario; conservar reglas/ejemplos/configuración solicitada.
 
 ## Fuentes de la técnica
 - SAP: https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/few-shot-learning-7ffdf9a6d89c465d8058634e7c4bb19c

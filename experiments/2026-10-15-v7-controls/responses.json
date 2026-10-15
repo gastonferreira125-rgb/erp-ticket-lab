@@ -1,0 +1,22 @@
+[
+  {
+    "ticket_id": "T02",
+    "categoria": "Finanzas",
+    "prioridad": "Alta",
+    "resumen": "La factura FV-1042 no se contabiliza, bloqueando al equipo de Finanzas y el cierre.",
+    "referencia_documento": "FV-1042",
+    "datos_faltantes": []
+  },
+  {
+    "ticket_id": "T04",
+    "categoria": "Inventario",
+    "prioridad": "Media",
+    "resumen": "El stock de ART-310 en el almacén central difiere del conteo físico.",
+    "referencia_documento": "ART-310",
+    "datos_faltantes": [
+      "Cantidad registrada en el sistema",
+      "Cantidad obtenida en el conteo físico",
+      "Fecha del conteo físico"
+    ]
+  }
+]
