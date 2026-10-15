@@ -1,0 +1,12 @@
+[
+  {
+    "id": "T13",
+    "text": "Desde ayer, algunas facturas de la tienda no llegan al ERP. Otras sí se importan y el equipo de Finanzas sigue trabajando. La factura FV-2086 es un ejemplo afectado.",
+    "expected": {
+      "ticket_id": "T13",
+      "categoria": "Integraciones",
+      "prioridad": "Media",
+      "referencia_documento": "FV-2086"
+    }
+  }
+]

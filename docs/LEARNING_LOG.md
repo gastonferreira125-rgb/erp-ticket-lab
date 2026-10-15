@@ -351,6 +351,16 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - T13 preparado como caso complementario nuevo para v7: etiquetas y criterios humanos guardados antes de observar respuesta, sin incorporarlo como ejemplo ni contar como ejecución. Variante cercana a T11, objeto factura/área Finanzas e impacto parcial. Evaluar separado del conjunto original.
 - Próximo: ejecutar T13 cambiando únicamente último Usuario, sin mostrar etiquetas esperadas al modelo.
 
+## 15 de octubre de 2026 — T13-v7, caso complementario
+- Respuesta original recibida como JSON. Expectations y criterios previos persistidos antes de salida, sin ajuste específico para T13; variante cercana a T11.
+- evaluate.py ejecutado sobre conjunto complementario T13: formato/etiquetas 1/1, Integraciones/Media/FV-2086, sin referencias inventadas literalmente ni ids desconocidos/duplicados.
+- Resumen fiel a importación parcial, sin causas/soluciones inventadas; omite continuidad explícita del equipo. Horario y sistema de origen útiles; pregunta sobre todas las facturas ya respondida por entrada, aunque tipo específico aporta un detalle ausente.
+- Aprendizaje: clasificar correctamente no garantiza usar perfectamente todos los datos. Mejor pregunta humana: qué comparten las facturas afectadas; no se modifica respuesta original ni prompt.
+- Resultado complementario separado del conjunto original v7: originales 4/4 conformes entre ejecutados, cobertura 4/10; T13 1/1 aparte. No demuestra generalización amplia.
+- Total entre versiones: 43 respuestas registradas sobre trece tickets distintos. [T13-v7](../experiments/2026-10-15-t13-v7/README.md).
+- Fuente textual, sin captura final/payload ni todos los parámetros numéricos actuales verificados.
+- Próximo repetir T02 con v7 sin cambios, guardar segunda ejecución por separado y observar datos_faltantes antes de otro ajuste. No contar repetición como nuevo ticket.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

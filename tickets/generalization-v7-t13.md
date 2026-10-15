@@ -1,6 +1,6 @@
-# T13 — caso complementario v7 preparado, sin resultados
+# T13 — caso complementario v7: diseño previo y resultado
 
-Fecha: 15 de octubre de 2026. [Entrada y etiquetas](generalization-v7-t13.json) definidas antes de recibir salida del modelo. No se ejecutó y no aumenta el conteo de tickets probados.
+Fecha: 15 de octubre de 2026. [Entrada y etiquetas](generalization-v7-t13.json) definidas antes de recibir salida del modelo. Al preparar este documento no estaba ejecutado. Ahora cuenta con [resultado guardado](../experiments/2026-10-15-t13-v7/README.md): etiquetas/formato 1/1 y revisión humana con una pregunta parcialmente redundante. Los criterios previos siguientes se conservan sin modificaciones.
 
 Objetivo: aplicar categoría por intercambio entre sistemas pese a factura/Finanzas, distinguir impacto parcial de proceso detenido para todo el equipo y extraer una referencia explícita. Es una variante cercana al caso T11 ya estudiado; no una prueba de toda la distribución real.
 
