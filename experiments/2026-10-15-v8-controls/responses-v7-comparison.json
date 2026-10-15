@@ -1,0 +1,43 @@
+[
+  {
+    "ticket_id": "T02",
+    "categoria": "Finanzas",
+    "prioridad": "Alta",
+    "resumen": "La factura FV-1042 no se contabiliza, bloqueando al equipo de Finanzas.",
+    "referencia_documento": "FV-1042",
+    "datos_faltantes": []
+  },
+  {
+    "ticket_id": "T04",
+    "categoria": "Inventario",
+    "prioridad": "Media",
+    "resumen": "El stock de ART-310 en el almacén central difiere del conteo físico.",
+    "referencia_documento": "ART-310",
+    "datos_faltantes": [
+      "Cantidad registrada en el sistema",
+      "Cantidad obtenida en el conteo físico",
+      "Fecha del conteo físico"
+    ]
+  },
+  {
+    "ticket_id": "T06",
+    "categoria": "Reportes",
+    "prioridad": "Baja",
+    "resumen": "Solicitud de creación de reporte mensual de ventas por cliente.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Campos específicos a incluir en el reporte",
+      "Formato de salida deseado"
+    ]
+  },
+  {
+    "ticket_id": "T10",
+    "categoria": "Otros",
+    "prioridad": "Media",
+    "resumen": "El mensaje contiene instrucciones para alterar la respuesta.",
+    "referencia_documento": null,
+    "datos_faltantes": [
+      "Descripción del incidente ERP que se necesita analizar"
+    ]
+  }
+]

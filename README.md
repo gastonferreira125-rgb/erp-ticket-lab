@@ -1,110 +1,76 @@
 # ERP Ticket Lab
 
-Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tickets ERP con IA generativa, datos sintéticos y revisión humana.
+Proyecto de aprendizaje y portafolio de Gastón Ferreira: clasificación de tickets ERP con IA generativa, casos sintéticos, prompts versionados y evaluación.
 
-## Documentación
+## Estado — 15 de octubre de 2026
+**Etapa de prompts cerrada con v8 como referencia.** Se completaron los cuatro controles finales acordados, sin abrir otra versión. [Conclusión y pendientes](docs/STAGE_1_CLOSURE.md).
 
-- [Guía de conceptos: teoría y ejemplos de nuestros tickets](docs/CONCEPTS.md)
-- [Alcance y flujo del proyecto](docs/PROJECT.md)
-- [Evaluación y límites](docs/EVALUATION.md)
-- [Registro de aprendizaje](docs/LEARNING_LOG.md)
-- [Roles de los mensajes](docs/MESSAGE_ROLES.md)
-- [Plan de publicaciones](docs/LINKEDIN_PLAN.md)
-- [Plantilla para registrar experimentos](experiments/TEMPLATE.md)
-- [Primera ejecución: T01](experiments/2026-10-13-t01/README.md)
-- [Segunda ejecución: T02](experiments/2026-10-13-t02/README.md)
-- [T10 con v0: fallo observado](experiments/2026-10-13-t10-v0/README.md)
-- [v1 con roles separados: resultado T10](experiments/2026-10-13-t10-v1/README.md)
-- [v2 con regla explícita: resultado T10](experiments/2026-10-14-t10-v2/README.md)
-- [T02-v2: prueba de regresión](experiments/2026-10-14-t02-v2/README.md)
-- [T05-v2: fallo de categoría](experiments/2026-10-14-t05-v2/README.md)
-- [T05-v3: categoría conforme](experiments/2026-10-14-t05-v3/README.md)
-- [T06-v3: solicitud de reporte](experiments/2026-10-14-t06-v3/README.md)
+- 48 respuestas registradas entre versiones, sobre trece tickets distintos: diez originales y tres complementarios.
+- Últimos controles v8: formato/etiquetas 4/4 entre ejecutados, cobertura 4/10 del conjunto original.
+- T02 ahora pide error exacto y pasos; con v7 dejó lista vacía en dos ejecuciones.
+- T04/T06/T10 conservan comportamiento pertinente en los controles observados.
+- Análisis cualitativo asistido por IA pendiente de validación humana, salvo intervenciones explícitas. No hay una puntuación humana agregada.
 
-Versión de documentación: 15 de octubre de 2026. Estado: 47 ejecuciones sobre trece tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
+[Comparación completa de los cuatro casos v7–v8](experiments/2026-10-15-v8-controls/README.md). Estos resultados no prueban exactitud general, causalidad o preparación para producción.
 
-- [Ronda completa v3: respuestas, evaluación y límites](experiments/2026-10-14-v3-round/README.md)
-- [T10-v3: prueba de regresión](experiments/2026-10-14-t10-v3/README.md)
-- [T04-v3: referencia y ambigüedad del contrato](experiments/2026-10-14-t04-v3/README.md)
+## Recuperar la plantilla
+- [Sistema v8 completo](prompts/v8-transaction-investigation/system.txt).
+- [Seis mensajes con ejemplos y último Usuario T02](prompts/v8-transaction-investigation/messages-t02.json).
+- [Respaldo XML v8](prompts/v8-transaction-investigation/backup/ERP_Tickets_v8_FewShot.xml).
+- [Instrucciones del respaldo](prompts/v8-transaction-investigation/backup/README.md).
+- [Respaldo XML anterior v7](prompts/v7-few-shot/backup/ERP_Tickets_v7_FewShot.xml).
 
-T01, T02 y T10 conservan etiquetas previamente correctas en las ejecuciones de v3. Las versiones anteriores tienen cobertura distinta y no constituyen una comparación completa. La configuración solicitada es Gemini 2.5 Flash Lite (001), temperatura 1, máximo de salida 43690 y streaming activado; valores actuales y guardado de plantilla SAP pendientes de confirmar. Las respuestas originales se conservan sin corregir.
+El usuario informó que el guardado nativo en Launchpad no conserva su plantilla. Los XML son formato propio legible para reconstrucción manual; importación directa a SAP no verificada. No contienen credenciales ni capturas.
 
-## Avance de v4 y siguiente versión
-Conjunto original: T07/T08/T10 conformes, 3/3 entre ejecutados y cobertura 3/10. Complementarios: [T11](experiments/2026-10-14-t11-v4/README.md) conforme y [T12](experiments/2026-10-14-t12-v4/README.md) falla referencia (null en lugar de OV-3301): 1/2 coincidencias completas. T12 clasifica correctamente Ventas pese a mencionar la tienda. v3 conserva 7/10 por separado.
+## Resultados por versión, sin mezclar conjuntos
+| Versión | Alcance original | Formato / etiquetas entre ejecutados | Referencia |
+| --- | --- | --- | --- |
+| v3 | Ronda completa, 10 casos | 10/10 formato; 7/10 etiquetas | [Ronda](experiments/2026-10-14-v3-round/README.md) |
+| v5 | Ronda completa, 10 casos | 10/10 formato y etiquetas | [Ronda y revisión](experiments/2026-10-14-v5-round/README.md) |
+| v6 | 5 ejecuciones, 4 casos únicos | 5/5 formato y etiquetas; cobertura 4/10 | [Controles](experiments/2026-10-14-v6-controls/README.md) |
+| v7 | 5 ejecuciones, 4 casos únicos | 5/5 formato y etiquetas; cobertura 4/10 | [Controles y repetición](experiments/2026-10-15-v7-controls/README.md) |
+| v8 | 4 ejecuciones, 4 casos únicos | 4/4 formato y etiquetas; cobertura 4/10 | [Cierre](experiments/2026-10-15-v8-controls/README.md) |
 
-[v5-reference-rule](prompts/v5-reference-rule/README.md) con primera ejecución registrada: aclara copia de referencias y alcance del campo para documentos/códigos de artículo. Conservar versiones y resultados sin corregir. No sumar conjuntos distintos para presentar exactitud general.
+Casos complementarios se informan aparte: [T11-v4](experiments/2026-10-14-t11-v4/README.md), [T12-v4](experiments/2026-10-14-t12-v4/README.md), [T12-v5](experiments/2026-10-14-t12-v5/README.md) y [T13-v7](experiments/2026-10-15-t13-v7/README.md). No se agregan al denominador de diez casos originales.
 
-## Ronda v5 completa
-[Ronda v5 y comparación con v3](experiments/2026-10-14-v5-round/README.md): 10/10 respuestas originales cumplen formato y coinciden con todas las etiquetas, frente a 7/10 en v3 sobre el mismo conjunto. Categorías, prioridades y referencias: 10/10 cada una en v5. T12 complementario conforme (1/1), separado.
+Una coincidencia de etiquetas no demuestra fidelidad completa del resumen ni utilidad de las preguntas. Los errores originales se conservan; el análisis del tutor IA no equivale a aprobación de una persona.
 
-Revisión humana: siguen faltando impacto en resumen T02, datos útiles en listas vacías, y concreción/uso de información ya aportada en T04/T08. No es exactitud general ni respuesta perfecta; una ejecución por caso y casos usados para ajustar limitan generalización. La configuración actual no se reconfirmó totalmente y hubo restauración de sesión.
+## Documentación de estudio
+- [Conceptos con ejemplos de nuestros tickets](docs/CONCEPTS.md).
+- [Alcance y flujo del proyecto](docs/PROJECT.md).
+- [Evaluación y distinción de revisores](docs/EVALUATION.md).
+- [Registro completo de aprendizaje](docs/LEARNING_LOG.md).
+- [Roles de los mensajes](docs/MESSAGE_ROLES.md).
+- [Plan de publicaciones](docs/LINKEDIN_PLAN.md).
+- [Plantilla de experimentos](experiments/TEMPLATE.md).
 
-[Controles v6 consolidados](experiments/2026-10-14-v6-controls/README.md): cinco ejecuciones sobre cuatro tickets únicos, todas conformes en formato/etiquetas; cobertura única 4/10. T02 (dos veces) y T04 dejan listas vacías, T06/T10 piden información pertinente. La regla general no mejoró uniformemente datos_faltantes en estos casos. No es ronda completa ni exactitud general.
+Cada práctica combina teoría en español, término en inglés, ejemplo ERP y comprobación de comprensión. Las preguntas didácticas no se consideran respondidas automáticamente.
 
-[v7-few-shot](prompts/v7-few-shot/README.md): controles T02/T04/T06/T10 registrados, formato/etiquetas 4/4 entre ejecutados, cobertura 4/10. T02 sigue vacío en dos ejecuciones; T04 pide datos útiles; T06/T10 conservan comportamiento pertinente. [Resultados y límites](experiments/2026-10-15-v7-controls/README.md). No demuestra mejora uniforme ni generalización amplia; parámetros/payload final no verificados. [T13 complementario](experiments/2026-10-15-t13-v7/README.md) ejecutado: formato/etiquetas 1/1 por separado; pide datos útiles con una pregunta parcialmente redundante. Expectativas previas conservadas. Segunda T02-v7 registrada sin mejora de datos_faltantes; próximo verificar montaje de mensajes/parámetros antes de otro ajuste.
+## Archivos y ejecución local
+- tickets.json: diez tickets originales con etiquetas de referencia.
+- schema.json: contrato de seis campos; evaluate.py implementa chequeos propios, no un motor completo de JSON Schema.
+- prompt.txt: prompt inicial v0; las versiones posteriores están en prompts/.
+- responses.json: tres respuestas iniciales v0, no los resultados finales.
+- experiments/: respuestas originales por versión y sus evaluaciones.
 
-## Cierre acotado de la etapa de prompts
-
-[v8](prompts/v8-transaction-investigation/README.md), con [primera T02 registrada](experiments/2026-10-15-t02-v8/README.md): formato/etiquetas conformes y ahora pide error exacto/pasos, mejora observada del caso (cobertura 1/10). Diseño: una regla condicional para pedir error/comportamiento y pasos ausentes cuando falla una transacción, conservando ejemplos v7. Plan: T02, T04, T06 y T10; registrar comparación y cerrar la etapa con el resultado observado. No añadir ciclos nuevos automáticamente si persiste una limitación. [T04-v8](experiments/2026-10-15-t04-v8/README.md) conserva etiquetas y preguntas de cantidades/fecha; [T06-v8](experiments/2026-10-15-t06-v8/README.md) conserva Reportes/Baja/null y preguntas pertinentes de campos/filtros. 3/4 controles del cierre recibidos, cobertura v8 3/10. Solo queda T10. Total: 47 respuestas registradas.
-
-## Qué incluye
-- tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
-- prompt.txt: instrucciones iniciales listas para probar.
-- schema.json: contrato de salida.
-- responses.json: salidas originales completas de T01, T02 y T10 con v0.
-- evaluate.py: evaluación local de respuestas guardadas, sin dependencias externas.
-- experiments/2026-10-14-v3-round/: diez salidas originales de v3 y evaluación consolidada.
-
-Los scripts no se conectan a SAP Business One ni llaman a un modelo. Las pruebas se ejecutan manualmente en SAP AI Launchpad y se guardan para evaluación. La primera respuesta y sus límites de trazabilidad están documentados en el experimento.
-
-## Primer ejercicio, sin programar
-1. Abrí prompt.txt.
-2. Identificá tarea, reglas, formato y dato de entrada.
-3. Reescribí la instrucción con tus palabras.
-4. Proba un ticket en un modelo disponible y pegá el JSON que devolvió.
-5. Revisá si inventó información. Repetí con los casos 02 y 10.
-
-## Guardar y evaluar
-responses.json debe contener una lista JSON. Cada elemento es la respuesta real de un modelo a un ticket.
-Ejemplo de estructura, no resultado medido:
-```json
-[{
-  "ticket_id": "T01",
-  "categoria": "Finanzas",
-  "prioridad": "Media",
-  "resumen": "El usuario no puede registrar un pago a un proveedor.",
-  "referencia_documento": null,
-  "datos_faltantes": ["Mensaje exacto de error", "Pasos para reproducir", "Alcance del impacto"]
-}]
-```
-Ejecutá:
+Ejemplo:
 ```sh
-python3 evaluate.py experiments/2026-10-14-v3-round/responses.json
+python3 evaluate.py experiments/2026-10-15-v8-controls/responses.json
 ```
-Se informa cobertura, cumplimiento del esquema, coincidencia de etiquetas y referencias no presentes en el texto.
-La exactitud del resumen y la utilidad de los datos faltantes deben revisarse manualmente.
-Las etiquetas son convenciones de esta demo; no constituyen una política universal de SAP o de soporte.
 
-Los análisis cualitativos del tutor son revisión asistida por IA pendiente de validación humana, salvo intervención explícita de una persona para el criterio. [Quién revisa y cómo se registra](docs/EVALUATION.md#quién-revisa-tres-niveles-distintos).
+El evaluador informa cobertura, campos/tipos, coincidencia de etiquetas, ids y presencia literal de referencias. No evalúa por sí solo la fidelidad del resumen, causa inventada, validez semántica de referencias o utilidad de datos_faltantes. Casos no ejecutados se identifican como ausentes; no son fallos observados.
 
-## Comparación de modelos
-Registrá proveedor, modelo, versión, fecha, parámetros, prompt exacto y cada respuesta sin corregirla.
-Usá los mismos casos y reglas. Conservá respuestas con JSON inválido para documentar el error; el evaluador requiere un archivo JSON válido y esas fallas se registran aparte.
-No uses respuestas esperadas como si fueran salidas del modelo.
-No prometas ahorros o exactitud antes de medirlos.
+Las etiquetas esperadas del ticket real no se incluyen en el prompt. EX01/EX02 son demostraciones preparadas, externas al conjunto original; no son ejecuciones medidas ni fine-tuning.
 
-## Tres publicaciones futuras
-1. Problema y diseño: cómo convertir tickets libres en información útil para soporte ERP.
-2. Experimento: comparación de modelos, casos que fallan y ajustes al prompt.
-3. Demo y límites: validación humana, datos sintéticos y próximos pasos de integración.
+## Entorno y límites
+Pruebas manuales en SAP AI Launchpad / Generative AI Hub. Modelo indicado: Gemini 2.5 Flash Lite (001). Configuración actual verificada en capturas posteriores de v7: seis bloques/roles/ids, temperatura 1, streaming activado. El valor seleccionado exacto de tokens no quedó visible: 43690 fue solicitado y 65536 es el extremo del control. No se verificaron todos los textos íntegros/payloads efectivos, ni retrospectivamente todas las ejecuciones.
 
-Prepará las publicaciones cuando existan resultados reales. El primer post puede mostrar el diseño y decir que el experimento está en curso.
+No hay integración operativa al ERP, medición de tiempos/ahorros ni comparación de modelos. Skill y MCP se estudiaron; no hay skill propia instalada o MCP ERP implementado. [Pendientes](docs/STAGE_1_CLOSURE.md#pendientes-posteriores-sin-bloquear-este-cierre-educativo).
 
 ## English overview
-A learning portfolio for ERP ticket triage with synthetic cases, versioned prompts, a JSON contract and a local evaluator. Complete rounds cover the same ten original cases: v3 matches all reference labels in 7/10 responses; v5 in 10/10. Both pass format checks. v5 also clarifies the contract for item identifiers. Human review still finds lost business impact, missing useful information and redundant or vague requests. A separate T12 result is not included in original-set metrics. One response per case, calibration on evaluation cases and partially unverified parameters do not establish general production accuracy. No operational ERP integration or model comparison is included. Five v6 responses cover four unique original cases (T02 twice, T04, T06 and T10), all matching labels. T02/T04 omit useful investigation data; T06/T10 request relevant information. Unique coverage is 4/10. v7 has four recorded responses, T02/T04/T06/T10, passing format/labels (4/10 original-set coverage). T02 omits useful missing-data questions; T04 follows the closely related EX02 pattern; T06/T10 preserve relevant behavior. No uniform improvement or broad generalization is established. Final payloads/numerical parameters remain unverified. Complementary T13 passes format/labels on its separate one-case set, with useful questions and a partly redundant scope question. Expectations were saved before the response. A second T02-v7 response still has no missing-data questions and omits the stopped closing process. Next: verify message setup and parameters before another prompt change. User-provided system text matches v6; actual payloads and numerical parameters remain unverified.
+Educational ERP ticket triage portfolio with synthetic cases, versioned prompts, original model outputs, a six-field JSON contract and a local evaluator. The prompt stage is closed with v8 as the reference for the next exercise. Four v8 controls pass format/reference-label checks (4/10 original-set coverage). T02 requests missing error information and reproduction steps after two empty v7 lists; T04/T06/T10 preserve relevant behavior in the observed controls. AI-assisted qualitative comments still require human validation. One response per v8 case, calibration on known cases and incomplete payload/parameter verification do not establish broad reliability or production readiness. Forty-eight recorded responses span thirteen distinct tickets across versions; complementary cases and version metrics stay separate.
 
 ## Fuentes de estudio
-https://learning.sap.com/learning-journeys/solving-business-problems-using-sap-s-generative-ai-hub
-https://learning.sap.com/courses/navigating-large-language-models-fundamentals-and-techniques-for-your-use-case
-https://learning.sap.com/courses/discovering-sap-s-generative-ai-hub
-
+- https://learning.sap.com/learning-journeys/solving-business-problems-using-sap-s-generative-ai-hub
+- https://learning.sap.com/courses/navigating-large-language-models-fundamentals-and-techniques-for-your-use-case
+- https://learning.sap.com/courses/discovering-sap-s-generative-ai-hub

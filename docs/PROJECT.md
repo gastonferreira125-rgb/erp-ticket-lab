@@ -1,50 +1,32 @@
 # Proyecto y alcance
 
-Autor: Gastón Ferreira. Proyecto de aprendizaje aplicado y portafolio.
+Autor: Gastón Ferreira. Aprendizaje aplicado y portafolio.
 
-## Problema
-Los tickets ERP llegan con texto libre, detalles incompletos y distintos niveles de impacto. El proyecto explora cómo un LLM puede proponer categoría, prioridad, resumen y datos faltantes para facilitar la revisión humana.
+## Problema y resultado de la etapa
+Los tickets ERP llegan con texto libre, detalles incompletos y distinto impacto. Se explora un modelo que propone categoría, prioridad, resumen, referencia y datos faltantes para revisión posterior.
 
-## Primera versión
-- Diez incidentes ficticios con etiquetas de referencia.
-- Prompt inicial y contrato JSON.
-- Evaluador local en Python sin dependencias externas.
-- Práctica manual iniciada en SAP AI Launchpad y Generative AI Hub.
+Al 15 de octubre de 2026, la etapa de prompts y evaluación queda cerrada con v8. Se registraron 48 respuestas entre versiones sobre trece tickets distintos. Rondas completas: v3 coincide en todas las etiquetas para 7/10, v5 para 10/10; ambas cumplen formato 10/10. Controles finales v8: formato/etiquetas 4/4 entre ejecutados, cobertura 4/10. Casos complementarios y versiones no se mezclan para presentar exactitud general.
 
-Estado al 15 de octubre de 2026: 47 ejecuciones sobre trece tickets distintos. Ronda v3 completa: 10/10 respuestas conformes en formato y 7/10 coincidencias completas de etiquetas; categorías 9/10, prioridades 10/10, referencias 8/10. T03/T04 omiten referencias, y T07 falla categoría. T04 expone una ambigüedad del contrato para códigos de artículo. T01/T02/T10 conservan etiquetas previamente correctas en estas ejecuciones. [Ronda y revisión humana](../experiments/2026-10-14-v3-round/README.md).
+En T02, v7 dejó listas vacías dos veces y v8 pide error/pasos. T04/T06/T10 conservan comportamiento pertinente. Análisis de contenido asistido por IA, pendiente de validación personal salvo intervención explícita. [Cierre, evidencia y límites](../experiments/2026-10-15-v8-controls/README.md).
 
-No hay integración operativa con ERP, medición de tiempos ni comparación de modelos. Faltan repeticiones y casos nuevos independientes del ajuste; valores actuales y guardado en SAP pendientes de confirmar.
+## Flujo realizado
+1. Definir tickets sintéticos y etiquetas de referencia antes de observar su salida.
+2. Versionar reglas, roles y luego ejemplos.
+3. Ejecutar manualmente en SAP AI Launchpad.
+4. Conservar originales sin corregir.
+5. Evaluar campos/tipos y etiquetas mediante evaluate.py.
+6. Analizar contenido y registrar límites de evidencia, diferenciando al tutor IA de una persona.
+7. Hacer controles de regresión y casos nuevos; cerrar el último ciclo según alcance acordado.
 
-## Flujo experimental
-1. Seleccionar un ticket y copiar únicamente su id y texto al modelo.
-2. Ejecutar el prompt y conservar la salida original.
-3. Registrar modelo, versión, parámetros, fecha y versión del prompt.
-4. Evaluar formato y etiquetas; revisar contenido manualmente.
-5. Documentar errores y ajustar el prompt en una versión nueva.
+La regla Alta/Baja/Media es una política de este laboratorio, no un estándar corporativo universal. Etiquetas de evaluación no se envían con el ticket real al modelo.
 
-Las etiquetas esperadas se usan después de generar la respuesta, nunca como entrada al modelo. El conjunto pequeño sirve como prueba educativa, no permite demostrar calidad general en producción.
+## Entregables
+[Guía de conceptos](CONCEPTS.md), [roles](MESSAGE_ROLES.md), [evaluación](EVALUATION.md), [registro de aprendizaje](LEARNING_LOG.md), prompts v0–v8 y resultados por experimento. [XML v8](../prompts/v8-transaction-investigation/backup/ERP_Tickets_v8_FewShot.xml) conserva seis mensajes previstos para recuperación manual; no es export SAP nativo.
 
-Las notas cualitativas del tutor IA requieren validación de una persona; ver [distinción de revisores](EVALUATION.md#quién-revisa-tres-niveles-distintos). No atribuirlas al usuario sin intervención explícita.
+## Alcance técnico verificado
+Modelo indicado Gemini 2.5 Flash Lite (001). Capturas posteriores de v7 confirmaron seis bloques/roles/ids, temperatura 1 y streaming activado. Máximo de tokens seleccionado y todos los payloads efectivos no verificados. Guardado nativo SAP informado como fallido.
 
-## Criterios de aceptación
-- Salida con los campos y tipos definidos.
-- Clasificación coherente con las reglas publicadas.
-- Resumen sin causas o soluciones inventadas.
-- Identificadores copiados del ticket.
-- Información faltante útil para investigar.
-- Revisión humana previa a cualquier uso operativo.
+No hay conexión operativa al ERP, cambios en datos reales, medición de ahorros, comparación de modelos ni RAG implementado. La skill propia y el MCP ERP son ejemplos conceptuales, no implementaciones.
 
-## Avance v4
-T07/T08/T10 conformes del conjunto original (3/3 entre ejecutados, cobertura 3/10). Complementarios T11/T12: 1/2 coincidencias completas. T12 conserva Ventas y Media pero omite OV-3301 en referencia_documento. El contraste de categoría pasa; la extracción falla. [Resultado T12](../experiments/2026-10-14-t12-v4/README.md).
-
-v5 completó los diez tickets del conjunto original: 10/10 en formato y todas las etiquetas. v3: 7/10 en etiquetas del mismo conjunto. T12 complementario conforme (1/1), aparte. La aclaración de códigos de artículo resolvió una ambigüedad del contrato; no atribuir toda diferencia únicamente a capacidad del modelo. Revisión humana mantiene pérdidas de impacto y utilidad de datos faltantes. [Comparación y límites](../experiments/2026-10-14-v5-round/README.md).
-
-v5 congelada. v6 añade únicamente calidad de datos_faltantes. Cinco ejecuciones sobre cuatro tickets (T02 dos veces, T04, T06 y T10): etiquetas conformes, cobertura única 4/10. T02/T04 tienen listas vacías pese a faltar información útil; T06 pide campos/filtros pertinentes para el reporte. No demostrar mejora global del campo frente a v5. Texto completo de Sistema aportado posteriormente coincide con v6 guardada; no confirma retrospectivamente payload o parámetros de la primera ejecución. No inferir incumplimiento general o error de copia.
-
-## Próximas entregas
-v7 cierra controles dirigidos con cuatro respuestas T02/T04/T06/T10: formato/etiquetas 4/4 entre ejecutados, cobertura 4/10. T02 mantiene lista vacía, T04 solicita cantidades/fecha, T06/T10 conservan comportamiento pertinente. No demuestra mejora uniforme ni generalización amplia; payload/parámetros no totalmente verificados. [Controles v7](../experiments/2026-10-15-v7-controls/README.md).
-
-Diseño v7 con System v6 idéntico y dos pares de ejemplos Usuario/Asistente EX01/EX02, externos al benchmark. T13 complementario ejecutado con expectativas previas: formato/etiquetas 1/1 en su conjunto separado; preguntas útiles de horario/origen y alcance parcialmente redundante. [Resultado T13](../experiments/2026-10-15-t13-v7/README.md). No sumarlo a las métricas originales ni afirmar generalización amplia. Segunda T02-v7 registrada por separado: mantiene lista vacía y omite cierre en resumen. v7 tiene cinco ejecuciones sobre cuatro casos originales, más T13 separado; cobertura original sigue 4/10. Próximo verificar montaje actual de seis mensajes/parámetros y guardar plantilla SAP si es posible antes de otro ajuste. Conservar respuestas y comprobar id, formato, etiquetas e información faltante útil. Demostraciones diseñadas no son ejecuciones medidas ni fine-tuning. Casos nuevos/repeticiones, precisión del impacto en resumen, comparación de modelos y demo pendientes. [v6 consolidada](../experiments/2026-10-14-v6-controls/README.md), [diseño v7](../prompts/v7-few-shot/README.md).
-
-## Plan acotado de cierre de la etapa
-El 15 de octubre el usuario pidió terminar esta etapa hoy para avanzar. [v8 preparada](../prompts/v8-transaction-investigation/README.md) añade únicamente regla de investigación para transacciones fallidas, manteniendo ejemplos/configuración. Ejecutar T02/T04/T06/T10, comparar y concluir. Si queda una limitación se documenta y pasa a pendientes; sin v9 automática. Es cierre educativo parcial, no validación de producción ni cobertura completa. Primera T02-v8 registrada: formato/etiquetas conformes y pide error exacto/pasos, mejora observada con límites de una ejecución. T04-v8 conserva etiquetas y cantidades/fecha útiles; T06-v8 conserva Reportes/Baja/null y requisitos útiles. 3/4 controles recibidos, cobertura v8 3/10. Queda T10 y cierre. Total 47 respuestas sobre trece tickets. [T02-v8](../experiments/2026-10-15-t02-v8/README.md).
+## Próxima etapa
+[Pendientes y transición](STAGE_1_CLOSURE.md): validación humana, evaluación ampliada, precisión del impacto, trazabilidad de parámetros y siguiente práctica de flujo/orquestación. No se crea v9 automáticamente; el cierre educativo no da por terminada una validación para producción.

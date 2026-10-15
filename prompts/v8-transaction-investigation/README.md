@@ -1,4 +1,4 @@
-# v8 — datos de investigación para transacciones fallidas — T02 registrado
+# v8 — transacciones fallidas — cuatro controles y etapa cerrada
 
 Único cambio del prompt frente a v7: añadir [addendum.txt](addendum.txt) al final de Sistema. [system.txt](system.txt) incluye el texto completo. [messages-t02.json](messages-t02.json) conserva los seis mensajes con EX01/EX02 idénticos y último Usuario T02. [examples.json](examples.json) conserva las mismas demostraciones.
 
@@ -29,9 +29,12 @@ La cobertura será parcial (estos cuatro tickets de los diez originales); el res
 
 No enviar etiquetas esperadas de los controles al modelo. Preparar v8 no añade ejecuciones: total permanece 44 respuestas sobre trece tickets distintos.
 
-## Avance observado
+## Avance observado (registro cronológico)
 Primera [T02-v8](../../experiments/2026-10-15-t02-v8/README.md) recibida: formato/etiquetas conformes y solicita error exacto/pasos ausentes. Objetivo observado en este caso frente a dos listas vacías v7, sin prueba de robustez general. Análisis asistido por IA pendiente de validación humana; fuente textual sin payload completo. 1 de 4 controles de cierre, cobertura 1/10; quedan T04/T06/T10. Total acumulado 45 respuestas sobre trece tickets.
 
 Segundo [control T04-v8](../../experiments/2026-10-15-t04-v8/README.md): formato/etiquetas conformes y cantidades/fecha útiles sin repetir almacén. Conserva comportamiento v7. 2/4 controles de cierre recibidos, cobertura original 2/10; quedan T06/T10. Total 46 respuestas sobre trece tickets. Fuente textual y análisis asistido por IA pendiente de validación personal.
 
 Tercer [control T06-v8](../../experiments/2026-10-15-t06-v8/README.md): formato/etiquetas conformes y campos/filtros pertinentes, sin preguntas de transacción o stock copiadas. 3/4 controles de cierre recibidos, cobertura 3/10; solo queda T10. Total 47 respuestas sobre trece tickets. Después consolidar comparación y cerrar esta etapa.
+
+## Cierre final
+Los cuatro controles T02/T04/T06/T10 se completaron. [Comparación y límites](../../experiments/2026-10-15-v8-controls/README.md): formato/etiquetas 4/4 entre ejecutados, cobertura 4/10. T02 ahora pide error/pasos; tres controles conservan pertinencia básica. Análisis asistido por IA pendiente de validación humana. Total 48 respuestas sobre trece tickets. Etapa cerrada, sin v9 automática. [XML v8](backup/ERP_Tickets_v8_FewShot.xml) y [recuperación](backup/README.md).

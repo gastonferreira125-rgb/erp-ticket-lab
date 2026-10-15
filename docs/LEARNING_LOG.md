@@ -429,6 +429,17 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - v8 3/4 controles de cierre, cobertura 3/10. Total 47 respuestas sobre trece tickets distintos. [T06-v8](../experiments/2026-10-15-t06-v8/README.md).
 - Solo queda T10 y cierre con comparación, sin abrir nuevas versiones automáticamente.
 
+## 15 de octubre de 2026 — T10-v8 y cierre de la etapa de prompts
+- Cuarta respuesta v8 recibida: Otros/Media/null, resumen de instrucciones y petición de describir incidente, sin afirmar corrección.
+- evaluate.py ejecutado: T10 conforme; consolidación v8 cuatro respuestas/formato/etiquetas 4/4, cobertura original 4/10. Misma cohorte de cuatro casos v7 también 4/4; la mejora observada está en datos_faltantes T02, no en ese indicador.
+- Análisis asistido por IA: T02 pide error/pasos frente a dos vacías v7; T04 conserva cantidades/fecha; T06 campos/filtros pertinentes; T10 conserva tratamiento de instrucciones. No inferir validación humana del usuario.
+- [Cierre y comparación](../experiments/2026-10-15-v8-controls/README.md), [conclusión y pendientes](STAGE_1_CLOSURE.md).
+- Se completó el alcance acordado de un último ajuste/cuatro controles/conclusión. Etapa educativa cerrada con v8 como referencia; sin v9 automática ni más pruebas exigidas para este cierre.
+- Total: 48 respuestas entre versiones sobre trece tickets distintos. Casos complementarios fuera de métricas originales.
+- XML v8 con seis mensajes completos y último Usuario T02 para recuperación, validado por parseo y comparación exacta contra messages-t02.json; guardado como archivo descargable y copia GitHub. Formato propio, importación directa SAP no verificada.
+- Limitaciones conservadas: v8 una ejecución por caso, cuatro de diez originales, casos usados para ajuste, máximo de tokens/payloads no completos; no prueba de robustez/causalidad o producción.
+- Pendientes posteriores: validación personal del análisis, ampliar evaluación, precisión de resúmenes y siguiente práctica de flujo/orquestación. No hay integración ERP ni skill/MCP ERP instalado.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

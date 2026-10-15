@@ -14,7 +14,7 @@ v0 usó un único Usuario con reglas y ticket. v1 mantuvo las reglas y las distr
 
 Las versiones v2–v6 precisaron distintas reglas y conservaron Sistema/Usuario. Los resultados y límites están en el [registro de aprendizaje](LEARNING_LOG.md); el diseño histórico v1 está en [v1-roles](../prompts/v1-roles/README.md).
 
-## v7: diseño y primera respuesta T02
+## v7: diseño y primeras respuestas (historial)
 
 Sistema v6 se conserva íntegro. Se añaden dos pares de demostraciones, con esta secuencia:
 
@@ -38,3 +38,6 @@ Los dos mensajes Asistente de ejemplo forman parte de la entrada. La salida nuev
 - [SAP, few-shot learning](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/few-shot-learning-7ffdf9a6d89c465d8058634e7c4bb19c).
 - [SAP Launchpad, Templating](https://help.sap.com/docs/ai-launchpad/sap-ai-launchpad/11d44e657b5946f6880729da08eba0da.html).
 - [Google, estrategias de prompts](https://ai.google.dev/gemini-api/docs/prompting-strategies).
+
+## Estado al cierre de la etapa
+v8 conserva los mismos seis roles y ejemplos; solo añade la regla de transacciones fallidas al Sistema. Se completaron T02/T04/T06/T10 cambiando el último Usuario. [Seis mensajes v8](../prompts/v8-transaction-investigation/messages-t02.json), [XML](../prompts/v8-transaction-investigation/backup/ERP_Tickets_v8_FewShot.xml), [cierre](STAGE_1_CLOSURE.md). Los Asistente de ejemplo siguen siendo contexto, no respuestas medidas.
