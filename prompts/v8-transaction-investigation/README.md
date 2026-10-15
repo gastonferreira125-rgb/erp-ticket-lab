@@ -31,3 +31,5 @@ No enviar etiquetas esperadas de los controles al modelo. Preparar v8 no añade 
 
 ## Avance observado
 Primera [T02-v8](../../experiments/2026-10-15-t02-v8/README.md) recibida: formato/etiquetas conformes y solicita error exacto/pasos ausentes. Objetivo observado en este caso frente a dos listas vacías v7, sin prueba de robustez general. Análisis asistido por IA pendiente de validación humana; fuente textual sin payload completo. 1 de 4 controles de cierre, cobertura 1/10; quedan T04/T06/T10. Total acumulado 45 respuestas sobre trece tickets.
+
+Segundo [control T04-v8](../../experiments/2026-10-15-t04-v8/README.md): formato/etiquetas conformes y cantidades/fecha útiles sin repetir almacén. Conserva comportamiento v7. 2/4 controles de cierre recibidos, cobertura original 2/10; quedan T06/T10. Total 46 respuestas sobre trece tickets. Fuente textual y análisis asistido por IA pendiente de validación personal.

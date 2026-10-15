@@ -415,6 +415,13 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - v8: 1/4 controles del cierre recibidos, cobertura 1/10. Quedan T04/T06/T10 con reglas/ejemplos sin cambios y conclusión, sin nuevas versiones automáticas.
 - Total entre versiones: 45 respuestas sobre trece tickets distintos. [T02-v8](../experiments/2026-10-15-t02-v8/README.md).
 
+## 15 de octubre de 2026 — T04-v8
+- Segundo control del cierre, respuesta original textual. evaluate.py: formato/etiquetas conformes, sin referencias ausentes literalmente ni ids desconocidos/duplicados.
+- Análisis asistido por IA: resumen fiel conserva almacén y ART-310; cantidades/fecha pertinentes sin repetir almacén ni pedir datos transaccionales innecesarios. Conserva comportamiento de T04-v7; validación humana no inferida.
+- Modelo/parámetros sin cambios solicitados; payload completo no capturado, temperatura/streaming confirmados previamente, máximo de tokens seleccionado no verificado.
+- v8: 2/4 controles recibidos, cobertura 2/10; total 46 respuestas sobre trece tickets distintos.
+- [T04-v8](../experiments/2026-10-15-t04-v8/README.md). Quedan T06/T10 y cierre acotado, sin v9 automática.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

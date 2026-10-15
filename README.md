@@ -21,7 +21,7 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira. Clasificación de tick
 - [T05-v3: categoría conforme](experiments/2026-10-14-t05-v3/README.md)
 - [T06-v3: solicitud de reporte](experiments/2026-10-14-t06-v3/README.md)
 
-Versión de documentación: 15 de octubre de 2026. Estado: 45 ejecuciones sobre trece tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
+Versión de documentación: 15 de octubre de 2026. Estado: 46 ejecuciones sobre trece tickets distintos. **Ronda v3 completa: 10/10 respuestas cumplen controles de formato y 7/10 coinciden con todas las etiquetas esperadas.** Categorías 9/10, prioridades 10/10, referencias 8/10. T03 y T04 omiten referencias; T07 devuelve Ventas en lugar de Integraciones. T04 presenta además ambigüedad entre el nombre del campo referencia_documento y el código de artículo esperado. Revisión humana y casos pendientes de mejora están documentados en la ronda.
 
 - [Ronda completa v3: respuestas, evaluación y límites](experiments/2026-10-14-v3-round/README.md)
 - [T10-v3: prueba de regresión](experiments/2026-10-14-t10-v3/README.md)
@@ -45,7 +45,7 @@ Revisión humana: siguen faltando impacto en resumen T02, datos útiles en lista
 
 ## Cierre acotado de la etapa de prompts
 
-[v8](prompts/v8-transaction-investigation/README.md), con [primera T02 registrada](experiments/2026-10-15-t02-v8/README.md): formato/etiquetas conformes y ahora pide error exacto/pasos, mejora observada del caso (cobertura 1/10). Diseño: una regla condicional para pedir error/comportamiento y pasos ausentes cuando falla una transacción, conservando ejemplos v7. Plan: T02, T04, T06 y T10; registrar comparación y cerrar la etapa con el resultado observado. No añadir ciclos nuevos automáticamente si persiste una limitación. Quedan T04/T06/T10 antes del cierre acordado. Total: 45 respuestas registradas.
+[v8](prompts/v8-transaction-investigation/README.md), con [primera T02 registrada](experiments/2026-10-15-t02-v8/README.md): formato/etiquetas conformes y ahora pide error exacto/pasos, mejora observada del caso (cobertura 1/10). Diseño: una regla condicional para pedir error/comportamiento y pasos ausentes cuando falla una transacción, conservando ejemplos v7. Plan: T02, T04, T06 y T10; registrar comparación y cerrar la etapa con el resultado observado. No añadir ciclos nuevos automáticamente si persiste una limitación. [T04-v8](experiments/2026-10-15-t04-v8/README.md) conserva etiquetas y preguntas de cantidades/fecha; 2/4 controles del cierre recibidos, cobertura v8 2/10. Quedan T06/T10. Total: 46 respuestas registradas.
 
 ## Qué incluye
 - tickets.json: 10 tickets ficticios y etiquetas de referencia para el benchmark.
