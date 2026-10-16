@@ -1,18 +1,16 @@
-# Roadmap de IA aplicada a ERP
+# Roadmap técnico de IA y arquitectura aplicada a ERP
 
-Plan educativo para continuar ERP Ticket Lab. Actualizado el 15 de octubre de 2026.
+Plan técnico de aprendizaje para ERP Ticket Lab. Actualizado el 15 de octubre de 2026.
 
-## Modalidad actual de avance
+## Modalidad de avance
 
-La preparación PMP y el desarrollo profesional tienen prioridad. La dedicación técnica se reduce a una práctica pequeña semanal, orientativamente de sesenta a noventa minutos cuando exista disponibilidad. Las dieciséis semanas de la tabla pasan a ser bloques futuros de referencia; no son un calendario activo ni una fecha de entrega comprometida.
+Los hitos se realizan de forma flexible, uno por vez. Las semanas de la tabla son bloques de esfuerzo orientativos; no representan un calendario comprometido. Se mantiene un único proyecto activo.
 
-El laboratorio se utilizará como caso compartido para aprender arquitectura de soluciones con Dynamics 365 Finance and Operations e IA aplicada. Primera entrega propuesta: requisitos y diagrama de contexto del flujo de soporte. La integración a Dynamics sigue sin estar implementada; las prácticas locales utilizarán datos sintéticos.
+El laboratorio puede servir como caso para estudiar arquitectura de soluciones con Dynamics 365 Finance and Operations e IA aplicada. Primera entrega propuesta: requisitos y diagrama de contexto del flujo de soporte. La integración a Dynamics no está implementada y las prácticas locales utilizan datos sintéticos.
 
-El caso también permite practicar alcance, interesados, riesgos y aceptación. Después se profundizará en software con C#/.NET, APIs, persistencia, pruebas, despliegue y observabilidad según lo necesite el prototipo. Arquitectura de soluciones y arquitectura de software son áreas relacionadas con distinta profundidad y alcance.
+La arquitectura de software se profundizará con C#/.NET, APIs, persistencia, pruebas, despliegue y observabilidad según las necesidades del prototipo. Los cursos complementarios y las extensiones quedan sujetos a su utilidad para cada hito.
 
-Se posponen nuevos cursos y credenciales de IA durante esta modalidad. Las extensiones quedan en espera y se mantiene un único proyecto activo. T06 continúa pendiente, sin exigir resolverlo en esta sesión.
-
-Referencias de arquitectura: [rol de solution architect](https://learn.microsoft.com/en-us/dynamics365/guidance/roles/solution-architect) y [ruta Dynamics 365 y Power Platform](https://learn.microsoft.com/en-us/training/paths/become-solution-architect/).
+Referencias: [rol de solution architect](https://learn.microsoft.com/en-us/dynamics365/guidance/roles/solution-architect) y [ruta Dynamics 365 y Power Platform](https://learn.microsoft.com/en-us/training/paths/become-solution-architect/).
 
 ## Punto de partida
 
