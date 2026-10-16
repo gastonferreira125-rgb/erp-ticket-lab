@@ -1,6 +1,18 @@
 # Roadmap de IA aplicada a ERP
 
-Plan educativo de 16 semanas para continuar ERP Ticket Lab. Fecha: 15 de octubre de 2026. Las semanas son bloques flexibles, con una dedicación propuesta de cuatro horas semanales.
+Plan educativo para continuar ERP Ticket Lab. Actualizado el 15 de octubre de 2026.
+
+## Modalidad actual de avance
+
+La preparación PMP y el desarrollo profesional tienen prioridad. La dedicación técnica se reduce a una práctica pequeña semanal, orientativamente de sesenta a noventa minutos cuando exista disponibilidad. Las dieciséis semanas de la tabla pasan a ser bloques futuros de referencia; no son un calendario activo ni una fecha de entrega comprometida.
+
+El laboratorio se utilizará como caso compartido para aprender arquitectura de soluciones con Dynamics 365 Finance and Operations e IA aplicada. Primera entrega propuesta: requisitos y diagrama de contexto del flujo de soporte. La integración a Dynamics sigue sin estar implementada; las prácticas locales utilizarán datos sintéticos.
+
+El caso también permite practicar alcance, interesados, riesgos y aceptación. Después se profundizará en software con C#/.NET, APIs, persistencia, pruebas, despliegue y observabilidad según lo necesite el prototipo. Arquitectura de soluciones y arquitectura de software son áreas relacionadas con distinta profundidad y alcance.
+
+Se posponen nuevos cursos y credenciales de IA durante esta modalidad. Las extensiones quedan en espera y se mantiene un único proyecto activo. T06 continúa pendiente, sin exigir resolverlo en esta sesión.
+
+Referencias de arquitectura: [rol de solution architect](https://learn.microsoft.com/en-us/dynamics365/guidance/roles/solution-architect) y [ruta Dynamics 365 y Power Platform](https://learn.microsoft.com/en-us/training/paths/become-solution-architect/).
 
 ## Punto de partida
 
@@ -16,7 +28,7 @@ Cada sesión combina un concepto en español con su término en inglés, un ejem
 
 Mantener un proyecto activo y un curso complementario como máximo. Si una semana solo permite una hora, reducir el ejercicio y mover el calendario. Revisar alcance cada cuatro semanas.
 
-## Hitos propuestos
+## Bloques futuros de referencia
 
 | Semanas | Foco | Entrega | Criterio de avance |
 | --- | --- | --- | --- |
@@ -67,7 +79,7 @@ La ruta básica no exige compras ni créditos. Si falta acceso a un modelo, se p
 
 ## Comunicación
 
-Proponer una pieza semanal basada en evidencia y coordinarla con el calendario de comunicación existente. Temas: problema de soporte, JSON válido frente a contenido útil, fallo observado, prioridad frente a estado, demo reproducible y respuestas con fuentes.
+Proponer como máximo una pieza cada dos semanas basada en evidencia y coordinarla con el calendario de comunicación existente. Temas: problema de soporte, JSON válido frente a contenido útil, fallo observado, prioridad frente a estado, demo reproducible y respuestas con fuentes.
 
 Mantener los criterios de [LINKEDIN_PLAN.md](LINKEDIN_PLAN.md): datos sintéticos, resultados originales, límites y enlace reproducible. Este archivo no programa ni publica mensajes.
 
