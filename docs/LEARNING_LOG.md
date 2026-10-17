@@ -466,6 +466,13 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - README corregido: el ejercicio inicial T02 sí fue respondido; no estaba pendiente como indicaba el resumen.
 - Solo documentación: sin código de orquestación, integración ERP, mensajes externos ni nuevas respuestas del modelo. Siguen 48 respuestas sobre trece tickets. Etapa 1 cerrada.
 
+## 17 de octubre de 2026 — respuesta sobre transición de información
+- Gastón respondió al ejercicio 3: “el estado de la imnformación, para que se realice la corrección”.
+- Identifica correctamente la dimensión que cambia cuando los datos recibidos alcanzan para investigar.
+- Aclaración del tutor: contar con error y pasos permite avanzar; no demuestra que la causa o corrección estén identificadas ni ejecutadas. Mientras continúe el bloqueo, prioridad Alta y ticket abierto.
+- Se añadió pseudocódigo de condición/acción como puente hacia una simulación. No hay automatización ejecutable ni actualización de tickets externos.
+- Comprobación puntual de comprensión, no validación general del modelo. Sin nuevas ejecuciones: 48 respuestas sobre trece tickets.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

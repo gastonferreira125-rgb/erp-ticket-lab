@@ -48,11 +48,26 @@ Una transición (state transition) es un cambio de estado provocado por un event
 
 Los estados y acciones del flujo se guardarían en un registro separado. El clasificador v8 mantiene sus seis claves. En esta lección no se cambia ningún ticket externo ni se envían solicitudes.
 
-## Ejercicio 3 — pendiente
+## Ejercicio 3 — respuesta recibida
 Escenario nuevo y simulado, no es una ejecución del modelo:
 
 T02 recibe el mensaje de error exacto y los pasos realizados. Esa información alcanza para comenzar la investigación, pero la factura sigue sin contabilizarse y el cierre de todo Finanzas continúa detenido.
 
 ¿Qué debe cambiar ahora: la prioridad, el estado de la información o la resolución del ticket? Explicá por qué.
 
-No se considera contestado por leer esta guía. La respuesta servirá para comprobar el criterio antes de pasar a una simulación con código.
+Gastón respondió: “el estado de la imnformación, para que se realice la corrección”.
+
+La elección identifica la dimensión que cambia: la información disponible. El tutor aclara que permite comenzar la investigación y buscar la corrección; recibir error y pasos todavía no demuestra causa identificada, solución definida o corrección ejecutada. La prioridad sigue Alta mientras continúe el bloqueo, y el ticket permanece abierto.
+
+Esta respuesta comprueba ese criterio puntual; no se atribuye aprobación de todas las salidas del modelo.
+
+## Puente hacia código: condición y acción
+Una regla determinista aplica la misma decisión cuando recibe las mismas condiciones. Para esta transición educativa podemos expresarla así, sin otra llamada al modelo:
+
+```text
+SI la información recibida alcanza para el siguiente paso:
+    estado_informacion = "Suficiente para iniciar investigación"
+    siguiente_accion = "Investigar"
+```
+
+La suficiencia debe ser evaluada; no se deduce únicamente de que llegó un mensaje. La regla no cambia por sí sola prioridad o resolución. Este pseudocódigo explica la decisión; todavía no es una automatización ejecutable ni prueba que un ticket haya sido actualizado.
