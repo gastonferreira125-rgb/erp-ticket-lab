@@ -458,6 +458,14 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Ejercicio 2 T06 pendiente: distinguir definición de solicitud planificada de atención urgente de un bloqueo.
 - Continúan 48 respuestas sobre trece tickets. Sin nuevas ejecuciones ni automatización implementada.
 
+## 17 de octubre de 2026 — retomar el flujo con reglas y transiciones
+- Usuario preguntó cómo seguir. Se preparó una [práctica guiada de T02 y T06](STAGE_2_PRACTICE_02.md), reutilizando salidas v8.
+- Conceptos: regla de decisión (decision rule) y transición de estado (state transition). Se distinguen urgencia, suficiencia de información y resolución.
+- T06 se explica como solicitud planificada de prioridad Baja; no se registra como respuesta de comprensión del usuario.
+- Ejercicio 3 pendiente: llegan error y pasos de T02, pero el bloqueo sigue. Distinguir actualización de información de cambio de prioridad o cierre.
+- README corregido: el ejercicio inicial T02 sí fue respondido; no estaba pendiente como indicaba el resumen.
+- Solo documentación: sin código de orquestación, integración ERP, mensajes externos ni nuevas respuestas del modelo. Siguen 48 respuestas sobre trece tickets. Etapa 1 cerrada.
+
 ## Plantilla para próximas sesiones
 - Fecha y objetivo:
 - Concepto aprendido:

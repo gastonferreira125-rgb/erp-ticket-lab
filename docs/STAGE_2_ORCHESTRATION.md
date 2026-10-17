@@ -83,4 +83,4 @@ Estos valores son un ejemplo simulado, no un ticket real actualizado. Prioridad 
 ## Ejercicio 2 — pendiente de respuesta
 T06 solicita un reporte mensual de ventas por cliente y no hay interrupción del negocio. Falta acordar campos y filtros. ¿Qué prioridad le corresponde? ¿Lo tratarías como atención de un bloqueo urgente o como definición de una solicitud planificada?
 
-Todavía no se definieron todos los estados/transiciones ni se implementó una simulación local. Tras la respuesta, concretar reglas de transición con ambos ejemplos. Sin nuevas llamadas al modelo ni acciones externas.
+El 17 de octubre se añadió una [práctica guiada con T02 y T06](STAGE_2_PRACTICE_02.md): reglas de decisión, eventos y transiciones iniciales. La respuesta a este ejercicio no se recibió; la guía explica T06 sin atribuir esa respuesta a Gastón. El ejercicio 3 queda pendiente. Todavía no hay simulación con código ni acciones externas.
