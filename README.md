@@ -14,7 +14,7 @@ Proyecto de aprendizaje y portafolio de Gastón Ferreira: clasificación de tick
 [Comparación completa de los cuatro casos v7–v8](experiments/2026-10-15-v8-controls/README.md). Estos resultados no prueban exactitud general, causalidad o preparación para producción.
 
 ## Etapa 2 — aprendizaje de orquestación
-[Lección y diseño funcional](docs/STAGE_2_ORCHESTRATION.md): clasificar, validar y decidir el tratamiento. [Práctica 2: reglas y transiciones con T02/T06](docs/STAGE_2_PRACTICE_02.md). Diseño didáctico sin implementación; v8 permanece congelada. Gastón respondió el criterio de atención y recopilación en paralelo para T02; en el ejercicio de transiciones identificó que cambia el estado de la información. La guía aclara que eso permite investigar sin demostrar resolución.
+[Lección y diseño funcional](docs/STAGE_2_ORCHESTRATION.md): clasificar, validar y decidir el tratamiento. [Práctica 2: reglas y transiciones con T02/T06](docs/STAGE_2_PRACTICE_02.md). Diseño funcional sin implementación; v8 permanece congelada. La documentación desarrolla atención prioritaria y recopilación de datos en paralelo, diferenciando disponibilidad de información de resolución.
 
 ## Recuperar la plantilla
 - [Sistema v8 completo](prompts/v8-transaction-investigation/system.txt).
@@ -42,20 +42,20 @@ Una coincidencia de etiquetas no demuestra fidelidad completa del resumen ni uti
 
 [Control de confirmaciones de proveedores](labs/procurement-confirmations/README.md): nuevo caso educativo para comparar cantidad, precio y fecha de entrega de una confirmación frente a una orden de compra. Incluye propuesta de Power Apps, Dataverse y Power Automate, con n8n como ampliación posterior.
 
-[Primera lección y práctica](labs/procurement-confirmations/LESSON_01.md) · [Datos sintéticos](labs/procurement-confirmations/data/lesson-01.csv) · [Registro de aprendizaje](labs/procurement-confirmations/LEARNING_LOG.md).
+[Fundamentos funcionales y técnicos](labs/procurement-confirmations/LESSON_01.md) · [Datos sintéticos](labs/procurement-confirmations/data/lesson-01.csv) · [Registro técnico](labs/procurement-confirmations/LEARNING_LOG.md).
 
-Estado inicial: diseño y ejercicios preparados; respuestas del estudiante, acceso Microsoft e implementación pendientes. No altera v8, el contrato del clasificador o las métricas anteriores.
+Estado inicial: diseño, fundamentos y datos de referencia preparados; acceso Microsoft e implementación pendientes. No altera v8, el contrato del clasificador o las métricas anteriores.
 
 ## Documentación de estudio
 - [Conceptos con ejemplos de nuestros tickets](docs/CONCEPTS.md).
 - [Alcance y flujo del proyecto](docs/PROJECT.md).
 - [Evaluación y distinción de revisores](docs/EVALUATION.md).
-- [Registro completo de aprendizaje](docs/LEARNING_LOG.md).
+- [Registro técnico de experimentos](docs/LEARNING_LOG.md).
 - [Roles de los mensajes](docs/MESSAGE_ROLES.md).
 - [Plan de publicaciones](docs/LINKEDIN_PLAN.md).
 - [Plantilla de experimentos](experiments/TEMPLATE.md).
 
-Cada práctica combina teoría en español, término en inglés, ejemplo ERP y comprobación de comprensión. Las preguntas didácticas no se consideran respondidas automáticamente.
+La documentación reúne fundamentos, ejemplos ERP, decisiones de diseño y evidencia técnica. Las conversaciones de tutoría y las evaluaciones personales se mantienen fuera del repositorio.
 
 ## Archivos y ejecución local
 - tickets.json: diez tickets originales con etiquetas de referencia.
