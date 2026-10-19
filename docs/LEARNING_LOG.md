@@ -1,4 +1,4 @@
-# Registro de aprendizaje
+# Registro técnico de experimentos
 
 ## 12 de octubre de 2026
 Objetivo: acceder al sistema de práctica AIG02 y entender SAP AI Launchpad, Generative AI Hub, modelo y prompt.
@@ -7,7 +7,7 @@ Concepto trabajado: clasificar un ticket no determina su causa. Un mensaje incom
 
 Acceso al entorno: pendiente de confirmar. Ejecuciones en modelos: pendientes.
 
-Método de cada sesión: teoría en español con términos en inglés, ejemplo ERP, acción práctica y comprobación de comprensión antes de continuar.
+La documentación técnica reúne fundamentos, configuración, evidencias y próximos pasos.
 
 ## 13 de octubre de 2026
 - Objetivo: retomar el laboratorio y ejecutar T01.
@@ -15,10 +15,10 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Modelo confirmado por captura posterior: Gemini 2.5 Flash Lite (001). Configuración actual capturada después de T01: temperatura 1; tokens de salida máximos 43690; streaming activado.
 - Conceptos explicados: prompt, JSON y clasificación frente a diagnóstico.
 - Acción realizada: primera ejecución manual de T01 en el bloque Usuario.
-- Evidencia: respuesta original y captura del panel de respuesta aportadas por Gastón.
+- Evidencia: respuesta original del modelo y captura del panel de respuesta.
 - Validación: 1 de 10 casos ejecutados; T01 cumple las comprobaciones del evaluador y coincide con las etiquetas de referencia.
 - Revisión humana: resumen fiel, sin diagnóstico inventado; datos faltantes útiles, aunque “detalles del pago” es amplio.
-- Comprobación de aprendizaje: Gastón identificó correctamente la condición de prioridad Alta del laboratorio (proceso detenido para todo un equipo).
+- Criterio de prioridad Alta: proceso detenido para todo un equipo.
 - Próximo paso: ejecutar T02 con la misma configuración, cambiando únicamente id y texto.
 - [Registro del experimento](../experiments/2026-10-13-t01/README.md).
 
@@ -29,7 +29,7 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Observación: faltan error exacto, pasos de reproducción y verificaciones realizadas.
 - Evidencia: captura del resultado; el resumen está cortado en el borde derecho.
 - Salida original completa recibida posteriormente, guardada sin correcciones y añadida a responses.json. Evaluador: T01 y T02 cumplen las comprobaciones y etiquetas; cobertura 2 de 10.
-- Pregunta de Gastón: por qué no se usan Sistema y Asistente. Concepto explicado: reglas generales en Sistema, ticket en Usuario, ejemplos/historial en Asistente. La versión inicial contiene todo en Usuario como referencia.
+- Separación de roles: reglas generales en Sistema, ticket en Usuario, ejemplos/historial en Asistente. La versión inicial contiene todo en Usuario como referencia.
 - Próximo paso: T10 con v0; luego comparar una versión que cambie únicamente la distribución de roles.
 - [Registro de T02](../experiments/2026-10-13-t02/README.md).
 
@@ -45,7 +45,7 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - [Experimento T10-v0](../experiments/2026-10-13-t10-v0/README.md).
 
 ## 13 de octubre de 2026 — recuperación de sesión y T10-v1
-- Gastón informó pérdida del editor por expiración de sesión; se reconstruyeron Sistema y Usuario.
+- Tras expirar la sesión del editor, se reconstruyeron Sistema y Usuario.
 - Dos bloques y modelo confirmados visualmente. Temperatura y tokens solicitados como antes, sin etiquetas numéricas confirmadas en la sesión restaurada.
 - Respuesta original de T10-v1 recibida: Otros, Baja, FV-999, resumen de corrección como hecho y datos_faltantes vacío.
 - Evaluación automática: formato correcto; etiquetas incorrectas por prioridad y referencia.
@@ -68,7 +68,6 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - [Resultado T10-v2](../experiments/2026-10-14-t10-v2/README.md).
 
 ## 14 de octubre de 2026 — T02-v2 y explicación de regresión
-- Gastón pregunta cuál fue la mejora y qué significa regression test en este caso.
 - Mejora dirigida a T10: condición explícita para no transformar instrucciones del ticket en hechos reportados.
 - Prueba de regresión: volver a ejecutar T02 después del cambio del prompt para comprobar que conserva la clasificación y el resumen correctos.
 - Respuesta T02-v2 guardada sin correcciones; cumple controles de formato y etiquetas.
@@ -79,7 +78,7 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - [Prueba de regresión T02-v2](../experiments/2026-10-14-t02-v2/README.md).
 
 ## 14 de octubre de 2026 — T05-v2 y criterio de categoría
-- Antes de ejecutar, Gastón identificó correctamente problema de acceso, no del reporte, y ausencia de bloqueo de todo el equipo.
+- Criterio funcional de T05: problema de acceso y ausencia de bloqueo de todo el equipo.
 - Respuesta modelo: Reportes, Media, resumen fiel, referencia null, usuario y nombre del reporte como datos faltantes.
 - Evaluador: formato conforme; categoría incorrecta frente a Autorizaciones esperada.
 - Aprendizaje: distinguir el recurso mencionado del problema principal reportado; no diagnosticar la causa técnica del permiso faltante.
@@ -91,7 +90,7 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 ## 14 de octubre de 2026 — T05-v3
 - Salida original y captura recibidas. Autorizaciones, Media, referencia null, resumen fiel y datos faltantes pertinentes.
 - Evaluador: campos/tipos y etiquetas conformes para T05.
-- Comparación: v2 había devuelto Reportes; v3 coincide con el criterio funcional previamente expresado por Gastón.
+- Comparación: v2 había devuelto Reportes; v3 coincide con el criterio funcional de referencia.
 - Límite: caso usado para ajustar el prompt; una ejecución no demuestra generalización.
 - Ocho ejecuciones totales sobre cuatro tickets distintos; seis casos del conjunto todavía no ejecutados.
 - Próximo caso: T06, solicitud de reporte sin interrupción. Luego repetir casos previos como regresión.
@@ -119,7 +118,7 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Conceptos: extracción de información (information extraction), esquema de salida (output schema), pasos para reproducir (steps to reproduce) y prueba de regresión (regression test).
 - Evaluador ejecutado sobre diez respuestas originales de v3: cobertura 10/10, formato 10/10, coincidencia completa 7/10, categorías 9/10, prioridades 10/10, referencias 8/10; cero referencias ausentes literalmente y sin IDs duplicados/desconocidos.
 - Acumulado: 17 ejecuciones entre versiones, diez tickets distintos. No mezclar versiones para calcular métricas. Una ronda pequeña y casos usados para ajustes no prueban exactitud en producción ni generalización.
-- Gastón autorizó explícitamente guardar tickets y evaluaciones en este repositorio. Capturas revisadas, sin publicar imágenes. Registro de T04 recuperado tras vencimientos iniciales de revisión automática.
+- Se conservaron tickets sintéticos y evaluaciones. Las capturas se revisaron sin publicar imágenes.
 - Próximo paso: nueva versión para categoría Integraciones, sin cambiar a la vez las reglas de referencia. Después alinear contrato, prompt y conjunto esperado; repetir y añadir casos nuevos.
 - [Ronda consolidada](../experiments/2026-10-14-v3-round/README.md).
 
@@ -297,16 +296,15 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - [v6 consolidada](../experiments/2026-10-14-v6-controls/README.md), [v7 preparada](../prompts/v7-few-shot/README.md).
 
 ## 14 de octubre de 2026 — conceptos integrados al laboratorio
-- Gastón pidió explicar skill con un ejemplo del proyecto y conservar este y otros conceptos en GitHub.
-- Se añadió [CONCEPTS.md](CONCEPTS.md): catorce temas con explicación en español, término en inglés, ejemplo ERP y pregunta de comprensión.
+- Se añadió [CONCEPTS.md](CONCEPTS.md): catorce temas con explicación en español, término en inglés, ejemplo ERP y criterios de aplicación.
 - Skill queda documentada como procedimiento reutilizable; el ejemplo de revisión ERP es conceptual, no una skill instalada.
 - La guía distingue prompt, roles, few-shot y herramientas; desarrolla clasificación/extracción/diagnóstico, esquema, instrucciones en datos, afirmaciones no sustentadas, benchmark, evaluación humana/automática, regresión, generalización, versionado y parámetros.
 - Se actualizó el documento de roles para separar el historial v0/v1 del estado actual y la propuesta v7.
-- Método acordado por solicitud del usuario: acompañar nuevas prácticas con teoría aplicada y registro en la guía; las preguntas quedan pendientes de respuesta, sin dar por demostrada la comprensión.
+- Se documentaron fundamentos aplicados y criterios de verificación del proyecto.
 - Sin nuevas salidas de modelo: continúan 38 ejecuciones sobre doce tickets distintos. Próxima prueba: T02 con v7.
 
 ## 14 de octubre de 2026 — MCP y relación con skills
-- Pregunta del usuario: qué es MCP y cómo se relaciona con una skill.
+- Se documentó la relación entre MCP y skills.
 - Añadida sección 15 en [la guía de conceptos](CONCEPTS.md#15-mcp-y-su-relación-con-las-skills-model-context-protocol), con definición, comparación de prompt/skill/MCP/tool/API y ejercicio aplicado a T04.
 - Ejemplo real: las herramientas del conector GitHub disponibles mediante MCP permiten leer y guardar documentación desde este chat.
 - Ejemplo futuro explícito: consultar una factura o stock mediante un servidor MCP del ERP; esa integración no está implementada en el laboratorio.
@@ -314,7 +312,7 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Documentación oficial OpenAI consultada. No hay nuevas ejecuciones: 38 sobre doce tickets, v7 aún preparada sin resultados.
 
 ## 15 de octubre de 2026 — restauración y primera respuesta T02-v7
-- Se recuperaron Sistema y seis mensajes v7 desde GitHub. El usuario preguntó por qué Asistente estaba vacío antes: v0–v6 no contenían demostraciones; v7 añade ejemplos.
+- Se recuperaron Sistema y seis mensajes v7 desde GitHub. Distribución de ejemplos entre versiones: v0–v6 no contenían demostraciones; v7 añade ejemplos.
 - Captura previa mostró tres bloques (Sistema, Usuario EX01, Asistente EX01) y panel vacío. Se explicó que + crea bloques y los botones eligen rol; se reenviaron los seis mensajes completos. Sin evidencia para atribuir la ausencia de salida exclusivamente a esa configuración.
 - JSON posterior T02 recibido como texto. Configuración final de seis bloques/payload y parámetros numéricos no capturados; modelo visible previamente Gemini 2.5 Flash Lite (001).
 - evaluate.py ejecutado: formato/etiquetas conformes. Resumen conserva bloqueo del equipo y cierre, sin causas inventadas; datos_faltantes sigue vacío pese a faltar error exacto/pasos.
@@ -362,7 +360,7 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Próximo repetir T02 con v7 sin cambios, guardar segunda ejecución por separado y observar datos_faltantes antes de otro ajuste. No contar repetición como nuevo ticket.
 
 ## 15 de octubre de 2026 — aclaración de revisión humana
-- El usuario preguntó qué significa revisión humana. Se distingue validación automática del script, análisis cualitativo del tutor IA y decisión de una persona con criterio funcional.
+- La documentación distingue validación automática del script, análisis cualitativo del tutor IA y decisión de una persona con criterio funcional.
 - Aclaración necesaria: varios registros previos usaron “revisión humana” para análisis redactados por IA. [EVALUATION.md](EVALUATION.md) deja explícito que son análisis asistidos por IA pendientes de validación humana, salvo intervención expresa del usuario en un criterio.
 - No inferir aprobación porque el usuario pega una salida o continúa la práctica. No atribuir al usuario mis observaciones; no hay puntuación humana agregada.
 - Ejemplos didácticos: T13, alcance parcial ya informado; T02, etiquetas conformes pero error exacto ausente.
@@ -440,44 +438,35 @@ Método de cada sesión: teoría en español con términos en inglés, ejemplo E
 - Limitaciones conservadas: v8 una ejecución por caso, cuatro de diez originales, casos usados para ajuste, máximo de tokens/payloads no completos; no prueba de robustez/causalidad o producción.
 - Pendientes posteriores: validación personal del análisis, ampliar evaluación, precisión de resúmenes y siguiente práctica de flujo/orquestación. No hay integración ERP ni skill/MCP ERP instalado.
 
-## 15 de octubre de 2026 — inicio teórico de etapa 2
-- Usuario reafirmó que quiere aprender y preguntó si se había explicado todo el teórico. Se aclaró que se trabajaron conceptos durante pruebas, con profundización todavía pendiente; documentación no equivale a dominio.
-- Método de tutoría reforzado: explicación, ejemplo ERP, ejercicio, comprobación y documentación.
-- Usuario indicó avanzar. Se añadió [lección inicial de orquestación](STAGE_2_ORCHESTRATION.md) y concepto 16, sin modificar v8.
-- Distinción: flujo funcional de atención frente al servicio SAP Orchestration. Documentación oficial SAP V2 consultada; no se configura el servicio ni se asume integración operativa.
-- Caso T02: atención prioritaria y recopilación de datos pueden ir en paralelo; clasificación/JSON válido/lista vacía no significan resolución.
-- Diseño de flujo con revisión de formato y contenido; metadatos futuros separados del contrato de seis campos.
-- Ejercicio de comprensión pendiente de respuesta. No se registra aprobación humana de experimentos.
-- Sin nuevas llamadas al modelo: siguen 48 respuestas sobre trece tickets. Etapa 1 cerrada; etapa 2 recién iniciada en diseño teórico.
+## 15 de octubre de 2026 — diseño de orquestación
 
-## 15 de octubre de 2026 — respuesta de comprensión y estados
-- Gastón respondió que gestionaría T02 en paralelo para avanzar. Se registra comprensión del criterio puntual: atención prioritaria y recopilación de datos simultáneas.
-- No se interpreta como validación humana de todo el modelo/experimentos.
-- [Lección de etapa 2](STAGE_2_ORCHESTRATION.md) ampliada: prioridad frente a estados de atención e información, con ejemplo simulado T02 Alta / En atención / Información pendiente.
-- Estados propuestos separados del contrato de seis campos; no se modifica v8 ni se actualiza un ticket externo.
-- Ejercicio 2 T06 pendiente: distinguir definición de solicitud planificada de atención urgente de un bloqueo.
-- Continúan 48 respuestas sobre trece tickets. Sin nuevas ejecuciones ni automatización implementada.
+- Añadida la [especificación de orquestación](STAGE_2_ORCHESTRATION.md), sin modificar v8.
+- Diferenciado el flujo funcional de atención del servicio SAP Orchestration.
+- Definido el tratamiento propuesto de T02: atención prioritaria y recopilación de datos en paralelo.
+- Separados prioridad, estado de atención, estado de información y resolución.
+- Mantenidos los metadatos de workflow fuera del contrato de seis campos del clasificador.
+- No se configuró el servicio SAP ni una integración operativa.
+- Sin nuevas llamadas al modelo: continúan 48 respuestas sobre trece tickets.
 
-## 17 de octubre de 2026 — retomar el flujo con reglas y transiciones
-- Usuario preguntó cómo seguir. Se preparó una [práctica guiada de T02 y T06](STAGE_2_PRACTICE_02.md), reutilizando salidas v8.
-- Conceptos: regla de decisión (decision rule) y transición de estado (state transition). Se distinguen urgencia, suficiencia de información y resolución.
-- T06 se explica como solicitud planificada de prioridad Baja; no se registra como respuesta de comprensión del usuario.
-- Ejercicio 3 pendiente: llegan error y pasos de T02, pero el bloqueo sigue. Distinguir actualización de información de cambio de prioridad o cierre.
-- README corregido: el ejercicio inicial T02 sí fue respondido; no estaba pendiente como indicaba el resumen.
-- Solo documentación: sin código de orquestación, integración ERP, mensajes externos ni nuevas respuestas del modelo. Siguen 48 respuestas sobre trece tickets. Etapa 1 cerrada.
+## 17 de octubre de 2026 — reglas y transiciones
 
-## 17 de octubre de 2026 — respuesta sobre transición de información
-- Gastón respondió al ejercicio 3: “el estado de la imnformación, para que se realice la corrección”.
-- Identifica correctamente la dimensión que cambia cuando los datos recibidos alcanzan para investigar.
-- Aclaración del tutor: contar con error y pasos permite avanzar; no demuestra que la causa o corrección estén identificadas ni ejecutadas. Mientras continúe el bloqueo, prioridad Alta y ticket abierto.
-- Se añadió pseudocódigo de condición/acción como puente hacia una simulación. No hay automatización ejecutable ni actualización de tickets externos.
-- Comprobación puntual de comprensión, no validación general del modelo. Sin nuevas ejecuciones: 48 respuestas sobre trece tickets.
+- Documentadas [reglas de decisión y transiciones](STAGE_2_PRACTICE_02.md) para T02 y T06, utilizando salidas v8.
+- T06 se trata como solicitud planificada de prioridad Baja según la política del laboratorio.
+- Recibir información suficiente actualiza la disponibilidad de evidencia y permite investigar; no demuestra resolución.
+- Añadido pseudocódigo de condición y acción como especificación de una futura simulación.
+- Sin automatización ejecutable, actualización de tickets externos ni nuevas respuestas del modelo.
 
-## Plantilla para próximas sesiones
+## 19 de octubre de 2026 — documentación profesional
+
+- La documentación pública se centra en fundamentos, decisiones, configuración y resultados técnicos verificables.
+- Las conversaciones de tutoría y las evaluaciones personales se mantienen fuera del repositorio.
+- Se conservan las respuestas originales del modelo y los resultados de experimentos, incluidos fallos y limitaciones.
+
+## Plantilla de registro técnico
+
 - Fecha y objetivo:
-- Concepto aprendido:
-- Acción realizada y entorno:
-- Evidencia obtenida:
-- Error o duda:
-- Qué puede explicar Gastón con sus palabras:
-- Próximo paso:
+- Cambio o decisión:
+- Configuración y entorno:
+- Evidencia de ejecución:
+- Resultado y limitaciones:
+- Próximo hito:
