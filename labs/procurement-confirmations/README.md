@@ -1,8 +1,8 @@
 # Control de confirmaciones de proveedores
 
-Caso de aprendizaje y portafolio de Gastón Ferreira. Inicio: 19 de octubre de 2026.
+Caso de automatización y portafolio de Gastón Ferreira. Inicio: 19 de octubre de 2026.
 
-**Estado:** diseño inicial, datos sintéticos y primera lección preparados. No hay aplicación Power Apps, tablas Dataverse, flujo Power Automate o workflow n8n desplegados. No hay integración con SAP o Dynamics ni resultados de ahorro medidos.
+**Estado:** diseño inicial, fundamentos y datos sintéticos preparados. No hay aplicación Power Apps, tablas Dataverse, flujo Power Automate o workflow n8n desplegados. No hay integración con SAP o Dynamics ni resultados de ahorro medidos.
 
 ## Problema de negocio
 
@@ -12,7 +12,7 @@ El caso se inspira en una necesidad documentada públicamente por SAP en Lemvigh
 
 Microsoft publica una [arquitectura de referencia de cotejo de confirmaciones con SAP](https://learn.microsoft.com/en-us/power-platform/architecture/reference-architectures/order-acknowledgment-validation). Nuestra propuesta es una versión educativa acotada, con reglas explícitas y datos ficticios. No replica su infraestructura ni atribuye sus resultados al laboratorio.
 
-## Aprendizaje progresivo
+## Plan de implementación
 
 1. Comprender el proceso y comparar dos registros manualmente.
 2. Verificar acceso y condiciones del entorno Microsoft.
@@ -22,7 +22,7 @@ Microsoft publica una [arquitectura de referencia de cotejo de confirmaciones co
 6. Ampliar a documentos PDF y extracción de datos, si el acceso y el coste lo permiten.
 7. Evaluar una integración externa con n8n cuando aporte una función concreta.
 
-No se marcan pasos como completados por haber generado la documentación.
+Cada hito de implementación requiere evidencia de ejecución.
 
 ## Responsabilidades de la solución propuesta
 
@@ -54,11 +54,11 @@ flowchart TD
 
 El diagrama es diseño. No demuestra que estos componentes estén conectados.
 
-## Primera práctica
+## Fundamentos y datos de referencia
 
-Abrir [Lección 1](LESSON_01.md), observar [los dos registros CSV](data/lesson-01.csv) y responder las preguntas en el chat. No hace falta ejecutar Python ni instalar herramientas para esta práctica.
+Los [fundamentos funcionales y técnicos](LESSON_01.md) explican las responsabilidades de Power Platform, el proceso de compra y los cálculos de diferencias. Los [registros CSV](data/lesson-01.csv) aportan un caso sintético reproducible.
 
-El [registro de aprendizaje](LEARNING_LOG.md) distingue material preparado, respuestas del estudiante y evidencia de ejecución.
+El [registro técnico](LEARNING_LOG.md) describe entregables, estado de implementación y próximos hitos.
 
 ## Contrato inicial de datos
 
@@ -78,7 +78,7 @@ Los dos registros usan el mismo esquema para facilitar la comparación inicial. 
 | currency | Moneda del precio |
 | delivery_date | Fecha pedida o confirmada, ISO YYYY-MM-DD |
 
-El CSV está codificado en UTF-8, separado por comas y usa punto decimal. Si Excel no divide columnas, usar importar desde texto/CSV y elegir coma. No se necesita modificar el equipo para responder la primera práctica.
+El CSV está codificado en UTF-8, separado por comas y usa punto decimal. Si Excel no divide columnas, usar importar desde texto/CSV y elegir coma. El esquema de intercambio es independiente del entorno de implementación.
 
 ## Reglas propuestas para el primer prototipo
 
@@ -109,15 +109,15 @@ La documentación de Microsoft consultada el 19 de octubre de 2026 indica que el
 
 La misma página anuncia cambios de los entornos de desarrollo no administrados: nuevas restricciones desde el 15 de noviembre de 2026, suspensión desde el 15 de diciembre y eliminación desde el 15 de enero de 2027. Los derechos para entornos administrados no están incluidos en el Developer Plan. AI Builder tampoco está incluido.
 
-Antes de crear recursos, comprobar cuenta, entorno, permisos y licencias actuales. No se promete un entorno gratuito permanente, ni se activan pruebas de pago o servicios de IA como parte de esta documentación. Un bloqueo de acceso no equivale a un fallo del estudiante.
+Antes de crear recursos, comprobar cuenta, entorno, permisos y licencias actuales. No se promete un entorno gratuito permanente, ni se activan pruebas de pago o servicios de IA como parte de esta documentación. La implementación requiere verificar las condiciones del entorno.
 
 Fuente: [Power Apps Developer Plan](https://learn.microsoft.com/en-us/power-platform/developer/plan). Conservar definiciones y datos exportables, y revisar las condiciones al comenzar la práctica en la plataforma.
 
 ## Presentación profesional
 
-Descripción factual actual: diseño de un caso de automatización de compras, asignación de responsabilidades de Power Platform y primera práctica con datos sintéticos.
+Descripción actual: diseño de automatización de compras, asignación de responsabilidades de Power Platform, fundamentos de comparación y datos sintéticos de referencia.
 
-Solo se añadirá implementación, integración, resultados o dominio de herramientas cuando exista evidencia. El material inicial se preparó con tutoría asistida por IA; las respuestas y decisiones del estudiante se registrarán como tales.
+La documentación pública describe el problema, el diseño, las decisiones y la evidencia técnica disponible. Las conversaciones de tutoría y las evaluaciones personales quedan fuera del repositorio. Las capacidades implementadas y las métricas se presentan con su evidencia.
 
 ## English overview
 
