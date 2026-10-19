@@ -60,10 +60,9 @@ No marcar T02 resuelto solo porque fue clasificado. Tampoco suspender automátic
 ## Contratos separados
 v8 conserva seis claves. Un flujo posterior puede tener estado, área sugerida, decisión de revisión y acciones propuestas en un registro separado. No añadir esos campos al JSON de clasificación ni decir que ya fueron ejecutados.
 
-## Ejercicio 1 — respuesta recibida
-Gastón indicó que gestionaría la atención y la solicitud de información en paralelo para avanzar. La respuesta coincide con el criterio explicado para T02: bloqueo de equipo con prioridad Alta y recopilación de datos en paralelo.
+## Criterio de atención de T02
 
-Esto comprueba ese criterio puntual de la lección. No equivale a aprobar todas las respuestas del modelo ni a validar todas las observaciones cualitativas de la etapa 1.
+El diseño contempla atención prioritaria y recopilación de información en paralelo cuando el proceso está detenido para todo un equipo. Esta regla de tratamiento no implica resolución ni valida por sí sola la salida del clasificador.
 
 ## Segunda lección: prioridad y estados (priority / status)
 La prioridad expresa urgencia relativa según nuestra política. El estado expresa en qué situación está el trabajo. Tener datos pendientes no obliga a bajar la prioridad ni a dejar toda la atención detenida.
@@ -80,7 +79,7 @@ Estos valores son un ejemplo simulado, no un ticket real actualizado. Prioridad 
 
 “Pendiente de información” describe una necesidad de investigación, no demuestra resolución ni determina por sí solo la urgencia. Si una herramienta falla al consultar datos, eso tampoco prueba que el incidente ERP esté resuelto.
 
-## Ejercicio 2 — pendiente de respuesta
-T06 solicita un reporte mensual de ventas por cliente y no hay interrupción del negocio. Falta acordar campos y filtros. ¿Qué prioridad le corresponde? ¿Lo tratarías como atención de un bloqueo urgente o como definición de una solicitud planificada?
+## Aplicación a T06
+T06 solicita un reporte mensual de ventas por cliente y no hay interrupción del negocio. El tratamiento propuesto es definir campos y filtros y planificar la solicitud, con prioridad Baja según las reglas del laboratorio.
 
-El 17 de octubre se añadió una [práctica guiada con T02 y T06](STAGE_2_PRACTICE_02.md): reglas de decisión, eventos y transiciones iniciales. La respuesta a este ejercicio no se recibió; la guía explica T06 sin atribuir esa respuesta a Gastón. El ejercicio 3 recibió respuesta: Gastón eligió cambiar el estado de la información. Se aclaró que permite investigar sin implicar corrección ejecutada; el detalle está en la práctica. Todavía no hay simulación con código ni acciones externas.
+La [especificación de reglas y transiciones](STAGE_2_PRACTICE_02.md) desarrolla T02 y T06. La recepción de información permite investigar o planificar; no demuestra que se haya ejecutado una corrección o entregado un reporte. El flujo sigue en etapa de diseño, sin simulación ejecutable ni acciones externas.
