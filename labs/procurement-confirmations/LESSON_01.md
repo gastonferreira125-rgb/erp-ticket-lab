@@ -1,65 +1,77 @@
-# Lección 1 de Power Platform aplicada a compras
+# Fundamentos de Power Platform para control de confirmaciones
 
-Fecha: 19 de octubre de 2026. Estado: explicación y ejercicio preparados; respuestas y comprensión pendientes.
+## Objetivo funcional
 
-## Objetivo
+Detectar diferencias entre una orden de compra y la confirmación del proveedor, presentar las excepciones a Compras y conservar una decisión trazable.
 
-Distinguir pantalla, datos y automatización, e identificar discrepancias entre dos documentos. No requiere Python, un entorno Microsoft ni instalación local.
+## Documentos del proceso
 
-## Conceptos
+- **Cotización (quotation):** oferta de condiciones de un proveedor utilizada para evaluar una compra.
+- **Orden de compra (purchase order):** documento con los artículos, cantidades, precios y fechas solicitados.
+- **Confirmación de proveedor (order acknowledgment):** comunicación con las condiciones que el proveedor confirma para esa orden.
 
-**Power Platform:** conjunto de herramientas Microsoft para construir aplicaciones, automatizaciones y análisis de negocio.
+Una confirmación puede diferir de lo solicitado. El sistema conserva ambos documentos y presenta las discrepancias para revisión.
 
-**Power Apps:** herramienta para construir aplicaciones. En el caso propuesto, una persona de Compras usará una pantalla para ver documentos y registrar su decisión.
+## Responsabilidades de Power Platform
 
-**Power Automate:** herramienta para construir flujos. Un flujo tiene un disparador (trigger), acciones (actions) y condiciones (conditions). En este caso podría comenzar cuando se registra una confirmación y luego comparar sus datos.
+| Componente | Responsabilidad en el diseño |
+| --- | --- |
+| Power Apps | Interfaz para consultar documentos y registrar la decisión de Compras |
+| Power Automate | Flujo con disparador, acciones y condiciones para comparar y registrar resultados |
+| Dataverse | Gestión de tablas, relaciones, permisos y registros |
+| Power BI | Indicadores posteriores sobre resultados y tiempos observados |
 
-**Dataverse:** plataforma para almacenar y gestionar datos en tablas, relaciones y permisos. En este caso mantendría documentos y decisiones. No es la pantalla del usuario.
+Power Platform es la familia de herramientas. Una aplicación, un flujo y una plataforma de datos resuelven responsabilidades distintas dentro de la misma solución.
 
-Una pantalla puede pedir que se inicie un proceso y un flujo puede crear registros. La distinción didáctica es la responsabilidad principal de cada componente, no que las herramientas sean incapaces de colaborar.
+Un disparador (trigger) inicia un flujo. Una acción (action) realiza una operación. Una condición (condition) selecciona el tratamiento según un criterio explícito.
 
-## Caso sintético
+## Ejemplo sintético de referencia
 
-Referencia: OC-1001, proveedor PROV-DEMO-01, línea 1, artículo ART-310. Misma moneda USD, misma unidad UN y mismo criterio de precio unitario sin impuestos.
+OC-1001, proveedor PROV-DEMO-01, línea 1, artículo ART-310. Ambos documentos usan USD, unidad UN y precio unitario sin impuestos.
 
-| Campo | Orden de compra OC-1001 | Confirmación CONF-001 |
-| --- | --- | --- |
-| Cantidad | 100 | 80 |
-| Precio unitario USD | 12.00 | 13.00 |
-| Fecha de entrega | 2026-11-05 | 2026-11-12 |
+| Campo | Orden | Confirmación | Diferencia confirmación menos orden |
+| --- | --- | --- | --- |
+| Cantidad | 100 UN | 80 UN | -20 UN |
+| Precio unitario | USD 12.00 | USD 13.00 | +USD 1.00 por unidad |
+| Entrega | 2026-11-05 | 2026-11-12 | +7 días naturales |
 
-Los datos completos están en [lesson-01.csv](data/lesson-01.csv). Son datos preparados, no información real de un proveedor ni salida de un modelo.
+La diferencia de cantidad muestra 20 unidades menos confirmadas; no demuestra cancelación del saldo. La diferencia de fecha indica una entrega posterior a la solicitada.
 
-## Actividad 1 de teoría
+Fuente de los valores: [datos sintéticos CSV](data/lesson-01.csv). La tabla es una referencia calculada de diseño, no una salida de una aplicación ya ejecutada.
 
-¿Qué componente usarías para la pantalla de revisión de Compras y cuál para ejecutar la comparación cuando llega una confirmación? Explicá brevemente por qué.
+## Cálculos y condiciones
 
-## Actividad 2 de práctica
+- Diferencia de cantidad = cantidad confirmada menos cantidad solicitada.
+- Diferencia de precio = precio unitario confirmado menos precio unitario solicitado.
+- Diferencia de fecha = fecha confirmada menos fecha solicitada, expresada en días naturales.
+- Comparar cantidades solo con unidades compatibles.
+- Comparar precios solo con moneda y base de precio compatibles.
+- Identificar orden, proveedor, línea y artículo antes de comparar.
+- Usar representación decimal adecuada para importes en la implementación.
+- Si faltan datos o no son comparables, registrar la incidencia para revisión.
 
-Compará los dos registros y anotá qué cambió en cantidad, precio y fecha. Para cada campo, expresá también la magnitud de la diferencia. Podés usar calculadora; no hace falta código.
+## Tratamiento propuesto
 
-## Actividad 3 de decisión
+En el primer prototipo, cualquier diferencia se envía a revisión de Compras. Se conserva el documento recibido, la orden original y el detalle de diferencias.
 
-¿La confirmación recibida debería sobrescribir automáticamente la orden de compra? Explicá qué registrarías y qué dejarías pendiente de una persona.
+Compras puede aceptar, rechazar o solicitar aclaración de las nuevas condiciones. La decisión, la persona responsable y su fecha se registrarán de forma separada del resultado de comparación.
 
-## Cómo responder
+No se sobrescribe automáticamente la orden original. La aceptación de un cambio y la actualización del ERP requieren un proceso explícito y evidencia de ejecución.
 
-Enviar en el chat:
+## Criterios de aceptación
 
-1. Pantalla y automatización: ...
-2. Diferencias: ...
-3. Decisión y motivo: ...
+1. El sistema debe relacionar la confirmación con la orden y línea correctas.
+2. El caso de referencia debe producir las tres diferencias indicadas.
+3. Los documentos originales deben permanecer disponibles.
+4. Toda diferencia debe quedar en una cola de revisión.
+5. Un problema de datos debe identificarse sin inventar valores.
+6. La decisión comercial debe poder distinguirse del resultado automático.
 
-El tutor revisará la respuesta y registrará los aciertos y las correcciones. Una respuesta parcial se continúa desde ese punto; no se marca toda la lección aprobada automáticamente.
+## Estado técnico
 
-## Evidencia de aprendizaje
+Fundamentos y datos de referencia preparados. La implementación y sus pruebas en Power Platform están pendientes. No hay integración operativa a SAP, Dynamics o n8n.
 
-Se completará después de recibir las respuestas. Todavía no existe ejecución en Power Platform, n8n, SAP o Dynamics.
+## Referencias
 
-## Próxima sesión
-
-Tras revisar el ejercicio, verificar el acceso real a Power Apps y el entorno disponible. Después crear una tabla o una pantalla pequeña en ese entorno. La secuencia exacta se adapta a la pantalla observada; no se presupone que ya exista una cuenta o licencia.
-
-## Fuente de estudio
-
-[Introducción al valor de negocio de Power Platform](https://learn.microsoft.com/en-us/training/paths/describe-business-value-microsoft-power-platform/).
+- [Introducción al valor de negocio de Power Platform](https://learn.microsoft.com/en-us/training/paths/describe-business-value-microsoft-power-platform/).
+- [Arquitectura de cotejo de confirmaciones con SAP](https://learn.microsoft.com/en-us/power-platform/architecture/reference-architectures/order-acknowledgment-validation).
