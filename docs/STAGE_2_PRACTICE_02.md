@@ -24,7 +24,7 @@ Las prioridades de esta tabla proceden de las respuestas v8 y coinciden con la p
 | Evidencia que permitiría avanzar | Error/comportamiento y pasos de la transacción | Campos y filtros acordados; comprobar si falta formato u otro requisito útil |
 | Lo que todavía no demuestra | Que la factura se haya contabilizado o el cierre se haya recuperado | Que el reporte se haya creado y aceptado |
 
-T06 corresponde a prioridad Baja por ser una solicitud planificada sin interrupción. Este es el desarrollo guiado del ejercicio anterior; no se registra como una respuesta de Gastón.
+T06 corresponde a prioridad Baja por ser una solicitud planificada sin interrupción. La prioridad y el tratamiento siguen la política explícita del laboratorio.
 
 ## Reglas iniciales del flujo
 1. Si el formato es inválido, registrar el problema y pasar a revisión; no tratar campos ausentes como decisiones válidas.
@@ -48,18 +48,14 @@ Una transición (state transition) es un cambio de estado provocado por un event
 
 Los estados y acciones del flujo se guardarían en un registro separado. El clasificador v8 mantiene sus seis claves. En esta lección no se cambia ningún ticket externo ni se envían solicitudes.
 
-## Ejercicio 3 — respuesta recibida
+## Ejemplo de transición por nueva información
 Escenario nuevo y simulado, no es una ejecución del modelo:
 
 T02 recibe el mensaje de error exacto y los pasos realizados. Esa información alcanza para comenzar la investigación, pero la factura sigue sin contabilizarse y el cierre de todo Finanzas continúa detenido.
 
-¿Qué debe cambiar ahora: la prioridad, el estado de la información o la resolución del ticket? Explicá por qué.
+La recepción de información suficiente actualiza el estado de información disponible. Mientras continúe el bloqueo, no cambia por sí sola la prioridad ni permite cerrar el ticket.
 
-Gastón respondió: “el estado de la imnformación, para que se realice la corrección”.
-
-La elección identifica la dimensión que cambia: la información disponible. El tutor aclara que permite comenzar la investigación y buscar la corrección; recibir error y pasos todavía no demuestra causa identificada, solución definida o corrección ejecutada. La prioridad sigue Alta mientras continúe el bloqueo, y el ticket permanece abierto.
-
-Esta respuesta comprueba ese criterio puntual; no se atribuye aprobación de todas las salidas del modelo.
+Recibir el error y los pasos permite comenzar la investigación. Todavía no demuestra una causa identificada, una solución definida o una corrección ejecutada. La prioridad sigue Alta mientras continúe el bloqueo y el ticket permanece abierto.
 
 ## Puente hacia código: condición y acción
 Una regla determinista aplica la misma decisión cuando recibe las mismas condiciones. Para esta transición educativa podemos expresarla así, sin otra llamada al modelo:
