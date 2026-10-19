@@ -38,6 +38,14 @@ Casos complementarios se informan aparte: [T11-v4](experiments/2026-10-14-t11-v4
 
 Una coincidencia de etiquetas no demuestra fidelidad completa del resumen ni utilidad de las preguntas. Los errores originales se conservan; el análisis del tutor IA no equivale a aprobación de una persona.
 
+## Caso de automatización de compras con Power Platform
+
+[Control de confirmaciones de proveedores](labs/procurement-confirmations/README.md): nuevo caso educativo para comparar cantidad, precio y fecha de entrega de una confirmación frente a una orden de compra. Incluye propuesta de Power Apps, Dataverse y Power Automate, con n8n como ampliación posterior.
+
+[Primera lección y práctica](labs/procurement-confirmations/LESSON_01.md) · [Datos sintéticos](labs/procurement-confirmations/data/lesson-01.csv) · [Registro de aprendizaje](labs/procurement-confirmations/LEARNING_LOG.md).
+
+Estado inicial: diseño y ejercicios preparados; respuestas del estudiante, acceso Microsoft e implementación pendientes. No altera v8, el contrato del clasificador o las métricas anteriores.
+
 ## Documentación de estudio
 - [Conceptos con ejemplos de nuestros tickets](docs/CONCEPTS.md).
 - [Alcance y flujo del proyecto](docs/PROJECT.md).
