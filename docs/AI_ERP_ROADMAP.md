@@ -16,13 +16,13 @@ Referencias: [rol de solution architect](https://learn.microsoft.com/en-us/dynam
 
 La etapa de prompts se cerró con v8 como referencia. El README consultado registra 48 respuestas entre versiones sobre 13 tickets distintos. Los cuatro controles v8 cubren 4/10 casos originales; no demuestran fiabilidad general. La validación humana cualitativa sigue pendiente salvo intervenciones expresas.
 
-La etapa 2 es diseño didáctico, todavía sin implementación del workflow. La documentación ya recoge la respuesta sobre gestionar T02 y solicitar datos en paralelo. El próximo ejercicio pendiente es T06, prioridad y tratamiento de una solicitud planificada.
+La etapa 2 es diseño didáctico, todavía sin implementación del workflow. La documentación desarrolla el tratamiento de T02 en paralelo y de T06 como solicitud planificada, junto con las reglas y transiciones propuestas.
 
 Este roadmap no reabre la etapa 1 ni modifica el contrato de seis claves de v8.
 
 ## Método
 
-Cada sesión combina un concepto en español con su término en inglés, un ejemplo ERP, una práctica pequeña y una comprobación de comprensión. El código o la documentación preparados por el tutor no acreditan comprensión del estudiante.
+El repositorio documenta fundamentos, ejemplos ERP, decisiones de diseño y evidencia reproducible. Las conversaciones de tutoría y las evaluaciones personales se mantienen fuera de GitHub.
 
 Mantener un proyecto activo y un curso complementario como máximo. Si una semana solo permite una hora, reducir el ejercicio y mover el calendario. Revisar alcance cada cuatro semanas.
 
@@ -83,6 +83,6 @@ Mantener los criterios de [LINKEDIN_PLAN.md](LINKEDIN_PLAN.md): datos sintético
 
 ## Próxima práctica
 
-Retomar el ejercicio 2 de [STAGE_2_ORCHESTRATION.md](STAGE_2_ORCHESTRATION.md): T06 pide un reporte mensual de ventas por cliente, sin interrupción del negocio. Faltan campos y filtros. El estudiante debe indicar prioridad, tratamiento y primer dato a solicitar.
+Retomar el ejercicio 2 de [STAGE_2_ORCHESTRATION.md](STAGE_2_ORCHESTRATION.md): T06 pide un reporte mensual de ventas por cliente, sin interrupción del negocio. Faltan campos y filtros. Documentar prioridad, tratamiento y requisitos de información según las reglas del proyecto.
 
-No marcar comprensión ni actualizar el estado del ejercicio hasta recibir y revisar la respuesta.
+Registrar avances de implementación y resultados solo con evidencia verificable.
