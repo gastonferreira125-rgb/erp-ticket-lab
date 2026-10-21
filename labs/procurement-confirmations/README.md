@@ -2,7 +2,7 @@
 
 Caso de automatización y portafolio de Gastón Ferreira. Inicio: 19 de octubre de 2026.
 
-**Estado:** diseño inicial, fundamentos y datos sintéticos preparados. No hay aplicación Power Apps, tablas Dataverse, flujo Power Automate o workflow n8n desplegados. No hay integración con SAP o Dynamics ni resultados de ahorro medidos.
+**Estado al 21 de octubre de 2026:** prototipo inicial de Power Apps con comparación manual de cantidades, resultado calculado, registro temporal en una colección, galería y contador. Se verificaron una coincidencia de 120/120 y un registro de 100 solicitadas frente a 80 confirmadas, con diferencia 20 y contador 1. La persistencia, la decisión de Compras y la comparación de precio y fecha quedan pendientes. No hay tablas Dataverse, flujos Power Automate, workflows n8n ni integración con SAP o Dynamics implementados; tampoco resultados de ahorro medidos.
 
 ## Problema de negocio
 
@@ -17,7 +17,7 @@ Microsoft publica una [arquitectura de referencia de cotejo de confirmaciones co
 1. Comprender el proceso y comparar dos registros manualmente.
 2. Verificar acceso y condiciones del entorno Microsoft.
 3. Modelar las tablas de orden, confirmación, diferencias y revisión.
-4. Construir una pantalla y una regla de comparación simples.
+4. Construir una pantalla y una regla de comparación simples: primera comparación de cantidades implementada; ampliar validaciones y datos de identificación.
 5. Ejecutar un flujo y conservar su evidencia, incluidos errores.
 6. Ampliar a documentos PDF y extracción de datos, si el acceso y el coste lo permiten.
 7. Evaluar una integración externa con n8n cuando aporte una función concreta.
@@ -28,7 +28,7 @@ Cada hito de implementación requiere evidencia de ejecución.
 
 | Componente | Responsabilidad en este caso | Estado |
 | --- | --- | --- |
-| Power Apps | Pantalla para consultar diferencias y registrar la decisión de Compras | Propuesto |
+| Power Apps | Pantalla para comparar cantidades, consultar diferencias y registrar la decisión de Compras | Comparador, colección temporal y galería implementados; decisión de Compras pendiente |
 | Dataverse | Tablas para documentos, líneas, discrepancias y revisiones | Propuesto; acceso pendiente |
 | Power Automate | Flujo que compara datos y registra el resultado | Propuesto |
 | Power BI | Indicadores de diferencias y tiempos observados | Ampliación posterior |
@@ -58,7 +58,11 @@ El diagrama es diseño. No demuestra que estos componentes estén conectados.
 
 Los [fundamentos funcionales y técnicos](LESSON_01.md) explican las responsabilidades de Power Platform, el proceso de compra y los cálculos de diferencias. Los [registros CSV](data/lesson-01.csv) aportan un caso sintético reproducible.
 
-El [registro técnico](LEARNING_LOG.md) describe entregables, estado de implementación y próximos hitos.
+La [guía del prototipo Power Apps](POWER_APPS_PROTOTYPE.md) documenta los controles, las fórmulas, el almacenamiento temporal y los casos de prueba. La validación de campos vacíos está definida y pendiente de evidencia de ejecución; las etiquetas visibles y la identificación de orden son los siguientes ajustes de pantalla.
+
+**Convención de cantidad:** la interfaz inicial calcula `Solicitada - Confirmada`, mientras que el CSV y los fundamentos usan `Confirmada - Solicitada`. Antes de integrar o persistir resultados se deberá unificar la convención o utilizar nombres explícitos. No se deben intercambiar ambos resultados como si tuvieran el mismo significado.
+
+El [registro técnico](LEARNING_LOG.md) conserva los hitos iniciales; para el estado actual del prototipo, consultar este README y la guía.
 
 ## Contrato inicial de datos
 
@@ -95,7 +99,11 @@ El CSV está codificado en UTF-8, separado por comas y usa punto decimal. Si Exc
 
 Estas son reglas de alcance del prototipo. Una implementación real requerirá validación con la empresa.
 
-## Evidencia y evaluación posteriores
+## Evidencia y evaluación
+
+La verificación manual del prototipo mostró 120 solicitadas y 120 confirmadas con diferencia 0 en verde. En otro caso, 100 solicitadas y 80 confirmadas mostraron diferencia 20; al registrar, la galería conservó esos valores y el contador indicó 1. Estas observaciones cubren la comparación básica y un registro temporal. No demuestran persistencia entre sesiones, procesamiento de documentos ni revisión comercial.
+
+Quedan por verificar el bloqueo de campos vacíos, el exceso de cantidad confirmada y varios registros sucesivos. La colección `colComparaciones` vive en la sesión: guardar el diseño de la app no conserva sus filas para la siguiente sesión.
 
 Se preparará un conjunto de diez casos sintéticos, con criterios esperados definidos antes de ejecutar el flujo. Incluirá coincidencia, cantidad diferente, precio diferente, retraso, combinación de diferencias, datos faltantes, moneda o unidad incompatible, orden desconocida y reenvío de documento.
 
@@ -115,10 +123,10 @@ Fuente: [Power Apps Developer Plan](https://learn.microsoft.com/en-us/power-plat
 
 ## Presentación profesional
 
-Descripción actual: diseño de automatización de compras, asignación de responsabilidades de Power Platform, fundamentos de comparación y datos sintéticos de referencia.
+Descripción actual: prototipo Power Apps para comparar cantidades de una orden y una confirmación, con fórmulas Power Fx, registro temporal en colección, galería y contador; acompañado de diseño de automatización de compras y datos sintéticos de referencia.
 
 La documentación pública describe el problema, el diseño, las decisiones y la evidencia técnica disponible. Las conversaciones de tutoría y las evaluaciones personales quedan fuera del repositorio. Las capacidades implementadas y las métricas se presentan con su evidencia.
 
 ## English overview
 
-Educational procurement confirmation matching case with synthetic records and an initial Power Platform design. Power Apps is proposed for review, Dataverse for records and Power Automate for orchestration. n8n intake and AI document extraction are later extensions. No deployed flows, ERP connections or measured business outcomes exist at kickoff.
+Educational procurement confirmation matching case with synthetic records. An initial Power Apps prototype compares manually entered quantities and records results in a session-only collection displayed in a gallery with a row counter. Persistent storage, purchasing decisions, price/date matching and Power Automate orchestration remain pending. n8n intake and AI document extraction are later extensions. No deployed flows, ERP connections or measured business outcomes are claimed.
