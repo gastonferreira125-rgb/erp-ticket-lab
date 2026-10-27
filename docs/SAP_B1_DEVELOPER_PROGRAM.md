@@ -166,7 +166,7 @@ Se recuperaron conversaciones históricas de septiembre y octubre sobre:
 - Diagnóstico de integraciones, alertas, trazabilidad de documentos y distinción entre permisos y licenciamiento.
 - Estudio posterior de UDF, UDT, UDO, búsquedas formateadas y circuito de compras (10/10).
 
-Son antecedentes recuperados de conversaciones, no ejecuciones nuevas ni validación de dominio completo. La matriz histórica fue localizada en un archivo privado; la lectura de vista previa no devolvió celdas. No se atribuyen a sus celdas contenidos sin inspección. No se publican aquí la matriz, nombres de usuarios/servidores, cantidades de licencias, identificadores de documentos, datos de empresa ni SQL interno.
+Son antecedentes recuperados de conversaciones, no ejecuciones nuevas ni validación de dominio completo. La matriz histórica fue localizada y abierta directamente como XLSX el 27/10/2026. Se verificaron sus hojas y se leyeron muestras de Catalogo_Tablas, Queries_Reportes, Queries_Aprobacion, Formatted_Search_SQL y 09_Interfaces. También contiene inventarios de UDF/UDT/UDO, procedimientos, triggers y validaciones Transaction Notification. La inspección fue estructural y por muestras; no constituye una auditoría completa de cada celda. Estos antecedentes se incorporan al diagnóstico inicial de aprendizaje. No se publican aquí la matriz, nombres de usuarios/servidores, cantidades de licencias, identificadores de documentos, datos de empresa ni SQL interno.
 
 Aplicación al programa:
 - M1: relacionar arquitectura con investigaciones y componentes ya conocidos; dedicar más tiempo a responsabilidades técnicas y vías de integración.
