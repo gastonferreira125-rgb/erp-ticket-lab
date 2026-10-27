@@ -153,3 +153,25 @@ Vocabulario: landscape = conjunto de componentes; business object = objeto de ne
 | 2026-10-27 | PDF y fuentes oficiales revisados; repositorio inspeccionado | Preparación completada | Referencias y archivos revisados arriba |
 | 2026-10-27 | M1 / Lección 1 | En estudio | Lectura y respuesta del alumno pendientes |
 | 2026-10-27 | B1-01A | No iniciado | Inventario, mapa y explicación pendientes |
+
+
+## Base de experiencia previa recuperada — 27/10/2026
+Ajuste solicitado por el alumno: la capacitación debe aprovechar su trabajo previo de soporte y análisis de SAP Business One sobre HANA. No tratar al alumno como principiante absoluto en SQL, tablas o procesos ERP. Presentar teoría técnica nueva antes de cada práctica, comprobar comprensión con casos y profundizar donde haya brechas.
+
+Se recuperaron conversaciones históricas de septiembre y octubre sobre:
+- Relevamiento mediante matriz maestra de usuarios, autorizaciones, licencias, componentes, cuentas técnicas e interfaces.
+- Consultas sobre OUSR y actividad documental por usuario en OPOR, OPCH, OIGE, OIGN, ORCT, OVPM y OINV (conversación del 24/09).
+- Reporte de órdenes de compra por período, cabecera/líneas OPOR y POR1, parámetros y estados pendientes.
+- Investigación de notas de crédito y facturación electrónica mediante ORIN, OINV, tablas de usuario de una extensión y metadatos HANA SYS.TABLE_COLUMNS (30/09).
+- Diagnóstico de integraciones, alertas, trazabilidad de documentos y distinción entre permisos y licenciamiento.
+- Estudio posterior de UDF, UDT, UDO, búsquedas formateadas y circuito de compras (10/10).
+
+Son antecedentes recuperados de conversaciones, no ejecuciones nuevas ni validación de dominio completo. La matriz histórica fue localizada en un archivo privado; la lectura de vista previa no devolvió celdas. No se atribuyen a sus celdas contenidos sin inspección. No se publican aquí la matriz, nombres de usuarios/servidores, cantidades de licencias, identificadores de documentos, datos de empresa ni SQL interno.
+
+Aplicación al programa:
+- M1: relacionar arquitectura con investigaciones y componentes ya conocidos; dedicar más tiempo a responsabilidades técnicas y vías de integración.
+- M2: comenzar con un diagnóstico breve de cabecera/líneas, claves internas, JOIN, filtros y agregaciones usando datos ficticios; profundizar en CTE, rendimiento, metadatos y diferencias de dialecto según resultado.
+- M3: convertir un caso conocido de consulta SQL de compras en una integración de lectura por API. La experiencia SQL no acredita todavía experiencia desarrollando Service Layer.
+- M8: aprovechar la experiencia de relevamiento y auditoría para explicar IAM, monitoreo, licencias y administración técnica.
+- Portafolio: reutilizar aprendizajes con ejemplos sintéticos, preservando la documentación empresarial privada.
+El punto de reanudación continúa en M1, Lección 1, con este reconocimiento explícito de la experiencia previa.
