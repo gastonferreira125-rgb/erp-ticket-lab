@@ -113,3 +113,13 @@ Próxima acción: exportar el workflow real, verificar contenido y cerrar el paq
 - `active: false` en el export; no hay pruebas de ejecución desde este JSON importado en otra instancia.
 - El JSON refleja la configuración de nodos y conexiones, **no** incluye historial de ejecuciones, credenciales ni prueba de integración con un ERP real.
 - El siguiente desarrollo será validar que `prioridad` pertenezca a los valores `Alta`, `Media` o `Baja`; un valor inválido no debe enrutarse como caso normal por `false`.
+
+## Validación de prioridades — avance 28/10/2026
+
+Evidencia: dos capturas recibidas en el chat de estudio (aún no publicadas como archivos en el repositorio). Se observa el nuevo nodo `Validar prioridad` (If) entre `Edit Fields` y el `If` original.
+
+- Expresión configurada: `{{ ['Alta', 'Media', 'Baja'].includes($json.prioridad) }}`; operador Boolean `is true`.
+- Prueba observada: entrada T02 / Finanzas / Alta, un item en la rama true del validador y continuación al If original y Edit Fields2.
+- Resultado: validación de caso permitido conforme. Las capturas no prueban todavía el comportamiento de `Media`, valores vacíos ni inválidos.
+- **Pendiente:** conectar false del validador a un nuevo nodo `Edit Fields` para registrar `estado_validacion = Rechazada` y `motivo_validacion`, conservando los campos originales. Ejecutar prueba de `Urgente` para comprobar que no entra al circuito ordinario. No confundir false del validador con false del If original.
+- **Enseñanza:** separación Input Validation (dominio permitido) de Business Logic (ruta Alta frente a no Alta). `includes` evalúa pertenencia exacta en un array y devuelve Boolean.
