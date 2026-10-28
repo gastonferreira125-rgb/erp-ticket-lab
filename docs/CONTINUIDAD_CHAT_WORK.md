@@ -119,3 +119,9 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Evidencia:** captura del nodo Edit Fields con los seis campos JSON de T02; captura de ejecución que muestra Validar contrato JSON, Validar prioridad, If y Edit Fields2 con un item. Export real inspeccionado con 8 nodos, Code en Run Once for Each Item, sin credenciales observadas. Se eliminó meta.instanceId en la copia pública.
 - **Límite:** el Code valida y agrega `validacion_contrato`, pero aún no se verifica por captura su OUTPUT JSON; no existe una rama de rechazo de contratos inválidos. No afirmar integración con modelo IA o SAP.
 - **Próximo paso único:** insertar If `Contrato válido?` después del Code, condición `{{ $json.validacion_contrato.valido }}` is true; true hacia Validar prioridad, false hacia nuevo Edit Fields `Revisar contrato`. Probar caso válido e inválido y exportar otra versión.
+
+## Handoff — 28/10/2026: revisión del If de contrato (capturas)
+
+- Se observa INPUT del nodo `Contrato válido?` con `validacion_contrato.valido=true` y array `errores` vacío (T02 válido), además de condición Boolean `is true` sobre `{{ $json.validacion_contrato.valido }}`.
+- `Revisar contrato` aún presenta el campo predeterminado `name/value`, aunque `Include Other Input Fields` está activado. Conexiones y ejecución del nuevo If no confirmadas visualmente.
+- **Siguiente acción única:** configurar dos campos de salida del rechazo (`estado_validacion=Rechazada`, `motivo_validacion=Contrato JSON inválido`), verificar enlaces true/false y probar con categoría inválida en el JSON simulado.
