@@ -135,3 +135,9 @@ Evidencia: dos capturas recibidas en el chat de estudio (aún no publicadas como
 ### Aclaración de orden de ejecuciones
 
 - **Aclaración posterior del participante:** el panel `No output data` era de una ejecución anterior, realizada antes de cambiar la prioridad a `Urgente`. Después cambió el dato y ejecutó el workflow, mostrando 1 item en la rama false de validación hacia `Revisar prioridad`. No se observó un fallo de ejecución; sigue sin recibirse una captura JSON del contenido de los campos de salida.
+
+## Prueba de prioridad Media — 28/10/2026
+- Evidencia aportada: captura de `Edit Fields` con `ticket_id=T02`, `categoria=Finanzas`, `prioridad=Media`; captura del lienzo con ejecución correcta y un item pasando por `Validar prioridad` (true), `If` original (false) y `Edit Fields1`.
+- **Resultado observado:** ruta correcta para un valor permitido distinto de Alta; la rama `Revisar prioridad` no se ejecutó en esta prueba.
+- **Límite funcional:** el ticket sintético T02 estaba etiquetado Alta por bloqueo de Finanzas; cambiarlo temporalmente a Media comprueba enrutamiento, no constituye una reclasificación funcional aprobada.
+- **Siguiente prueba:** prioridad `""` (String vacío), con expectativa `Validar prioridad=false` → `Revisar prioridad`; obtener el OUTPUT de ese nodo. No se ha observado aún esta prueba.
