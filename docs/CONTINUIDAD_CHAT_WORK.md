@@ -75,3 +75,10 @@ Cuando no se hayan modificado archivos, la respuesta final debe incluir un breve
 - **Seguridad:** sin secciones credentials en nodos; retirada de meta.instanceId de la copia pública.
 - **Resultado:** configuración registrada en GitHub; no se han ejecutado pruebas adicionales del workflow importado.
 - **Siguiente paso:** Input Validation en n8n (Alta / Media / Baja), con pruebas de prioridad Media, texto vacío y valor desconocido. Evitar repetir T02 y T06 ya documentados, salvo requerimiento específico.
+
+## Sesión chat normal — 28/10/2026, validación de prioridad
+
+- **Estado:** el participante agregó un If llamado `Validar prioridad` y mostró dos capturas de configuración y ejecución.
+- **Prueba confirmada:** T02 / Alta produce true en validador, llega a If original y continúa a Edit Fields2; se observó un item en esa ruta.
+- **Pendientes:** rama false de Validar prioridad sin tratamiento, crear salida de rechazo y probar valor `Urgente`; luego probar `Media` y vacío. No atribuir estos resultados hasta ver su ejecución.
+- **Próximo paso único:** conectar un nodo de revisión en false del validador, conservando campos de entrada y marcando el estado de validación; después ejecutar entrada inválida.
