@@ -82,3 +82,10 @@ Cuando no se hayan modificado archivos, la respuesta final debe incluir un breve
 - **Prueba confirmada:** T02 / Alta produce true en validador, llega a If original y continúa a Edit Fields2; se observó un item en esa ruta.
 - **Pendientes:** rama false de Validar prioridad sin tratamiento, crear salida de rechazo y probar valor `Urgente`; luego probar `Media` y vacío. No atribuir estos resultados hasta ver su ejecución.
 - **Próximo paso único:** conectar un nodo de revisión en false del validador, conservando campos de entrada y marcando el estado de validación; después ejecutar entrada inválida.
+
+## Sesión chat normal — 28/10/2026, prueba negativa de prioridad
+
+- **Configuración mostrada:** se creó `Revisar prioridad` en false del validador, con `estado_validacion=Rechazada`, `motivo_validacion=Prioridad fuera del catálogo permitido` e inclusión de demás campos.
+- **Prueba con evidencia:** entrada T02 con prioridad `Urgente`; el lienzo muestra ruta false a `Revisar prioridad`, 1 item y ejecución exitosa. No pasó al `If` original.
+- **Límite de la evidencia:** otra captura del panel mostraba `No output data`, presumiblemente distinta ejecución; falta ver JSON OUTPUT del último recorrido, sin afirmar que los seis campos resultantes están comprobados.
+- **Próximo paso único:** abrir `Revisar prioridad`, capturar OUTPUT JSON de la última ejecución de `Urgente`; luego probar Media y vacío. Mantener separado el export anterior de cinco nodos.
