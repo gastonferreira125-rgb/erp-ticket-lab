@@ -106,3 +106,9 @@ Cuando no se hayan modificado archivos, la respuesta final debe incluir un breve
 
 ## Inicio Lab 02 — 28/10/2026
 Se recibió una captura del usuario que confirma la existencia de una copia en n8n llamada 'ERP Ticket Lab - Flujo 02 - Integración IA'. Se observan los siete nodos del Lab 01 y las conexiones del enrutamiento y rechazo. No hay una exportación JSON de esta copia, ni evidencia de integración real con un modelo. Paso siguiente de tutoría: en el nodo Edit Fields de la copia, cambiar Manual Mapping a JSON Output, cargar un objeto sintético compatible con schema.json de seis campos, ejecutar y revisar el OUTPUT. Registrar luego el resultado observado. Conservar Flujo 01 sin modificar.
+
+## Flujo 02 — entrada JSON simulada (28/10/2026)
+- Captura recibida del nodo Edit Fields de n8n en el Flujo 02; Mode=JSON. El OUTPUT muestra un item con seis claves: ticket_id=T02, categoria=Finanzas, prioridad=Alta, resumen sintético, referencia_documento=FV-1042 y datos_faltantes como array de dos strings.
+- El nodo produjo correctamente JSON sintácticamente interpretable. No se ha validado aún el documento con el schema.json completo; no hay conexión con un modelo ni con SAP.
+- No se ha compartido un export JSON actualizado del Flujo 02, solo captura. El Flujo 01 original se conserva.
+- **Próximo paso:** crear una etapa de validación integral del contrato con JavaScript (nodo Code) antes del validador de prioridades y comprobar la salida con casos válidos e inválidos. Enseñar sintaxis y tipos mientras se desarrolla.
