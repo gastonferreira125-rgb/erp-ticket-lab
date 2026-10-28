@@ -1,0 +1,355 @@
+{
+  "name": "ERP Ticket Lab - Flujo 02 - Integración IA",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "de6b32a5-d65e-497e-8991-d40fbc4bc293",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"ticket_id\": \"T02\",\n  \"categoria\": \"NoExiste\",\n  \"prioridad\": \"Alta\",\n  \"resumen\": \"La factura FV-1042 no se contabiliza. Todo Finanzas está bloqueado y el cierre detenido.\",\n  \"referencia_documento\": \"FV-1042\",\n  \"datos_faltantes\": [\n    \"Mensaje de error exacto\",\n    \"Pasos realizados antes del error\"\n  ]\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "e85d2bc5-4fc9-49b5-9b6f-e97af8ed7801",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "ad09bcf9-1c21-43bc-8c89-66ce93160740",
+              "leftValue": "={{ $json.prioridad }}",
+              "rightValue": "Alta",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        1120,
+        0
+      ],
+      "id": "5f5b64e9-484b-493e-836c-0d4747e1d1a5",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "874c7020-0925-4066-a8c5-0fba9a779ceb",
+              "name": "siguiente_accion",
+              "value": "Revisar requisitos e impacto para planificar atención",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        1296,
+        144
+      ],
+      "id": "f618e027-9970-4fc2-a174-ea8e9daff91f",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "aa02b90c-0317-4dd0-8785-34f7be514b45",
+              "name": "siguiente_accion",
+              "value": "Proponer atención prioritaria y solicitar datos faltantes en paralelo",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        1280,
+        -112
+      ],
+      "id": "12032dfb-9583-4f60-ba8e-249d7ebe9ebb",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "908f1d8b-03f9-4c1b-b4d8-fda3f58f3572",
+              "leftValue": "={{ ['Alta', 'Media', 'Baja'].includes($json.prioridad) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        896,
+        0
+      ],
+      "id": "5590eb04-dce2-40b6-baeb-cd43ad6a31ae",
+      "name": "Validar prioridad"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5f089bdb-6d01-454b-ba44-313a320039bd",
+              "name": "estado_validacion",
+              "value": "Rechazada",
+              "type": "string"
+            },
+            {
+              "id": "60f1a824-9bec-4805-b58d-c886b7902229",
+              "name": "motivo_validacion",
+              "value": "Prioridad fuera del catálogo permitido",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        1136,
+        304
+      ],
+      "id": "77352446-017b-4fc2-8172-6ddfabbf4d58",
+      "name": "Revisar prioridad"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "\nconst ticket = $input.item.json;\nconst errores = [];\n\nconst campos = [\n  \"ticket_id\",\n  \"categoria\",\n  \"prioridad\",\n  \"resumen\",\n  \"referencia_documento\",\n  \"datos_faltantes\"\n];\n\nconst categorias = [\n  \"Finanzas\", \"Ventas\", \"Inventario\",\n  \"Autorizaciones\", \"Reportes\",\n  \"Integraciones\", \"Compras\", \"Otros\"\n];\n\nconst prioridades = [\"Alta\", \"Media\", \"Baja\"];\n\n// Comprobar campos obligatorios\nfor (const campo of campos) {\n  if (!Object.hasOwn(ticket, campo)) {\n    errores.push(`Falta el campo: ${campo}`);\n  }\n}\n\n// No admitir campos adicionales\nfor (const campo of Object.keys(ticket)) {\n  if (!campos.includes(campo)) {\n    errores.push(`Campo no permitido: ${campo}`);\n  }\n}\n\n// Validar tipos y valores\nif (typeof ticket.ticket_id !== \"string\") {\n  errores.push(\"ticket_id debe ser String\");\n}\n\nif (!categorias.includes(ticket.categoria)) {\n  errores.push(\"Categoría no permitida\");\n}\n\nif (!prioridades.includes(ticket.prioridad)) {\n  errores.push(\"Prioridad no permitida\");\n}\n\nif (\n  typeof ticket.resumen !== \"string\" ||\n  ticket.resumen.length < 1\n) {\n  errores.push(\"Resumen inválido\");\n}\n\nif (\n  ticket.referencia_documento !== null &&\n  typeof ticket.referencia_documento !== \"string\"\n) {\n  errores.push(\"Referencia debe ser String o null\");\n}\n\nif (\n  !Array.isArray(ticket.datos_faltantes) ||\n  !ticket.datos_faltantes.every(\n    valor => typeof valor === \"string\"\n  )\n) {\n  errores.push(\"datos_faltantes debe ser Array de String\");\n}\n\n// Devolver datos y resultado de validación\nreturn {\n  json: {\n    ...ticket,\n    validacion_contrato: {\n      valido: errores.length === 0,\n      errores: errores\n    }\n  }\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "96ba65b8-1d08-4402-815b-214d5054cb27",
+      "name": "Validar contrato JSON"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "5bd0de11-340d-411f-82af-f6678910137d",
+              "leftValue": "={{ $json.validacion_contrato.valido }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        672,
+        0
+      ],
+      "id": "c9fb4331-63a0-48ee-add8-628cde25a640",
+      "name": "Contrato válido?"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2183cab8-5326-4677-8f06-9c52b198d590",
+              "name": "estado_validacion",
+              "value": "Rechazada",
+              "type": "string"
+            },
+            {
+              "id": "f95ae405-ce15-453f-ab28-b44daf552d67",
+              "name": "motivo_validacion",
+              "value": "Contrato JSON inválido",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        768,
+        240
+      ],
+      "id": "14e56c69-222a-405e-ae4d-eeb60d88d96b",
+      "name": "Revisar contrato"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Validar contrato JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar prioridad": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Revisar prioridad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar contrato JSON": {
+      "main": [
+        [
+          {
+            "node": "Contrato válido?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contrato válido?": {
+      "main": [
+        [
+          {
+            "node": "Validar prioridad",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Revisar contrato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true
+  },
+  "versionId": "bd1ed034-5c1a-4927-8aeb-4451dc9fcecb",
+  "meta": {},
+  "nodeGroups": [],
+  "id": "TrkHCAvNMMT3h0Eu",
+  "tags": []
+}
