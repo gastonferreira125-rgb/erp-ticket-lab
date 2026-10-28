@@ -175,3 +175,7 @@ Aplicación al programa:
 - M8: aprovechar la experiencia de relevamiento y auditoría para explicar IAM, monitoreo, licencias y administración técnica.
 - Portafolio: reutilizar aprendizajes con ejemplos sintéticos, preservando la documentación empresarial privada.
 El punto de reanudación continúa en M1, Lección 1, con este reconocimiento explícito de la experiencia previa.
+
+
+## Laboratorio de automatización n8n — 28/10/2026
+Se incorporó la práctica [n8n Ticket Routing — Lab 01](../labs/n8n-ticket-routing/README.md), con siete capturas seleccionadas, instrucciones, correcciones y resultados diferenciados por ejecución. Routing determinista con prioridad manual: T06/Baja por false y T02/Alta por true. Exportación del workflow real pendiente; sin llamadas IA ni conexión ERP. Complementa la orquestación del laboratorio sin modificar prompts v8 ni métricas previas.
