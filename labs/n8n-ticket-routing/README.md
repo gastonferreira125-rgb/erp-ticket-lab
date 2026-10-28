@@ -6,7 +6,7 @@ Educational workflow built manually in n8n Cloud on 28 October 2026. Synthetic E
 Se construyó un flujo con Manual Trigger, Edit Fields, If y dos nodos Edit Fields de salida.
 - T06 / Baja: se observó el recorrido false hasta Edit Fields1 tras corregir la conexión.
 - T02 / Alta: se observó el recorrido true hasta Edit Fields2 y una salida con los cuatro campos de entrada más siguiente_accion.
-- Se conservaron siete capturas seleccionadas de ejecución y correcciones. Son evidencia visual; el JSON exportado del workflow todavía está pendiente.
+- Se conservaron siete capturas seleccionadas de ejecución y correcciones. Son evidencia visual; el JSON exportado del workflow ya fue recibido y archivado (véase sección de exportación).
 
 ## Arquitectura
 
@@ -84,10 +84,10 @@ Las capturas reflejan momentos distintos, no una ejecución única. No se calcul
 Se documentan comportamientos y correcciones técnicas, sin atribuir valoraciones personales al participante.
 
 ## Límites y próximos pasos
-- Estado: laboratorio de routing ejecutado con evidencia en ambas ramas; exportación e inspección del workflow JSON pendientes.
+- Estado: laboratorio de routing ejecutado con evidencia en ambas ramas; exportación e inspección del workflow JSON completadas.
 - Las capturas prueban lo visible, no persistencia, versión exacta de n8n o reproducibilidad automática.
 - El último caso mostrado es T02/Alta.
-- Falta obtener el JSON exportado real, conservarlo tras revisar datos sensibles y repetir una ejecución T06 con OUTPUT final después del cableado corregido.
+- El JSON exportado real se recibió y archivó tras retirar el identificador de instancia. La captura del OUTPUT final de T06 posterior al cableado corregido sigue pendiente; no se considera requisito para avanzar a la siguiente lección.
 - Añadir validación de valores permitidos antes del routing: hoy un valor vacío/desconocido puede ir por false y parecer un caso no alto.
 - Faltan validación humana formal, gestión de estados, persistencia, errores de integración y datos faltantes estructurados.
 - No hay nueva inferencia, agente, MCP, RAG ni conexión SAP/Dynamics. “En paralelo” es texto de una recomendación; no dos tareas implementadas.
@@ -102,3 +102,14 @@ Se documentan comportamientos y correcciones técnicas, sin atribuir valoracione
 Fecha: 28/10/2026.
 Evidencia revisada: capturas aportadas por el participante; nombres originales y correspondencia en el índice.
 Próxima acción: exportar el workflow real, verificar contenido y cerrar el paquete reproducible antes de añadir nuevas integraciones.
+
+## Archivo exportado y reproducibilidad — 28/10/2026
+
+- Se recibió el export real de n8n en formato JSON y se conservó una copia: [workflow.json](workflow.json).
+- Se validó la sintaxis JSON y la topología de cinco nodos: Manual Trigger → Edit Fields → If; true → Edit Fields2; false → Edit Fields1.
+- La condición almacenada es `={{ $json.prioridad }}` igual a `Alta`; los nodos de salida preservan los demás campos (`includeOtherFields: true`).
+- El export contiene como entrada el caso T02 / Finanzas / Alta. Los datos de T06 no permanecieron en el export; sus pruebas previas están registradas por capturas.
+- No se detectaron nodos con `credentials`. Para evitar publicar identificadores de la instancia se eliminó únicamente `meta.instanceId` del archivo versionado; el archivo original permanece en la conversación del participante.
+- `active: false` en el export; no hay pruebas de ejecución desde este JSON importado en otra instancia.
+- El JSON refleja la configuración de nodos y conexiones, **no** incluye historial de ejecuciones, credenciales ni prueba de integración con un ERP real.
+- El siguiente desarrollo será validar que `prioridad` pertenezca a los valores `Alta`, `Media` o `Baja`; un valor inválido no debe enrutarse como caso normal por `false`.
