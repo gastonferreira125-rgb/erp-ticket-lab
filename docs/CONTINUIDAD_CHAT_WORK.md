@@ -103,3 +103,6 @@ Cuando no se hayan modificado archivos, la respuesta final debe incluir un breve
 - **Versión exportada:** entrada `prioridad=""`; sin credenciales, copia pública sin `meta.instanceId`. El export representa configuración, no historial ni datos OUTPUT.
 - **No declarar comprobado:** el contenido final del OUTPUT JSON de Rechazar prioridad en ejecución, conexión a IA ni conexión a SAP.
 - **Próximo paso:** iniciar diseño educativo de entrada automática del clasificador IA (contrato, normalización y tratamiento de entradas inválidas), sin reejecutar pruebas cubiertas salvo que se necesite evidencia nueva. Explicar la teoría junto a cada implementación.
+
+## Inicio Lab 02 — 28/10/2026
+Se recibió una captura del usuario que confirma la existencia de una copia en n8n llamada 'ERP Ticket Lab - Flujo 02 - Integración IA'. Se observan los siete nodos del Lab 01 y las conexiones del enrutamiento y rechazo. No hay una exportación JSON de esta copia, ni evidencia de integración real con un modelo. Paso siguiente de tutoría: en el nodo Edit Fields de la copia, cambiar Manual Mapping a JSON Output, cargar un objeto sintético compatible con schema.json de seis campos, ejecutar y revisar el OUTPUT. Registrar luego el resultado observado. Conservar Flujo 01 sin modificar.
