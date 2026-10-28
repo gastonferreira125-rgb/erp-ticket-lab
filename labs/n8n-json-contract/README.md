@@ -28,3 +28,10 @@ La implementación refleja controles principales de [schema.json](../../schema.j
 El flujo actual **no separa los contratos inválidos**. Incluso con `validacion_contrato.valido=false`, el item sigue hacia `Validar prioridad`. Para impedirlo, añadir un nodo If llamado `Contrato válido?` inmediatamente después de `Validar contrato JSON`, con condición Boolean `{{ $json.validacion_contrato.valido }}` `is true`. Su salida true debe conectar a `Validar prioridad`; false a un nuevo nodo `Revisar contrato` que preserve datos y marque `estado_validacion=Rechazada`, `motivo_validacion=Contrato JSON inválido`. No reutilizar `Revisar prioridad` para errores de esquema.
 
 Probar primero T02 válido y luego un caso con `categoria=NoExiste` o un campo extra, confirmando que el rechazo ocurre antes del enrutamiento por prioridad. Una vez comprobado, volver a exportar el Flujo 02 como nueva versión.
+
+## 28/10/2026 — control del contrato y salida de rechazo (capturas)
+
+- El alumno muestra el nodo `Contrato válido?` con expresión `{{ $json.validacion_contrato.valido }}` y operador Boolean `is true`. Su INPUT muestra `validacion_contrato.valido = true` y una colección `errores` sin elementos para T02. Esto confirma visualmente la salida del Code en el caso válido.
+- La captura del nodo `Revisar contrato` muestra `Include Other Input Fields` activado, pero el campo aún conserva el marcador `name` / `value`; falta configurar `estado_validacion` y `motivo_validacion`.
+- No se ve un lienzo completo de las nuevas conexiones ni una ejecución posterior del nodo If; `No output data` por sí solo no confirma un fallo.
+- **Próximo paso:** terminar los campos de rechazo, confirmar rama true a Validar prioridad y false a Revisar contrato, ejecutar caso sintético con `categoria = NoExiste`, y verificar `validacion_contrato.valido = false`, mensaje `Categoría no permitida` y salida de rechazo. No afirmar ejecución hasta recibir evidencia.
