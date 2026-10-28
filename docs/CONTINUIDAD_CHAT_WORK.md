@@ -93,3 +93,13 @@ Cuando no se hayan modificado archivos, la respuesta final debe incluir un breve
 ### Aclaración de captura previa
 
 - **Aclaración posterior del participante:** el panel `No output data` era de una ejecución anterior, realizada antes de cambiar la prioridad a `Urgente`. Después cambió el dato y ejecutó el workflow, mostrando 1 item en la rama false de validación hacia `Revisar prioridad`. No se observó un fallo de ejecución; sigue sin recibirse una captura JSON del contenido de los campos de salida.
+
+
+## Handoff — 28/10/2026: laboratorio n8n validación v2
+
+- **Estado:** export nuevo guardado en [workflow-v2-validacion.json](../labs/n8n-ticket-routing/workflow-v2-validacion.json). La versión original de cinco nodos permanece sin sustituir.
+- **Arquitectura comprobada:** siete nodos; validación previa de prioridad mediante `includes` para Alta/Media/Baja; false hacia Revisar prioridad; true hacia If que distingue Alta de no Alta.
+- **Evidencia visual:** T02 Alta por ruta prioritaria, T02 Media por ruta no Alta, T02 con Urgente por rechazo, T02 con prioridad vacía por rechazo (1 item); T06 Baja fue probado en el laboratorio v1, no con el validador nuevo.
+- **Versión exportada:** entrada `prioridad=""`; sin credenciales, copia pública sin `meta.instanceId`. El export representa configuración, no historial ni datos OUTPUT.
+- **No declarar comprobado:** el contenido final del OUTPUT JSON de Rechazar prioridad en ejecución, conexión a IA ni conexión a SAP.
+- **Próximo paso:** iniciar diseño educativo de entrada automática del clasificador IA (contrato, normalización y tratamiento de entradas inválidas), sin reejecutar pruebas cubiertas salvo que se necesite evidencia nueva. Explicar la teoría junto a cada implementación.
