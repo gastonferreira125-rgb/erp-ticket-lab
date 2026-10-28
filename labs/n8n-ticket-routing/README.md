@@ -141,3 +141,17 @@ Evidencia: dos capturas recibidas en el chat de estudio (aún no publicadas como
 - **Resultado observado:** ruta correcta para un valor permitido distinto de Alta; la rama `Revisar prioridad` no se ejecutó en esta prueba.
 - **Límite funcional:** el ticket sintético T02 estaba etiquetado Alta por bloqueo de Finanzas; cambiarlo temporalmente a Media comprueba enrutamiento, no constituye una reclasificación funcional aprobada.
 - **Siguiente prueba:** prioridad `""` (String vacío), con expectativa `Validar prioridad=false` → `Revisar prioridad`; obtener el OUTPUT de ese nodo. No se ha observado aún esta prueba.
+
+
+## Validación de prioridad — versión 2 (28/10/2026)
+
+**Artefacto:** [workflow-v2-validacion.json](workflow-v2-validacion.json). La versión inicial de cinco nodos permanece en [workflow.json](workflow.json).
+
+- El JSON exportado contiene **7 nodos**: Manual Trigger, Edit Fields, Validar prioridad, If, Edit Fields1, Edit Fields2 y Revisar prioridad. La rama true del validador llega a If; la false llega a Revisar prioridad.
+- Validar prioridad aplica `{{ ['Alta', 'Media', 'Baja'].includes($json.prioridad) }}` con operador Boolean `is true`; las entradas no pertenecientes al conjunto se derivan a revisión.
+- Revisar prioridad añade `estado_validacion: Rechazada` y `motivo_validacion: Prioridad fuera del catálogo permitido`, conservando el resto de campos.
+- Capturas del alumno: T02/Alta pasó por validación y atención prioritaria; T02 con Media pasó validación y luego por la rama no Alta; T02 con Urgente recorrió rechazo; T02 con prioridad vacía recorrió rechazo, con un item en Revisar prioridad.
+- T02/Media es una prueba técnica de enrutamiento, no reclasificación funcional de T02 (caso original: Alta por bloqueo de Finanzas).
+- El JSON v2 contiene `prioridad: ""` como entrada de la última prueba. Se verificó la estructura del export y se retiró `meta.instanceId` antes de publicar. No hay credenciales de nodos.
+- **Alcance de evidencia:** el lienzo confirma las rutas y los items; no se recibió captura final del JSON OUTPUT de Revisar prioridad. El export no contiene historial de ejecuciones y no prueba el texto emitido en runtime.
+- **Siguiente evolución:** separar mejor prioridades Media/Baja y diseñar la entrada desde el clasificador IA versionado, manteniendo revisión humana y contrato de datos; no conectar un ERP real hasta definir autenticación, manejo de errores y permisos.
