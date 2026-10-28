@@ -112,3 +112,10 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - El nodo produjo correctamente JSON sintácticamente interpretable. No se ha validado aún el documento con el schema.json completo; no hay conexión con un modelo ni con SAP.
 - No se ha compartido un export JSON actualizado del Flujo 02, solo captura. El Flujo 01 original se conserva.
 - **Próximo paso:** crear una etapa de validación integral del contrato con JavaScript (nodo Code) antes del validador de prioridades y comprobar la salida con casos válidos e inválidos. Enseñar sintaxis y tipos mientras se desarrolla.
+
+## Handoff — 28/10/2026: Flujo 02 con Code JavaScript (8 nodos)
+
+- **Archivos:** [export del Flujo 02](../labs/n8n-json-contract/flujo-02-v1.json), [manual del Lab 02](../labs/n8n-json-contract/README.md) y contrato [schema.json](../schema.json).
+- **Evidencia:** captura del nodo Edit Fields con los seis campos JSON de T02; captura de ejecución que muestra Validar contrato JSON, Validar prioridad, If y Edit Fields2 con un item. Export real inspeccionado con 8 nodos, Code en Run Once for Each Item, sin credenciales observadas. Se eliminó meta.instanceId en la copia pública.
+- **Límite:** el Code valida y agrega `validacion_contrato`, pero aún no se verifica por captura su OUTPUT JSON; no existe una rama de rechazo de contratos inválidos. No afirmar integración con modelo IA o SAP.
+- **Próximo paso único:** insertar If `Contrato válido?` después del Code, condición `{{ $json.validacion_contrato.valido }}` is true; true hacia Validar prioridad, false hacia nuevo Edit Fields `Revisar contrato`. Probar caso válido e inválido y exportar otra versión.
