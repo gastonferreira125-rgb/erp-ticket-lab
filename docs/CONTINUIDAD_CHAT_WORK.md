@@ -125,3 +125,10 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - Se observa INPUT del nodo `Contrato válido?` con `validacion_contrato.valido=true` y array `errores` vacío (T02 válido), además de condición Boolean `is true` sobre `{{ $json.validacion_contrato.valido }}`.
 - `Revisar contrato` aún presenta el campo predeterminado `name/value`, aunque `Include Other Input Fields` está activado. Conexiones y ejecución del nuevo If no confirmadas visualmente.
 - **Siguiente acción única:** configurar dos campos de salida del rechazo (`estado_validacion=Rechazada`, `motivo_validacion=Contrato JSON inválido`), verificar enlaces true/false y probar con categoría inválida en el JSON simulado.
+
+## Handoff — 28/10/2026, gate de contrato implementado y rechazo probado
+
+- Se recibió un segundo export del Flujo 02: [flujo-02-v2-rechazo.json](../labs/n8n-json-contract/flujo-02-v2-rechazo.json), **10 nodos**, con dos ramas de `Contrato válido?` y nodo `Revisar contrato`.
+- Prueba negativa observada en capturas: `categoria=NoExiste`, `prioridad=Alta`; rama false de Contrato válido? llega a Revisar contrato (1 item). No se recorren Validar prioridad ni If original. Ajustes de rechazo confirmados por captura y configuración del JSON.
+- **Límite:** no se vio contenido OUTPUT final del rechazo; no asumir mensaje exacto mostrado al usuario. Export es configuración, no historial de ejecución.
+- **Próximo paso:** prueba de regresión del caso válido cambiando solo categoría a `Finanzas` (verificar true → Validar prioridad → Edit Fields2), y después mejorar motivo dinámico de validación de errores. Mantener Flujo 01 y versión anterior del Flujo 02 sin cambios.
