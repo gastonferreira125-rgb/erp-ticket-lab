@@ -123,3 +123,11 @@ Evidencia: dos capturas recibidas en el chat de estudio (aún no publicadas como
 - Resultado: validación de caso permitido conforme. Las capturas no prueban todavía el comportamiento de `Media`, valores vacíos ni inválidos.
 - **Pendiente:** conectar false del validador a un nuevo nodo `Edit Fields` para registrar `estado_validacion = Rechazada` y `motivo_validacion`, conservando los campos originales. Ejecutar prueba de `Urgente` para comprobar que no entra al circuito ordinario. No confundir false del validador con false del If original.
 - **Enseñanza:** separación Input Validation (dominio permitido) de Business Logic (ruta Alta frente a no Alta). `includes` evalúa pertenencia exacta en un array y devuelve Boolean.
+
+## Prueba negativa — `Urgente` rechazada (28/10/2026)
+
+- Evidencia recibida en tres capturas del chat (archivos todavía no incorporados al repositorio): primer `Edit Fields` con `ticket_id=T02`, `categoria=Finanzas` y `prioridad=Urgente`; configuración de `Revisar prioridad`; y vista del flujo ejecutado.
+- El nodo `Revisar prioridad` es un `Edit Fields` añadido a la salida **false** de `Validar prioridad`. Se configuraron dos campos String: `estado_validacion = Rechazada` y `motivo_validacion = Prioridad fuera del catálogo permitido`. `Include Other Input Fields` está habilitado.
+- La captura del lienzo muestra recorrido verde `Edit Fields → Validar prioridad (false) → Revisar prioridad`, **1 item** y el nodo final con ejecución correcta. El `If` de negocio no se recorrió en esa ejecución: prueba de enrutamiento negativo confirmada.
+- **Evidencia pendiente:** la primera captura del panel `Revisar prioridad` muestra `No output data` / `No fields - node executed, but no items were sent on this branch`, aunque la captura posterior del lienzo muestra la ruta de rechazo con 1 item. Pueden representar ejecuciones distintas; no atribuir ese panel a la última corrida. Reabrir nodo y capturar el JSON de OUTPUT de la última ejecución para validar que conserva cuatro campos y añade los dos campos de rechazo.
+- **Pendiente siguiente:** comprobar el OUTPUT de la rama de rechazo y luego probar `Media` y valor vacío. Exportar una **nueva versión** del JSON tras completar la validación; el `workflow.json` del repositorio sigue representando la versión anterior de cinco nodos.
