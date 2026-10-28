@@ -89,3 +89,7 @@ Cuando no se hayan modificado archivos, la respuesta final debe incluir un breve
 - **Prueba con evidencia:** entrada T02 con prioridad `Urgente`; el lienzo muestra ruta false a `Revisar prioridad`, 1 item y ejecución exitosa. No pasó al `If` original.
 - **Límite de la evidencia:** otra captura del panel mostraba `No output data`, presumiblemente distinta ejecución; falta ver JSON OUTPUT del último recorrido, sin afirmar que los seis campos resultantes están comprobados.
 - **Próximo paso único:** abrir `Revisar prioridad`, capturar OUTPUT JSON de la última ejecución de `Urgente`; luego probar Media y vacío. Mantener separado el export anterior de cinco nodos.
+
+### Aclaración de captura previa
+
+- **Aclaración posterior del participante:** el panel `No output data` era de una ejecución anterior, realizada antes de cambiar la prioridad a `Urgente`. Después cambió el dato y ejecutó el workflow, mostrando 1 item en la rama false de validación hacia `Revisar prioridad`. No se observó un fallo de ejecución; sigue sin recibirse una captura JSON del contenido de los campos de salida.
