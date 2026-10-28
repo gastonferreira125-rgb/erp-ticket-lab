@@ -29,8 +29,8 @@ Documentación: [labs/n8n-ticket-routing/README.md](../labs/n8n-ticket-routing/R
 - T06/Baja: rama false comprobada; T02/Alta: rama true comprobada.
 - Se documentaron correcciones: campo comparado, conservar campos de entrada, cableado false y actualización de OUTPUT mediante nueva ejecución.
 - Capturas y límites documentados en [índice de evidencias](../labs/n8n-ticket-routing/evidence/2026-10-28/README.md).
-- **Pendiente inmediato:** exportar el JSON real del workflow desde n8n, revisarlo para excluir secretos y guardarlo; repetir T06/Baja y verificar OUTPUT posterior al cableado corregido.
-- **Después:** validar prioridades permitidas, especialmente Media o valores vacíos/desconocidos, antes de avanzar a integración con el clasificador.
+- **Completado:** se recibió el export de n8n, se verificaron 5 nodos/conexiones, se retiró solo meta.instanceId y se guardó [workflow.json](../labs/n8n-ticket-routing/workflow.json). El export mantiene T02/Alta. No incluye historial de ejecución.
+- **Próximo paso de formación:** añadir validación de prioridad con valores permitidos Alta / Media / Baja; evitar que vacío o desconocido se enrute por false. La captura del OUTPUT final de T06 posterior al cableado corregido sigue pendiente de forma no bloqueante.
 - No existe en este laboratorio conexión live a ERP, modelo IA, MCP ni orquestación en paralelo.
 
 ### Clasificador ERP con IA
@@ -67,3 +67,11 @@ Cuando no se hayan modificado archivos, la respuesta final debe incluir un breve
 ## Instrucción para pegar al cambiar de chat
 
 > Continuá mi programa ERP Ticket Lab / SAP B1 Developer, Integrations & AI. Antes de avanzar, leé `docs/CONTINUIDAD_CHAT_WORK.md` en el repositorio `gastonferreira125-rgb/erp-ticket-lab` y los documentos enlazados. Verificá el estado real, evitá repetir prácticas, explicame teoría y términos técnicos durante cada ejercicio, pedime capturas como evidencia y actualizá el registro al cerrar. No des por completado lo que solo esté diseñado o pendiente.
+
+## Cierre de sesión de chat — 28/10/2026: exportación del workflow
+
+- **Modalidad:** chat normal.
+- **Evidencia:** archivo JSON exportado por el participante y revisado; cinco nodos y conexiones verificados contra la práctica. [Copia para importar](../labs/n8n-ticket-routing/workflow.json).
+- **Seguridad:** sin secciones credentials en nodos; retirada de meta.instanceId de la copia pública.
+- **Resultado:** configuración registrada en GitHub; no se han ejecutado pruebas adicionales del workflow importado.
+- **Siguiente paso:** Input Validation en n8n (Alta / Media / Baja), con pruebas de prioridad Media, texto vacío y valor desconocido. Evitar repetir T02 y T06 ya documentados, salvo requerimiento específico.
