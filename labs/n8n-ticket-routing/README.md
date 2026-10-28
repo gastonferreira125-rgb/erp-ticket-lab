@@ -131,3 +131,7 @@ Evidencia: dos capturas recibidas en el chat de estudio (aún no publicadas como
 - La captura del lienzo muestra recorrido verde `Edit Fields → Validar prioridad (false) → Revisar prioridad`, **1 item** y el nodo final con ejecución correcta. El `If` de negocio no se recorrió en esa ejecución: prueba de enrutamiento negativo confirmada.
 - **Evidencia pendiente:** la primera captura del panel `Revisar prioridad` muestra `No output data` / `No fields - node executed, but no items were sent on this branch`, aunque la captura posterior del lienzo muestra la ruta de rechazo con 1 item. Pueden representar ejecuciones distintas; no atribuir ese panel a la última corrida. Reabrir nodo y capturar el JSON de OUTPUT de la última ejecución para validar que conserva cuatro campos y añade los dos campos de rechazo.
 - **Pendiente siguiente:** comprobar el OUTPUT de la rama de rechazo y luego probar `Media` y valor vacío. Exportar una **nueva versión** del JSON tras completar la validación; el `workflow.json` del repositorio sigue representando la versión anterior de cinco nodos.
+
+### Aclaración de orden de ejecuciones
+
+- **Aclaración posterior del participante:** el panel `No output data` era de una ejecución anterior, realizada antes de cambiar la prioridad a `Urgente`. Después cambió el dato y ejecutó el workflow, mostrando 1 item en la rama false de validación hacia `Revisar prioridad`. No se observó un fallo de ejecución; sigue sin recibirse una captura JSON del contenido de los campos de salida.
