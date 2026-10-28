@@ -35,3 +35,15 @@ Probar primero T02 válido y luego un caso con `categoria=NoExiste` o un campo e
 - La captura del nodo `Revisar contrato` muestra `Include Other Input Fields` activado, pero el campo aún conserva el marcador `name` / `value`; falta configurar `estado_validacion` y `motivo_validacion`.
 - No se ve un lienzo completo de las nuevas conexiones ni una ejecución posterior del nodo If; `No output data` por sí solo no confirma un fallo.
 - **Próximo paso:** terminar los campos de rechazo, confirmar rama true a Validar prioridad y false a Revisar contrato, ejecutar caso sintético con `categoria = NoExiste`, y verificar `validacion_contrato.valido = false`, mensaje `Categoría no permitida` y salida de rechazo. No afirmar ejecución hasta recibir evidencia.
+
+## 28/10/2026 — Prueba negativa confirmada y versión 2
+
+**Artefacto nuevo:** [flujo-02-v2-rechazo.json](flujo-02-v2-rechazo.json), export real del participante, 10 nodos; se conservaron [flujo-02-v1.json](flujo-02-v1.json) y la documentación histórica. Se retiró `meta.instanceId` de la copia pública; no hay credenciales configuradas en los nodos.
+
+- Entrada sintética observada: ticket T02, categoría `NoExiste`, prioridad `Alta`, los demás campos del contrato completos.
+- Captura de configuración: `Revisar contrato` ahora agrega `estado_validacion=Rechazada` y `motivo_validacion=Contrato JSON inválido`, conservando otros campos (`includeOtherFields`).
+- Captura de lienzo ejecutado: `Edit Fields` → `Validar contrato JSON` → `Contrato válido?` rama **false** → `Revisar contrato` con **1 item**. `Validar prioridad` y `If` no se ejecutan en la prueba. Se confirma el bloqueo de entrada inválida previo a la lógica de negocio.
+- Export verificado: `Contrato válido?` comprueba Boolean `{{ $json.validacion_contrato.valido }}` `is true`; true hacia `Validar prioridad`, false hacia `Revisar contrato`.
+- Limitación: no hay captura de OUTPUT final del rechazo. Por código, `NoExiste` debe generar `Categoría no permitida` y `valido=false`, pero ese contenido exacto no fue verificado visualmente en la ejecución.
+
+**Siguiente actividad:** volver a probar categoría válida `Finanzas` con prioridad Alta y confirmar true del nuevo gate como regresión. Como mejora funcional, permitir que `motivo_validacion` derive de `$json.validacion_contrato.errores.join('; ')` en vez de una etiqueta genérica; verificar en OUTPUT. No hay integración real con SAP o servicios de IA.
