@@ -85,3 +85,7 @@ Educational ERP ticket triage portfolio with synthetic cases, versioned prompts,
 - https://learning.sap.com/learning-journeys/solving-business-problems-using-sap-s-generative-ai-hub
 - https://learning.sap.com/courses/navigating-large-language-models-fundamentals-and-techniques-for-your-use-case
 - https://learning.sap.com/courses/discovering-sap-s-generative-ai-hub
+
+## Otros proyectos de mi portafolio técnico
+
+Este repositorio forma parte de un portafolio práctico que combina análisis funcional ERP, automatización, evaluación de IA y desarrollo. **[Ver índice de proyectos](docs/PORTFOLIO_PROYECTOS.md)**, incluido el [caso de estudio público de Opportunity Radar Automation](docs/portfolio/OPPORTUNITY_RADAR_CASE_STUDY.md) con arquitectura y pruebas, sin exponer configuraciones privadas.
