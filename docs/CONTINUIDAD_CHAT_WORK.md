@@ -297,3 +297,11 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - Es un error de sintaxis en el código JavaScript que impide ejecutar el nodo; no debe confundirse con el `SyntaxError` en tiempo de ejecución de `JSON.parse` que se busca probar.
 - Siguiente acción: corregir a `tipo_error: error.name,` y ejecutar prueba negativa con texto JSON deliberadamente incompleto, conservando dentro de try `const ticket = JSON.parse(texto);`. Verificar OUTPUT con `tipo_error=SyntaxError` y `error_parseo=true`. Restaurar luego la lectura normal del LLM.
 - No se recibió todavía OUTPUT posterior a esta edición. **Prueba negativa específica de JSON.parse sigue pendiente.**
+
+
+## Sesión 03/11/2026 — ReferenceError confirmado en salida del test negativo
+
+- Captura del OUTPUT JSON de `Parsear respuesta IA`: `tipo_error="ReferenceError"`, `error_parseo=true`, `motivo_error="La IA devolvió JSON inválido"`.
+- **Confirmado:** el catch captura una excepción y entrega una salida controlada. **No confirmado:** captura de JSON malformado por `JSON.parse`; `ReferenceError` indica uso de variable no definida, posiblemente `ticket`, basado en edición observada anteriormente.
+- **Próximo paso único:** sustituir TODO el código del nodo por un ejemplo autónomo donde `const texto = '{"ticket_id": "T03",';` y `const ticket = JSON.parse(texto);` estén definidos en posiciones correctas, con try/catch y `tipo_error: error.name`. Ejecutar solamente ese nodo, capturar OUTPUT `tipo_error="SyntaxError"` y restaurar luego la lectura desde la respuesta Groq.
+- La rama explícita de revisión por errores de parsing sigue sin implementarse. No dar la prueba como aprobada todavía.
