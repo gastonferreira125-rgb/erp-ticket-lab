@@ -132,3 +132,14 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - Prueba negativa observada en capturas: `categoria=NoExiste`, `prioridad=Alta`; rama false de Contrato válido? llega a Revisar contrato (1 item). No se recorren Validar prioridad ni If original. Ajustes de rechazo confirmados por captura y configuración del JSON.
 - **Límite:** no se vio contenido OUTPUT final del rechazo; no asumir mensaje exacto mostrado al usuario. Export es configuración, no historial de ejecución.
 - **Próximo paso:** prueba de regresión del caso válido cambiando solo categoría a `Finanzas` (verificar true → Validar prioridad → Edit Fields2), y después mejorar motivo dinámico de validación de errores. Mantener Flujo 01 y versión anterior del Flujo 02 sin cambios.
+
+
+## Sesión de planificación — 03/11/2026: empleabilidad y SAP Business AI
+
+- **Alcance de este chat:** aprendizaje técnico SAP B1 Developer, IA aplicada a ERP, n8n/Python/JavaScript, Joule Studio y arquitectura SAP Business AI; las búsquedas laborales y postulaciones se gestionan en **otro chat**, sin duplicarlas.
+- **Propósito profesional:** fortalecer conocimientos demostrables y el portfolio para acceder a empleos de consultoría ERP, integraciones y automatización de IA a corto plazo; estudiar una certificación nueva no debe bloquear postulaciones.
+- **Roadmap complementario propuesto (no realizado):** fundamentos de SAP Business AI -> arquitectura BAIPA1 -> desarrollo con Joule Studio -> metodologías BAIPAM -> preparación eventual para C_BAIPA. Integrar teoría al mismo ERP Ticket Lab y documentar evidencia; no dar certificaciones por obtenidas ni asumir vouchers disponibles.
+- **Estado consultado:** último export comprobado es `labs/n8n-json-contract/flujo-02-v2-rechazo.json`, con diez nodos; el ejemplo configurado conserva `categoria=NoExiste`; hubo evidencia de recorrido de rechazo, pero no de JSON OUTPUT final.
+- **Siguiente paso práctico único (todavía pendiente):** en el `Edit Fields` de Flujo 02 cambiar solo `categoria` de `NoExiste` a `Finanzas`, ejecutar el workflow, capturar lienzo y OUTPUT JSON del camino `Contrato válido?` true -> `Validar prioridad` true -> `If` true -> `Edit Fields2`; comprobar `validacion_contrato.valido=true` y `errores=[]`. No afirmar ejecución antes de evidencia.
+- **Mejora posterior:** hacer dinámico `motivo_validacion` en `Revisar contrato` mediante `{{ $json.validacion_contrato.errores.join('; ') }}`, probar un caso inválido y exportar una nueva versión sin reemplazar los archivos históricos.
+- **Modo de enseñanza:** teoría, términos en inglés, práctica paso a paso y pedido de capturas de evidencia, manteniendo este documento como fuente de verdad.
