@@ -281,3 +281,11 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Prueba positiva comprobada por OUTPUT:** ticket T03 con categoria Finanzas, prioridad Alta, referencia_documento FV-1042, resumen y array de datos_faltantes; un item, nodo ejecutado correctamente.
 - **Aún pendiente:** prueba negativa real del bloque catch, su OUTPUT, manejo explícito de la rama `error_parseo` y guardado de nueva exportación. No afirmar que ya se capturó una excepción real.
 - **Siguiente acción única:** inyectar temporalmente una cadena JSON malformada en la primera línea del nodo Code, ejecutar solamente el nodo, observar `error_parseo=true` y el mensaje; después restaurar `const texto = $input.item.json.text;`. Mantener separado del enrutamiento hasta verificar.
+
+
+## Sesión 03/11/2026 — Prueba negativa con error distinto al previsto
+
+- **Captura revisada:** OUTPUT de `Parsear respuesta IA` devuelve `error_parseo=true` y `motivo_error=La IA devolvió JSON inválido`. El nodo termina exitosamente con 1 item.
+- **Hallazgo técnico importante:** la inyección del texto JSON inválido sustituyó por error la línea `const ticket = JSON.parse(texto)` DENTRO del bloque `try`, en vez de sustituir solamente la línea de entrada. La condición posterior usa `ticket` sin declararlo. El error capturado es por ello un `ReferenceError` probable, no una prueba válida de `JSON.parse` con un texto malformado.
+- **Estado correcto:** el bloque catch fue alcanzado, pero la prueba de parsing malformado NO está validada. No registrar como prueba negativa de JSON aprobada.
+- **Corrección guiada pendiente:** fijar texto de prueba JSON malformado en la línea de entrada; preservar `const ticket = JSON.parse(texto)` en el try; agregar temporalmente `tipo_error: error.name` a la salida catch para verificar que se recibe `SyntaxError`. Ejecutar el nodo y mostrar OUTPUT; restaurar entrada de Groq después.
