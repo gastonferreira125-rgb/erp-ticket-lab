@@ -189,3 +189,12 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Pruebas observadas en capturas (no contenidas en el export):** ticket T02 Finanzas/Alta recorre la rama true y termina con siguiente_accion prioritaria; ticket T02 NoExiste/Alta recorre rechazo, con valido=false, estado_validacion=Rechazada y motivo_validacion=Categoría no permitida.
 - **Límites:** la revisión del archivo fue estática. No se ejecutó el export descargado en un entorno n8n nuevo. La entrada sigue siendo simulada; no hay IA real ni conexión a SAP.
 - **Siguiente fase:** Lab 03, conectar un proveedor/modelo de IA usando exclusivamente tickets sintéticos y un contrato validado antes de enrutar; separar salida del modelo, normalización, controles y supervisión humana.
+
+
+## Sesión 03/11/2026 — Inicio Flujo 03 por duplicación
+
+- **Confirmación del participante:** informa que duplicó el workflow n8n para comenzar Flujo 03. No se recibió todavía captura ni export de la copia, por lo que el nombre y estructura aún no se han comprobado.
+- **Propósito:** insertar un Basic LLM Chain y un Groq Chat Model en la copia para comenzar el laboratorio de clasificación real, sin alterar Flujo 02.
+- **Paso guiado actual, pendiente de evidencia:** agregar ambos nodos y conectarlos mediante el puerto Model; no ejecutar ni reemplazar todavía el validador, que necesitará normalización de la respuesta del LLM.
+- **Seguridad:** credenciales API se configuran directamente dentro de n8n; no publicar claves en capturas, exportaciones ni en GitHub.
+- **Estado:** solo duplicación reportada; integración LLM no implementada ni probada.
