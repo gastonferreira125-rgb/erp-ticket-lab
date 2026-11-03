@@ -253,3 +253,14 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Resultado:** un ticket generado por IA real (Groq) superó por primera vez el control determinista y alcanzó el final de la ruta prioritaria. El lienzo muestra 1 item en Edit Fields2, pero no se recibió captura de su OUTPUT final para verificar `siguiente_accion` en esta nueva ejecución.
 - **Alcance:** prueba guiada en n8n con incidente de ejemplo fijo. No hay entrada dinámica de tickets, sistema SAP conectado, robustez de parsing inválido ni validación semántica automatizada. La corrección puntual de FV-1042 no demuestra consistencia del modelo.
 - **Próximo paso:** exportar Flujo 03 tal como está para versionar punto de control, sanitizar credenciales e identificadores de instancia; después manejar fallos de JSON.parse con salida segura y rama de revisión. Registrar el nuevo export sin sobrescribir versiones del Flujo 02.
+
+
+## Sesión 03/11/2026 — Flujo 03 v1 exportado y versionado
+
+- **Evidencia recibida:** export JSON original del participante `ERP Ticket Lab - Flujo 03 - Clasificación IA real.json` (revisión estática de configuración).
+- **Nuevo archivo público:** [flujo-03-v1-groq-clasificacion.json](../labs/n8n-llm-classification/flujo-03-v1-groq-clasificacion.json), basado en ese export y limpiado de referencias a credenciales Groq (ID/nombre), `meta.instanceId`, ID del workflow y `versionId`. Claves API no estaban incluidas en el export. La copia publicada requiere volver a configurar la credencial tras importación.
+- **Comprobación:** 13 nodos, 11 conexiones con extremos válidos, `openai/gpt-oss-20b` en Groq Chat Model, `Basic LLM Chain → Parsear respuesta IA → Validar contrato JSON` y todas las rutas de prioridad/rechazo. El `Edit Fields` simulado original queda desconectado. El prompt continúa siendo estático.
+- **Prueba previa por capturas:** la ejecución desde Groq hasta Edit Fields2 recorrió la rama verdadera y la validación mostró T03/Finanzas/Alta, `referencia_documento=FV-1042`, `validacion_contrato.valido=true` y errores vacíos. El export no incluye historial de ejecución.
+- **Pendiente importante:** actualmente el nodo `Parsear respuesta IA` llama `JSON.parse(texto)` sin `try/catch`; si el LLM entrega JSON mal formado, se genera un error. Hace falta implementar el fallo controlado y probarlo antes de integrar entradas dinámicas. No hay aún integración con SAP ni pruebas automatizadas de consistencia semántica.
+- **Próximo paso:** duplicar Flujo 03 para pruebas de robustez o preservar la v1 exportada; implementar manejo controlado del error de parsing y una rama de revisión, verificando salida negativa con captura y export v2.
+
