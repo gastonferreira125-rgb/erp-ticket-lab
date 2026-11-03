@@ -47,3 +47,12 @@ Probar primero T02 válido y luego un caso con `categoria=NoExiste` o un campo e
 - Limitación: no hay captura de OUTPUT final del rechazo. Por código, `NoExiste` debe generar `Categoría no permitida` y `valido=false`, pero ese contenido exacto no fue verificado visualmente en la ejecución.
 
 **Siguiente actividad:** volver a probar categoría válida `Finanzas` con prioridad Alta y confirmar true del nuevo gate como regresión. Como mejora funcional, permitir que `motivo_validacion` derive de `$json.validacion_contrato.errores.join('; ')` en vez de una etiqueta genérica; verificar en OUTPUT. No hay integración real con SAP o servicios de IA.
+
+
+## Actualización 03/11/2026 — Versión 3 de Flujo 02
+
+- **Versión reproducible:** [flujo-02-v3-errores-dinamicos.json](flujo-02-v3-errores-dinamicos.json), export n8n recibido del participante y publicado después de retirar meta.instanceId.
+- **Topología:** 10 nodos, 9 conexiones; contrato JSON validado antes del ruteo; rutas distintas para rechazo de contrato, rechazo de prioridad, atención alta y atención no alta.
+- **Mejora v3:** Revisar contrato ahora construye dinámicamente motivo_validacion a partir de los errores; captura del OUTPUT con Categoria no permitida confirmada. La prueba positiva previa de Finanzas/Alta también tiene captura del OUTPUT final.
+- **Seguridad y alcance:** sin credenciales en el export; datos de prueba sintéticos. El JSON no contiene historial de ejecución, no hay integración real con LLM ni con SAP. Se preservan v1 y v2 para trazabilidad.
+- **Siguiente fase prevista:** Lab 03 — entrada de clasificador IA real con validación, controles y pruebas sobre tickets sintéticos.
