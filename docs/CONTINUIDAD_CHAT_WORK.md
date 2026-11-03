@@ -178,3 +178,14 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Conclusión:** se corrigió el uso literal de la expresión y se observó su evaluación efectiva. La salida ahora entrega el motivo dinámico del rechazo. La prueba positiva previa con Finanzas/Alta también quedó confirmada.
 - **Estado:** comprobado con capturas; todavía no se ha recibido el nuevo export JSON actualizado del Flujo 02 ni se ha integrado un modelo IA o SAP. Las capturas están en la conversación, no como archivos de evidencia del repositorio.
 - **Siguiente paso único:** exportar desde n8n la versión actual del Flujo 02 (Download workflow / JSON), compartirla para comprobar estructura, sanitizar metadatos o secretos y versionarla sin sobrescribir `flujo-02-v2-rechazo.json`. Tras eso, comenzar conexión real a IA usando entrada sintética y validar la salida con el contrato ya probado.
+
+
+## Sesión 03/11/2026 — Export verificado y versionado del Flujo 02 v3
+
+- **Fuente:** export JSON entregado por el alumno, revisado y comparado contra la versión v2 del repositorio.
+- **Artefacto nuevo:** [flujo-02-v3-errores-dinamicos.json](../labs/n8n-json-contract/flujo-02-v3-errores-dinamicos.json). Se conservan la v1 y la v2, sin sobrescribirlas.
+- **Revisión estática:** 10 nodos, 9 conexiones correctas; nombres e identificadores de nodos únicos; sin credenciales configuradas y sin direcciones de correo en el export. Se retiró exclusivamente meta.instanceId para la versión pública.
+- **Cambio respecto de v2:** el campo de mensaje del nodo Revisar contrato pasó de texto genérico a expresión dinámica que une los errores de validacion_contrato. El export utiliza la convención de expresiones de n8n tanto en el valor como en el nombre interno del campo. En captura previa, el OUTPUT se observó correctamente como motivo_validacion=Categoría no permitida.
+- **Pruebas observadas en capturas (no contenidas en el export):** ticket T02 Finanzas/Alta recorre la rama true y termina con siguiente_accion prioritaria; ticket T02 NoExiste/Alta recorre rechazo, con valido=false, estado_validacion=Rechazada y motivo_validacion=Categoría no permitida.
+- **Límites:** la revisión del archivo fue estática. No se ejecutó el export descargado en un entorno n8n nuevo. La entrada sigue siendo simulada; no hay IA real ni conexión a SAP.
+- **Siguiente fase:** Lab 03, conectar un proveedor/modelo de IA usando exclusivamente tickets sintéticos y un contrato validado antes de enrutar; separar salida del modelo, normalización, controles y supervisión humana.
