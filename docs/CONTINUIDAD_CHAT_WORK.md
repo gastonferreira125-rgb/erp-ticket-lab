@@ -305,3 +305,11 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Confirmado:** el catch captura una excepción y entrega una salida controlada. **No confirmado:** captura de JSON malformado por `JSON.parse`; `ReferenceError` indica uso de variable no definida, posiblemente `ticket`, basado en edición observada anteriormente.
 - **Próximo paso único:** sustituir TODO el código del nodo por un ejemplo autónomo donde `const texto = '{"ticket_id": "T03",';` y `const ticket = JSON.parse(texto);` estén definidos en posiciones correctas, con try/catch y `tipo_error: error.name`. Ejecutar solamente ese nodo, capturar OUTPUT `tipo_error="SyntaxError"` y restaurar luego la lectura desde la respuesta Groq.
 - La rama explícita de revisión por errores de parsing sigue sin implementarse. No dar la prueba como aprobada todavía.
+
+
+## Sesión 03/11/2026 — Prueba negativa de parsing completada
+
+- Captura: OUTPUT de Parsear respuesta IA con tipo_error=SyntaxError, error_parseo=true y motivo_error=La IA devolvió JSON inválido.
+- Se confirmó el manejo controlado de una respuesta JSON sintácticamente incorrecta por medio de JSON.parse y catch. Es una prueba aislada del nodo, no del flujo completo.
+- Prueba previa con ReferenceError no era el fallo que se buscaba; ahora sí se observa SyntaxError.
+- Pendiente: restablecer la entrada del modelo y comprobar la ruta positiva; luego separar errores de parsing de la validación ERP mediante un nodo IF y ruta de revisión. Flujo 03 v1 del repositorio permanece sin reemplazar.
