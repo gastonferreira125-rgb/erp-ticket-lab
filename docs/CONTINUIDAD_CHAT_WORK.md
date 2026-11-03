@@ -264,3 +264,11 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Pendiente importante:** actualmente el nodo `Parsear respuesta IA` llama `JSON.parse(texto)` sin `try/catch`; si el LLM entrega JSON mal formado, se genera un error. Hace falta implementar el fallo controlado y probarlo antes de integrar entradas dinámicas. No hay aún integración con SAP ni pruebas automatizadas de consistencia semántica.
 - **Próximo paso:** duplicar Flujo 03 para pruebas de robustez o preservar la v1 exportada; implementar manejo controlado del error de parsing y una rama de revisión, verificando salida negativa con captura y export v2.
 
+
+
+## Sesión 03/11/2026 — Regresión visual después de proponer try/catch
+
+- **Evidencia recibida:** captura del lienzo n8n del Flujo 03 después de la instrucción de reemplazar código del nodo Parsear respuesta IA por try/catch.
+- **Observado:** recorrido completo de un ítem, con nodos ejecutados en verde desde Manual Trigger → Basic LLM Chain con Groq → Parsear respuesta IA → Validar contrato JSON → Contrato válido? true → Validar prioridad true → If true → Edit Fields2. Se ve éxito de ejecución general.
+- **No verificado:** la captura no muestra código JavaScript dentro del nodo Parsear ni OUTPUT de sus campos; tampoco prueba que el try/catch esté guardado o que maneje JSON malformado. No se ha hecho la prueba negativa ni publicado un nuevo export.
+- **Próximo paso único:** pedir captura del código y OUTPUT JSON del nodo Parsear respuesta IA en la última ejecución; después preparar prueba negativa controlada para garantizar que un JSON incorrecto no continúe por ruta de negocio.
