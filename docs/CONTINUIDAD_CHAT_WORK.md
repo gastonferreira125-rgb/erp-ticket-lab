@@ -143,3 +143,13 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Siguiente paso práctico único (todavía pendiente):** en el `Edit Fields` de Flujo 02 cambiar solo `categoria` de `NoExiste` a `Finanzas`, ejecutar el workflow, capturar lienzo y OUTPUT JSON del camino `Contrato válido?` true -> `Validar prioridad` true -> `If` true -> `Edit Fields2`; comprobar `validacion_contrato.valido=true` y `errores=[]`. No afirmar ejecución antes de evidencia.
 - **Mejora posterior:** hacer dinámico `motivo_validacion` en `Revisar contrato` mediante `{{ $json.validacion_contrato.errores.join('; ') }}`, probar un caso inválido y exportar una nueva versión sin reemplazar los archivos históricos.
 - **Modo de enseñanza:** teoría, términos en inglés, práctica paso a paso y pedido de capturas de evidencia, manteniendo este documento como fuente de verdad.
+
+
+## Sesión — 03/11/2026: regresión positiva del Flujo 02
+
+- **Modalidad:** chat normal. Usuario compartió dos capturas de n8n Cloud.
+- **Entrada visualizada:** ticket T02, `categoria=Finanzas`, `prioridad=Alta`, `referencia_documento=FV-1042`, `datos_faltantes` como array de dos textos. Captura JSON con seis campos, aparentemente del primer `Edit Fields` (no salida enriquecida final).
+- **Prueba de regresión positiva confirmada por lienzo:** `Manual Trigger → Edit Fields → Validar contrato JSON → Contrato válido?` rama true → `Validar prioridad` rama true → `If` rama true → `Edit Fields2`. Todos los nodos del recorrido figuran ejecutados (verde) y hay 1 item hasta el nodo final; se muestra mensaje `Workflow executed successfully`.
+- **Evidencia pendiente:** captura de OUTPUT JSON en `Edit Fields2` con `validacion_contrato.valido=true`, `validacion_contrato.errores=[]` y `siguiente_accion`. No afirmar estos campos inspeccionados solo por éxito del lienzo.
+- **Resultado real:** ruta de procesamiento correcto validada visualmente, además del rechazo de categoría inválida de la sesión anterior. No se han conectado IA real ni SAP.
+- **Siguiente paso único:** abrir `Edit Fields2` → OUTPUT → JSON y compartir captura completa; luego parametrizar `motivo_validacion` dinámico en `Revisar contrato` con `{{ $json.validacion_contrato.errores.join('; ') }}`, probar `categoria=NoExiste` y aportar evidencia del mensaje exacto. Guardar nueva versión de export tras verificar.
