@@ -153,3 +153,11 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Evidencia pendiente:** captura de OUTPUT JSON en `Edit Fields2` con `validacion_contrato.valido=true`, `validacion_contrato.errores=[]` y `siguiente_accion`. No afirmar estos campos inspeccionados solo por éxito del lienzo.
 - **Resultado real:** ruta de procesamiento correcto validada visualmente, además del rechazo de categoría inválida de la sesión anterior. No se han conectado IA real ni SAP.
 - **Siguiente paso único:** abrir `Edit Fields2` → OUTPUT → JSON y compartir captura completa; luego parametrizar `motivo_validacion` dinámico en `Revisar contrato` con `{{ $json.validacion_contrato.errores.join('; ') }}`, probar `categoria=NoExiste` y aportar evidencia del mensaje exacto. Guardar nueva versión de export tras verificar.
+
+
+## Sesión — 03/11/2026: OUTPUT final de regresión verificado
+
+- **Evidencia visual recibida:** captura de n8n del OUTPUT JSON del nodo `Edit Fields2`, con ticket sintético `T02`, `categoria=Finanzas`, `prioridad=Alta` y `referencia_documento=FV-1042`.
+- **Verificado en el JSON final:** `validacion_contrato.valido=true`, `validacion_contrato.errores=[]`, y `siguiente_accion="Proponer atención prioritaria y solicitar datos faltantes en paralelo"`. Los seis campos originales se conservan, y el ajuste `Include Other Input Fields` está activo.
+- **Conclusión:** regresión del camino válido confirmada tanto por ejecución completa del lienzo como por valores del OUTPUT final. Esto NO prueba integración real con IA ni SAP.
+- **Siguiente práctica (no ejecutada todavía):** en nodo `Revisar contrato`, cambiar valor de `motivo_validacion` a Expression `{{ $json.validacion_contrato.errores.join('; ') }}`; usar `categoria=NoExiste` en la entrada; ejecutar y verificar mensaje exacto en OUTPUT JSON del rechazo. Solicitar captura y nuevo export al finalizar, manteniendo historial previo.
