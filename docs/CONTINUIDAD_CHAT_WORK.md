@@ -321,3 +321,12 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Interpretación:** la ruta de `catch` funciona, pero hay un identificador no definido en el código; el OUTPUT no aporta la línea ni el nombre exacto de variable. Por ediciones anteriores, la falta de declaración de `ticket` es una hipótesis razonable, no una causa confirmada.
 - **Acción correctiva guiada:** reemplazar TODO el contenido del nodo Code por una implementación autocontenida que declara `texto` y `ticket` dentro del `try`, realiza JSON.parse, verifica tipo object no nulo/no array y devuelve un objeto; `catch` incluye `tipo_error`, `error_parseo`, `motivo_error` y `detalle_tecnico=error.message` para depuración con datos ficticios.
 - **Estado:** no se ha recibido OUTPUT posterior a este reemplazo; regresión positiva pendiente. No agregar aún ruta de rechazo ni dar por corregido.
+
+
+## Sesión 03/11/2026 — Restauración positiva del parsing confirmada
+
+- **Captura comprobada:** OUTPUT JSON del nodo Parsear respuesta IA con ticket T03, categoria Finanzas, prioridad Alta, referencia_documento FV-1042, resumen y datos_faltantes de dos elementos. No aparecen indicadores de error_parseo en la salida.
+- **Conclusión:** el nodo Code volvió a producir una estructura positiva tras corregir el ReferenceError y completar las pruebas negativas con SyntaxError. Esta captura es del OUTPUT del nodo, no una nueva confirmación del workflow completo.
+- **Pruebas del nodo:** caso válido -> objeto de seis campos; texto JSON malformado -> catch con tipo_error SyntaxError, error_parseo true. Ambas respaldadas por capturas en la conversación.
+- **Nuevo siguiente paso:** insertar IF llamado Error de parseo? justo después de Parsear respuesta IA. Condición Boolean sobre la expresión `{{ $json.error_parseo === true }}`, true -> nodo Edit Fields Revisar salida IA con estado_validacion Revisión IA y motivo_validacion tomado de motivo_error, conservando otros campos; false -> Validar contrato JSON. Probar ambas ramas y capturar sus OUTPUT antes de exportar versión 2.
+- **No declarar implementado:** ni IF ni ruta de revisión hasta nueva evidencia; tampoco se ha realizado revisión semántica automatizada de referencias documentales.
