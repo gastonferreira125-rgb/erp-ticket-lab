@@ -169,3 +169,12 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - El flujo tomo la rama false y ejecuto Revisar contrato (1 item), con estado_validacion Rechazada.
 - Pendiente: motivo_validacion se mostró como texto de fórmula, no como mensaje evaluado. Revisar el modo Expression del campo, volver a ejecutar y capturar el resultado.
 - No declarar terminado el mensaje dinámico hasta ver motivo_validacion con la frase de error.
+
+
+## Sesión 03/11/2026 — Mensaje dinámico confirmado en OUTPUT
+
+- **Evidencia aportada:** captura del panel OUTPUT JSON tras ejecutar el rechazo del Flujo 02 con ticket sintético T02 y `categoria=NoExiste`, `prioridad=Alta`.
+- **Contenido del OUTPUT verificado:** `validacion_contrato.valido=false`; `validacion_contrato.errores=["Categoría no permitida"]`; `estado_validacion="Rechazada"`; `motivo_validacion="Categoría no permitida"`.
+- **Conclusión:** se corrigió el uso literal de la expresión y se observó su evaluación efectiva. La salida ahora entrega el motivo dinámico del rechazo. La prueba positiva previa con Finanzas/Alta también quedó confirmada.
+- **Estado:** comprobado con capturas; todavía no se ha recibido el nuevo export JSON actualizado del Flujo 02 ni se ha integrado un modelo IA o SAP. Las capturas están en la conversación, no como archivos de evidencia del repositorio.
+- **Siguiente paso único:** exportar desde n8n la versión actual del Flujo 02 (Download workflow / JSON), compartirla para comprobar estructura, sanitizar metadatos o secretos y versionarla sin sobrescribir `flujo-02-v2-rechazo.json`. Tras eso, comenzar conexión real a IA usando entrada sintética y validar la salida con el contrato ya probado.
