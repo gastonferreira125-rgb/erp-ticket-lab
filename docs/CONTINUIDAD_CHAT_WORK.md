@@ -161,3 +161,11 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Verificado en el JSON final:** `validacion_contrato.valido=true`, `validacion_contrato.errores=[]`, y `siguiente_accion="Proponer atención prioritaria y solicitar datos faltantes en paralelo"`. Los seis campos originales se conservan, y el ajuste `Include Other Input Fields` está activo.
 - **Conclusión:** regresión del camino válido confirmada tanto por ejecución completa del lienzo como por valores del OUTPUT final. Esto NO prueba integración real con IA ni SAP.
 - **Siguiente práctica (no ejecutada todavía):** en nodo `Revisar contrato`, cambiar valor de `motivo_validacion` a Expression `{{ $json.validacion_contrato.errores.join('; ') }}`; usar `categoria=NoExiste` en la entrada; ejecutar y verificar mensaje exacto en OUTPUT JSON del rechazo. Solicitar captura y nuevo export al finalizar, manteniendo historial previo.
+
+
+## Sesión 03/11/2026 — Rechazo validado; expresión aún literal
+
+- Captura: ticket T02 con categoria NoExiste, contrato valido=false y errores: Categoria no permitida.
+- El flujo tomo la rama false y ejecuto Revisar contrato (1 item), con estado_validacion Rechazada.
+- Pendiente: motivo_validacion se mostró como texto de fórmula, no como mensaje evaluado. Revisar el modo Expression del campo, volver a ejecutar y capturar el resultado.
+- No declarar terminado el mensaje dinámico hasta ver motivo_validacion con la frase de error.
