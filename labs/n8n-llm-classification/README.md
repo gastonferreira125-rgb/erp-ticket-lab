@@ -59,3 +59,10 @@ No se recibió aún export del Flujo 03 ni evidencia de ejecución completa con 
 - Prueba previa observada: LLM → validador → ruta Alta hasta Edit Fields2. Resultado de validador para T03 correcto en captura; el export es configuración, no historial de ejecución.
 - Límite actual: prompt fijo, `JSON.parse` sin excepción capturada, clasificación susceptible a omisión semántica, sin datos reales ni conexión SAP. Próximo trabajo: `try/catch`, revisión de respuestas no parseables, pruebas negativas y versionado v2.
 
+
+
+## Prueba negativa de parseo — 03/11/2026
+
+- Captura de n8n: el OUTPUT del nodo Parsear respuesta IA devolvió tipo_error=SyntaxError, error_parseo=true y motivo_error=La IA devolvió JSON inválido.
+- Se confirmó el uso de catch para convertir una excepción de JSON.parse en una respuesta de datos controlada. La ejecución fue únicamente del nodo; no prueba todavía el circuito de rechazo completo.
+- Próximo paso: restaurar la entrada normal del LLM, ejecutar un caso positivo, agregar un IF de error_parseo antes de Validar contrato JSON y diseñar la rama de revisión de IA.
