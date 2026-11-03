@@ -198,3 +198,12 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Paso guiado actual, pendiente de evidencia:** agregar ambos nodos y conectarlos mediante el puerto Model; no ejecutar ni reemplazar todavía el validador, que necesitará normalización de la respuesta del LLM.
 - **Seguridad:** credenciales API se configuran directamente dentro de n8n; no publicar claves en capturas, exportaciones ni en GitHub.
 - **Estado:** solo duplicación reportada; integración LLM no implementada ni probada.
+
+
+## Sesión 03/11/2026 — Flujo 03: estructura LLM observada
+
+- **Evidencia:** captura del lienzo n8n titulada `ERP Ticket Lab - Flujo 03 - Clasificación IA real`.
+- **Comprobado visualmente:** copia del flujo con los diez nodos del ruteo y rechazo; nuevo nodo `Basic LLM Chain` con `Groq Chat Model` enlazado mediante conexión de subnodo `Model`. La cadena LLM todavía está desconectada de la ruta principal, intencionalmente.
+- **Pendiente:** el subnodo Groq muestra advertencia roja; no se han verificado credenciales, modelo ni ejecuciones del LLM. Ninguna integración real confirmada aún. No copiar claves en el repositorio.
+- **Siguiente paso de aprendizaje:** crear Groq API Key en la consola, configurar credential cifrada en n8n y seleccionar el modelo disponible, idealmente `llama-3.3-70b-versatile`; pedir captura del nodo mostrando credencial seleccionada y modelo pero no la clave. Conservar la cadena desconectada hasta definir entrada en lenguaje natural, prompt y normalización de salida antes del validador JSON.
+- **Teoría abordada:** diferencia entre Basic LLM Chain (orquestación/prompt), Groq Chat Model (motor proveedor/modelo) y API Key (autenticación); separación de responsabilidades y seguridad de secretos.
