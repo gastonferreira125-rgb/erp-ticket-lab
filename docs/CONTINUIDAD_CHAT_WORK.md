@@ -234,3 +234,12 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **No afirmar:** que el modelo haya pasado el validador existente, que la respuesta ya se parseó, que las dos ramas estén integradas, que se haya conectado con SAP ni que haya prueba integral end-to-end.
 - **Próximo paso práctico (pendiente):** incorporar `Code` después de `Basic LLM Chain` con JavaScript `JSON.parse($input.item.json.text)` en modo Run Once for Each Item, devolver el objeto como `{json: ...}`, ejecutar y mostrar OUTPUT. Mantener separados flujo principal y rama LLM hasta validar estructura y control de errores. Corregir la regla de extracción `referencia_documento` del prompt y hacer pruebas de regresión después.
 - **Teoría:** diferencia entre serialización JSON (string), parsing de JSON (objeto) y validación semántica; privacidad: únicamente incidentes ficticios.
+
+
+## Sesión 03/11/2026 — Parsear respuesta IA verificado (T03)
+
+- **Captura n8n:** nodo `Parsear respuesta IA` de tipo Code, JavaScript, `Run Once for Each Item`, con código `const texto = $input.item.json.text; const ticket = JSON.parse(texto); return { json: ticket };`.
+- **Ejecución verificada:** 1 item y salida JSON con las seis claves del ticket T03: `ticket_id=T03`, `categoria=Finanzas`, `prioridad=Alta`, `resumen` sobre la factura FV-1042, `referencia_documento=FV-1042`, `datos_faltantes` con tres elementos. El parsing funcionó.
+- **Comparación de inferencias:** en la inferencia previa Groq había devuelto `referencia_documento=null` para la misma referencia mencionada en el texto; en esta nueva captura sí extrajo FV-1042. Es una observación puntual, no prueba de consistencia o de que se haya cambiado el prompt.
+- **Límites:** validación por `schema.json` todavía NO ejecutada sobre la salida IA; no hay prueba completa de enrutamiento con IA; el uso directo de `JSON.parse` puede lanzar un error si el modelo genera texto no parseable y se añadirá manejo de errores.
+- **Próximo paso único:** conectar `Parsear respuesta IA` a `Validar contrato JSON` y desconectar `Edit Fields` del validador anterior, manteniendo Edit Fields sin ejecutar como referencia, para probar un recorrido único de la IA hacia los controles existentes. Ejecutar y revisar que `validacion_contrato.valido=true`, luego captura del circuito. Mantener el Flujo 02 intacto.
