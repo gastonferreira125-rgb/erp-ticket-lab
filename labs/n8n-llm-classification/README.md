@@ -37,3 +37,13 @@ Agregar un nodo `Code` después de `Basic LLM Chain`, configurado en `Run Once f
 ## Límites y siguientes hitos
 
 No se recibió aún export del Flujo 03 ni evidencia de ejecución completa con un modelo y el validador conectados. Después del parsing, ajustar el prompt sobre extracción de `referencia_documento` y repetir pruebas con múltiples incidentes sintéticos; añadir control de parseo fallido y supervisión humana antes de presentar el laboratorio como solución empresarial.
+
+
+## Actualización 03/11/2026 — Recorrido completo exitoso de IA a reglas ERP
+
+
+- **Evidencia del lienzo:** `Manual Trigger → Basic LLM Chain [Groq Chat Model] → Parsear respuesta IA → Validar contrato JSON → Contrato válido? (true) → Validar prioridad (true) → If (true) → Edit Fields2` (1 item). `Edit Fields` anterior está aislado.
+- **Evidencia OUTPUT del validador:** ticket ficticio T03, `Finanzas`, `Alta`, referencia `FV-1042`, datos_faltantes con dos elementos, `validacion_contrato.valido=true` y `errores=[]`.
+- **Confirmado:** parsing, esquema contractual y enrutamiento positivo tras una inferencia real de Groq. **No confirmado por OUTPUT:** valor exacto de `siguiente_accion` de Edit Fields2 en esta ejecución (solo nodo final verde y 1 item en el lienzo).
+- **Pendiente:** export Flujo 03; control de errores de formato (JSON.parse arroja excepción si el texto es inválido); pruebas de fallos, reconciliación semántica contra texto original, entradas dinámicas y datos ERP reales.
+- **Siguiente paso recomendado:** crear punto de restauración mediante export de n8n y registrar versión sin secretos; luego prueba dirigida de JSON inválido con manejo seguro de errores y rechazo explícito.
