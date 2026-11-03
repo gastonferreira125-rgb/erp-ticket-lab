@@ -272,3 +272,12 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Observado:** recorrido completo de un ítem, con nodos ejecutados en verde desde Manual Trigger → Basic LLM Chain con Groq → Parsear respuesta IA → Validar contrato JSON → Contrato válido? true → Validar prioridad true → If true → Edit Fields2. Se ve éxito de ejecución general.
 - **No verificado:** la captura no muestra código JavaScript dentro del nodo Parsear ni OUTPUT de sus campos; tampoco prueba que el try/catch esté guardado o que maneje JSON malformado. No se ha hecho la prueba negativa ni publicado un nuevo export.
 - **Próximo paso único:** pedir captura del código y OUTPUT JSON del nodo Parsear respuesta IA en la última ejecución; después preparar prueba negativa controlada para garantizar que un JSON incorrecto no continúe por ruta de negocio.
+
+
+## Sesión 03/11/2026 — Captura try/catch y regresión válida en Parsear respuesta IA
+
+- **Captura recibida:** parámetros del nodo n8n `Parsear respuesta IA` (Code, JavaScript, Run Once for Each Item) con `try { const ticket = JSON.parse(texto) ... } catch (error) { ... }` visible.
+- **Implementación observada:** verifica que el resultado no sea null ni array y que sea de tipo object; ante error, devuelve `{error_parseo: true, motivo_error: "La IA devolvió JSON inválido"}`.
+- **Prueba positiva comprobada por OUTPUT:** ticket T03 con categoria Finanzas, prioridad Alta, referencia_documento FV-1042, resumen y array de datos_faltantes; un item, nodo ejecutado correctamente.
+- **Aún pendiente:** prueba negativa real del bloque catch, su OUTPUT, manejo explícito de la rama `error_parseo` y guardado de nueva exportación. No afirmar que ya se capturó una excepción real.
+- **Siguiente acción única:** inyectar temporalmente una cadena JSON malformada en la primera línea del nodo Code, ejecutar solamente el nodo, observar `error_parseo=true` y el mensaje; después restaurar `const texto = $input.item.json.text;`. Mantener separado del enrutamiento hasta verificar.
