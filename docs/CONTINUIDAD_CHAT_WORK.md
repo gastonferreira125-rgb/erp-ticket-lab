@@ -224,3 +224,13 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Confirmado:** conexión visual entre ambos nodos. El icono rojo de Groq por sí solo no acredita error; en esta captura no se observan los parámetros internos.
 - **Aún no comprobado:** que el modelo seleccionado sea `openai/gpt-oss-20b`, autenticación efectiva o llamada real. La cadena sigue pendiente de prueba y de integración con el resto del flujo.
 - **Paso siguiente:** abrir parámetros del nodo Groq, confirmar credencial y nombre de modelo sin compartir secretos; después configurar prompt y ejecutar una prueba sintética controlada.
+
+
+## Sesión 03/11/2026 — Primera inferencia LLM real confirmada
+
+- **Capturas recibidas:** lienzo de `ERP Ticket Lab - Flujo 03 - Clasificación IA real` con dos ramas separadas desde Manual Trigger: flujo de validación previo (entrada NoExiste rechazada) y `Basic LLM Chain` con `Groq Chat Model`. Basic LLM Chain y Groq se ven ejecutados exitosamente, con 1 item.
+- **Evidencia OUTPUT de Basic LLM Chain:** un objeto con clave `text`, cuyo valor es **texto que representa JSON**, no seis propiedades JSON directas. Se observan `ticket_id=T03`, `categoria=Finanzas`, `prioridad=Alta`, `referencia_documento=null`, datos_faltantes con tres textos y resumen de factura FV-1042 que no se contabiliza durante cierre mensual.
+- **Hallazgo funcional:** el modelo omitió la referencia `FV-1042` pese a estar en el incidente. Error semántico demostrado; no confundir la validez del JSON con exactitud respecto al texto original.
+- **No afirmar:** que el modelo haya pasado el validador existente, que la respuesta ya se parseó, que las dos ramas estén integradas, que se haya conectado con SAP ni que haya prueba integral end-to-end.
+- **Próximo paso práctico (pendiente):** incorporar `Code` después de `Basic LLM Chain` con JavaScript `JSON.parse($input.item.json.text)` en modo Run Once for Each Item, devolver el objeto como `{json: ...}`, ejecutar y mostrar OUTPUT. Mantener separados flujo principal y rama LLM hasta validar estructura y control de errores. Corregir la regla de extracción `referencia_documento` del prompt y hacer pruebas de regresión después.
+- **Teoría:** diferencia entre serialización JSON (string), parsing de JSON (objeto) y validación semántica; privacidad: únicamente incidentes ficticios.
