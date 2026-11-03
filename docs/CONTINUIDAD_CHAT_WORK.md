@@ -216,3 +216,11 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Modelo propuesto para laboratorio:** `openai/gpt-oss-20b` en GroqCloud, publicado en catálogo de modelos y límites Free; dispone de JSON mode.
 - **Siguiente paso único:** abrir desplegable Model, seleccionar `openai/gpt-oss-20b` si se encuentra y verificar que desaparezca advertencia. Si no aparece, compartir captura de lista, no seleccionar modelos descontinuados. Sin ejecutar workflow ni exponer claves.
 - **Estado:** captura verifica selección de credencial, no autenticación ni llamadas exitosas; cadena aún no conectada al flujo de negocio.
+
+
+## Sesión 03/11/2026 — Confirmación visual de conexión de subnodos
+
+- **Evidencia:** captura centrada en `Basic LLM Chain` y `Groq Chat Model` unidos mediante el conector `Model`.
+- **Confirmado:** conexión visual entre ambos nodos. El icono rojo de Groq por sí solo no acredita error; en esta captura no se observan los parámetros internos.
+- **Aún no comprobado:** que el modelo seleccionado sea `openai/gpt-oss-20b`, autenticación efectiva o llamada real. La cadena sigue pendiente de prueba y de integración con el resto del flujo.
+- **Paso siguiente:** abrir parámetros del nodo Groq, confirmar credencial y nombre de modelo sin compartir secretos; después configurar prompt y ejecutar una prueba sintética controlada.
