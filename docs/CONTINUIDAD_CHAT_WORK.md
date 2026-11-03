@@ -243,3 +243,13 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Comparación de inferencias:** en la inferencia previa Groq había devuelto `referencia_documento=null` para la misma referencia mencionada en el texto; en esta nueva captura sí extrajo FV-1042. Es una observación puntual, no prueba de consistencia o de que se haya cambiado el prompt.
 - **Límites:** validación por `schema.json` todavía NO ejecutada sobre la salida IA; no hay prueba completa de enrutamiento con IA; el uso directo de `JSON.parse` puede lanzar un error si el modelo genera texto no parseable y se añadirá manejo de errores.
 - **Próximo paso único:** conectar `Parsear respuesta IA` a `Validar contrato JSON` y desconectar `Edit Fields` del validador anterior, manteniendo Edit Fields sin ejecutar como referencia, para probar un recorrido único de la IA hacia los controles existentes. Ejecutar y revisar que `validacion_contrato.valido=true`, luego captura del circuito. Mantener el Flujo 02 intacto.
+
+
+## Sesión 03/11/2026 — Primer recorrido LLM → validación → prioridad confirmado
+
+
+- **Capturas verificadas:** Flujo 03 ejecutado, desde Manual Trigger a Basic LLM Chain + Groq Chat Model, Parsear respuesta IA, Validar contrato JSON, Contrato válido? (true), Validar prioridad (true), If (true), Edit Fields2 (1 item). El nodo Edit Fields original quedó aislado e inactivo. Los nodos de rechazo no se ejecutaron.
+- **Salida del validador:** T03, `categoria=Finanzas`, `prioridad=Alta`, `referencia_documento=FV-1042`, `datos_faltantes` array de dos textos, `validacion_contrato.valido=true` y `errores=[]`.
+- **Resultado:** un ticket generado por IA real (Groq) superó por primera vez el control determinista y alcanzó el final de la ruta prioritaria. El lienzo muestra 1 item en Edit Fields2, pero no se recibió captura de su OUTPUT final para verificar `siguiente_accion` en esta nueva ejecución.
+- **Alcance:** prueba guiada en n8n con incidente de ejemplo fijo. No hay entrada dinámica de tickets, sistema SAP conectado, robustez de parsing inválido ni validación semántica automatizada. La corrección puntual de FV-1042 no demuestra consistencia del modelo.
+- **Próximo paso:** exportar Flujo 03 tal como está para versionar punto de control, sanitizar credenciales e identificadores de instancia; después manejar fallos de JSON.parse con salida segura y rama de revisión. Registrar el nuevo export sin sobrescribir versiones del Flujo 02.
