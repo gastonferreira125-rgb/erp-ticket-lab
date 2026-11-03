@@ -313,3 +313,11 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - Se confirmó el manejo controlado de una respuesta JSON sintácticamente incorrecta por medio de JSON.parse y catch. Es una prueba aislada del nodo, no del flujo completo.
 - Prueba previa con ReferenceError no era el fallo que se buscaba; ahora sí se observa SyntaxError.
 - Pendiente: restablecer la entrada del modelo y comprobar la ruta positiva; luego separar errores de parsing de la validación ERP mediante un nodo IF y ruta de revisión. Flujo 03 v1 del repositorio permanece sin reemplazar.
+
+
+## Sesión 03/11/2026 — ReferenceError persistente tras restauración
+
+- **Captura recibida:** OUTPUT de Parsear respuesta IA después de intentar restaurar el caso válido, con `tipo_error=ReferenceError`, `error_parseo=true` y `motivo_error=La IA devolvió JSON inválido`.
+- **Interpretación:** la ruta de `catch` funciona, pero hay un identificador no definido en el código; el OUTPUT no aporta la línea ni el nombre exacto de variable. Por ediciones anteriores, la falta de declaración de `ticket` es una hipótesis razonable, no una causa confirmada.
+- **Acción correctiva guiada:** reemplazar TODO el contenido del nodo Code por una implementación autocontenida que declara `texto` y `ticket` dentro del `try`, realiza JSON.parse, verifica tipo object no nulo/no array y devuelve un objeto; `catch` incluye `tipo_error`, `error_parseo`, `motivo_error` y `detalle_tecnico=error.message` para depuración con datos ficticios.
+- **Estado:** no se ha recibido OUTPUT posterior a este reemplazo; regresión positiva pendiente. No agregar aún ruta de rechazo ni dar por corregido.
