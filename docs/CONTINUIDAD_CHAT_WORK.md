@@ -207,3 +207,12 @@ Se recibió una captura del usuario que confirma la existencia de una copia en n
 - **Pendiente:** el subnodo Groq muestra advertencia roja; no se han verificado credenciales, modelo ni ejecuciones del LLM. Ninguna integración real confirmada aún. No copiar claves en el repositorio.
 - **Siguiente paso de aprendizaje:** crear Groq API Key en la consola, configurar credential cifrada en n8n y seleccionar el modelo disponible, idealmente `llama-3.3-70b-versatile`; pedir captura del nodo mostrando credencial seleccionada y modelo pero no la clave. Conservar la cadena desconectada hasta definir entrada en lenguaje natural, prompt y normalización de salida antes del validador JSON.
 - **Teoría abordada:** diferencia entre Basic LLM Chain (orquestación/prompt), Groq Chat Model (motor proveedor/modelo) y API Key (autenticación); separación de responsabilidades y seguridad de secretos.
+
+
+## Sesión 03/11/2026 — Revisión de modelo Groq retirado
+
+- **Captura observada:** credencial n8n seleccionada con etiqueta `Groq account`; `Groq Chat Model` tiene el valor `llama3-8b-8192` y aparece una advertencia roja junto al modelo. No se ha probado si la credencial autentica correctamente.
+- **Verificación externa:** Groq documenta que `llama3-8b-8192` quedó descontinuado el 30-08-2025. También `llama-3.3-70b-versatile` fue retirado del plan gratuito y Developer el 16-08-2026; evitar recomendar modelos obsoletos.
+- **Modelo propuesto para laboratorio:** `openai/gpt-oss-20b` en GroqCloud, publicado en catálogo de modelos y límites Free; dispone de JSON mode.
+- **Siguiente paso único:** abrir desplegable Model, seleccionar `openai/gpt-oss-20b` si se encuentra y verificar que desaparezca advertencia. Si no aparece, compartir captura de lista, no seleccionar modelos descontinuados. Sin ejecutar workflow ni exponer claves.
+- **Estado:** captura verifica selección de credencial, no autenticación ni llamadas exitosas; cadena aún no conectada al flujo de negocio.
